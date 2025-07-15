@@ -1,0 +1,15 @@
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.form-input {
+    display: flex;
+    flex-direction: row;
+    background: rgba(27, 68, 82, 0.6);
+    .textView {
+        all: unset;
+    }
+}
+

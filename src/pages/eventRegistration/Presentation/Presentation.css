@@ -1,0 +1,32 @@
+.presentation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: white;
+}
+
+.presentation-form label {
+    display: flex;
+    flex-direction: column;
+}
+
+.presentation-form select,
+.presentation-form input[type="file"] {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+}
+
+.presentation-form button {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: #1B4452;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
