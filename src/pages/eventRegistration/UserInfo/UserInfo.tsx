@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useRegistration } from '../../../store/RegistrationContext';
+import { useRegistration } from '../../../store/useRegistration';
 import './UserInfo.css';
 
 export default function UserInfo() {

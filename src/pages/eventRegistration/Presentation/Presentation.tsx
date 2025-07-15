@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useRegistration } from '../../../store/RegistrationContext.tsx';
+import { useRegistration } from '../../../store/useRegistration';
+import * as React from "react";
 
 export default function Presentation() {
     const navigate = useNavigate();

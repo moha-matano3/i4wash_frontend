@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useRegistration } from '../../../store/RegistrationContext';
+import { useRegistration } from '../../../store/useRegistration';
 
 type Attendee = {
     fullName: string;
@@ -42,7 +42,7 @@ export default function Attendees() {
 
     return (
         <div className="form-container">
-            <h3>Step 4: Attendees</h3>
+            <h3>Attendees</h3>
 
             <form onSubmit={handleSubmit} className="form-body">
                 {attendees.map((attendee, index) => (

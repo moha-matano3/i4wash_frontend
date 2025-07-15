@@ -7,11 +7,19 @@ import Booth from './pages/eventRegistration/Booth/Booth.tsx';
 import Attendees from './pages/eventRegistration/Attendees/Attendees.tsx';
 import Summary from './pages/eventRegistration/Summary/Summary.tsx';
 import Payment from './pages/eventRegistration/Payment/Payment.tsx';
+import Home from './pages/PublicPages/Home.tsx'
+import PublicLayout from "./layouts/PublicLayout.tsx";
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
+                {/* Public Pages */}
+                <Route path="/" element={<PublicLayout />}>
+                    <Route index element={<Home />} />
+                </Route>
+
+                {/* Registration flow pages */}
                 <Route path="/register" element={<EventRegistrationLayout />}>
                     <Route path="step1" element={<UserInfo />} />
                     <Route path="step2" element={<Presentation />} />

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, type ReactNode } from 'react';
+import { createContext, useState, type ReactNode } from 'react';
 
 type Attendee = {
     fullName: string;
@@ -44,7 +44,7 @@ const defaultData: RegistrationData = {
     attendees: [],
 };
 
-const RegistrationContext = createContext<RegistrationContextType | undefined>(undefined);
+export const RegistrationContext = createContext<RegistrationContextType | undefined>(undefined);
 
 export const RegistrationProvider = ({ children }: { children: ReactNode }) => {
     const [formData, updateFormData] = useState<RegistrationData>(defaultData);
@@ -58,12 +58,4 @@ export const RegistrationProvider = ({ children }: { children: ReactNode }) => {
             {children}
         </RegistrationContext.Provider>
     );
-};
-
-export const useRegistration = (): RegistrationContextType => {
-    const context = useContext(RegistrationContext);
-    if (!context) {
-        throw new Error('useRegistration must be used within a RegistrationProvider');
-    }
-    return context;
 };

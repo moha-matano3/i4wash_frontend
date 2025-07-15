@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useRegistration } from '../../../store/RegistrationContext';
+import { useRegistration } from '../../../store/useRegistration';
+import * as React from "react";
 
 export default function Payment() {
     const navigate = useNavigate();
@@ -9,7 +10,7 @@ export default function Payment() {
     const [payment, setPayment] = useState({
         method: 'Mpesa',
         phone: '',
-        amount: 7000, // Optional: could be dynamic
+        amount: 7000, // Optional: will be dynamic
         mpesaReference: '',
     });
 
@@ -28,7 +29,7 @@ export default function Payment() {
             },
         });
 
-        navigate('/register/confirmation'); //show a success screen next
+        navigate('/register/confirmation'); //show a success screen next :in dev
     };
 
     return (

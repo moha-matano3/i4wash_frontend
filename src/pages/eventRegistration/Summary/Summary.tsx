@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { useRegistration } from '../../../store/RegistrationContext';
+import { useRegistration } from '../../../store/useRegistration';
 
 export default function Summary() {
     const { formData } = useRegistration();
