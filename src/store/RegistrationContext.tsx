@@ -22,7 +22,7 @@ type RegistrationData = {
         phone: string;
         amount: number;
         status: string;
-        mpesaReference: string;
+        reference: string;
     };
 };
 

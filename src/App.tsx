@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import EventRegistrationLayout from './layouts/EventRegistrationLayout.tsx';
 
+import EventRegistrationLayout from './layouts/EventRegistrationLayout.tsx';
 import UserInfo from './pages/eventRegistration/UserInfo/UserInfo.tsx';
 import Presentation from './pages/eventRegistration/Presentation/Presentation.tsx';
 import Booth from './pages/eventRegistration/Booth/Booth.tsx';
@@ -9,6 +9,7 @@ import Summary from './pages/eventRegistration/Summary/Summary.tsx';
 import Payment from './pages/eventRegistration/Payment/Payment.tsx';
 import Home from './pages/PublicPages/Home.tsx'
 import PublicLayout from "./layouts/PublicLayout.tsx";
+
 
 function App() {
     return (
