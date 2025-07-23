@@ -4,6 +4,7 @@ type Attendee = {
     fullName: string;
     email: string;
     phone: string;
+    organization: string;
 };
 
 type RegistrationData = {

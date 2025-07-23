@@ -7,8 +7,9 @@ import Booth from './pages/eventRegistration/Booth/Booth.tsx';
 import Attendees from './pages/eventRegistration/Attendees/Attendees.tsx';
 import Summary from './pages/eventRegistration/Summary/Summary.tsx';
 import Payment from './pages/eventRegistration/Payment/Payment.tsx';
-import Home from './pages/PublicPages/Home.tsx'
+import Home from './pages/PublicPages/Home/Home.tsx'
 import PublicLayout from "./layouts/PublicLayout.tsx";
+import EmailForm from "./pages/eventRegistration/EmailForm/EmailForm.tsx";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
                     <Route path="step4" element={<Attendees />} />
                     <Route path="step5" element={<Summary />} />
                     <Route path="review" element={<Payment />} />
+                    <Route path="sponsorship" element={<EmailForm/>}/>
                 </Route>
 
                 <Route path="*" element={<div>404 - Not Found</div>} />

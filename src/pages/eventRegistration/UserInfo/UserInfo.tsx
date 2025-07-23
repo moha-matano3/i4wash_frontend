@@ -26,6 +26,10 @@ export default function UserInfo() {
         navigate('/register/step2'); // Go to next step
     };
 
+    const handleBack = () => {
+        navigate('/');
+    };
+
     return (
         <div className="form-container">
             <h3>Applicant Details</h3>
@@ -94,7 +98,18 @@ export default function UserInfo() {
                     />
                 </div>
 
-                <button type="submit" className="form-button">Next →</button>
+                {/* Navigation Buttons */}
+                <div className="form-buttons mt-4 space-x-2">
+                    <button
+                        type="button"
+                        className="form-button secondary"
+                        onClick={handleBack}
+                    >
+                        ← Back
+                    </button>
+
+                    <button type="submit" className="form-button">Next →</button>
+                </div>
             </form>
         </div>
     );
