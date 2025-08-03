@@ -5,6 +5,7 @@ import * as React from "react";
 import MpesaModal from './PaymentModals/MpesaModal.tsx';
 import StripeModal from './PaymentModals/StripeModal.tsx';
 import StripeWrapper from './PaymentModals/Checkout/StripeWrapper.tsx';
+import flowSVG from "../../../assets/icons/FormFlow/flow4.svg";
 
 export default function Payment() {
     const navigate = useNavigate();
@@ -46,7 +47,10 @@ export default function Payment() {
 
     return (
         <div className="form-container">
-            <h3>Payment Details</h3>
+            <div className="flow">
+                <img src={flowSVG} alt="" style={{ width: '100%', height: 'auto' }} />
+            </div>
+            <h3 className="title">Payment Details</h3>
 
             <div className="form-body">
                 <div className="form-input">

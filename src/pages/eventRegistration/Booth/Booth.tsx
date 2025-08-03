@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useRegistration } from '../../../store/useRegistration';
+import * as React from "react";
+import FormNavBtns from "../../../components/FormNavBtns/FormNavBtns.tsx";
+import backBtn from "../../../assets/icons/backBtn.svg";
+import nextBtn from "../../../assets/icons/nextBtn.svg";
+import flowSVG from "../../../assets/icons/FormFlow/flow4.svg";
 
 export default function Booth() {
     const navigate = useNavigate();
@@ -9,20 +14,27 @@ export default function Booth() {
     const [needsBooth, setNeedsBooth] = useState(formData.exhibitionBoothNeeded);
     const [boothCount, setBoothCount] = useState(formData.exhibitionBoothCount || 0);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleNext = (e: React.FormEvent) => {
         e.preventDefault();
         setFormData({
             exhibitionBoothNeeded: needsBooth,
             exhibitionBoothCount: needsBooth ? boothCount : 0,
         });
-        navigate('/register/step4');
+        navigate('/register/step5');
+    };
+    const handleBack = () => {
+        navigate('/register/step3');
     };
 
     return (
         <div className="form-container">
-            <h3>Exhibition Booth</h3>
+            <div className="flow">
+                <img src={flowSVG} alt="" style={{ width: '100%', height: 'auto' }} />
+            </div>
+            <h3 className="title">Exhibition Booth</h3>
 
-            <form onSubmit={handleSubmit} className="form-body">
+            <form onSubmit={handleNext} className="form-body">
+                <div className="form">
                 <div className="form-input">
                     <label className="form-label">Do you require a booth?</label>
                     <select
@@ -51,7 +63,21 @@ export default function Booth() {
                     </div>
                 )}
 
-                <button type="submit" className="form-button">Next →</button>
+                </div>
+                {/* Navigation Buttons */}
+                <div className="form-buttons">
+                    <FormNavBtns
+                        svgSrc={backBtn}
+                        alt="Go back"
+                        onClick={handleBack}
+                    />
+
+                    <FormNavBtns
+                        svgSrc={nextBtn}
+                        alt="Continue"
+                        type="submit"
+                    />
+                </div>
             </form>
         </div>
     );

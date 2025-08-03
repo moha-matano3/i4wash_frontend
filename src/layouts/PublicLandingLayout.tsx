@@ -1,8 +1,9 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/NavBar/NavBar.tsx';
+import Footer from '../components/Footer/Footer.tsx';
 import oceanImage from "../assets/ocean.jpg";
 
-export default function PublicLayout() {
+export default function PublicLandingLayout() {
     return (
         <div style={{
             height: '100vh',
@@ -23,14 +24,14 @@ export default function PublicLayout() {
                 zIndex: 0,
             }} />
 
-            {/* Updated color overlay (rgba(41, 142, 166, 0.7)) */}
+            {/* Color overlay */}
             <div style={{
                 position: 'absolute',
                 top: 0,
                 left: 0,
                 height: '100%',
                 width: '100%',
-                backgroundColor: 'rgba(41, 142, 166, 0.7)',
+                backgroundColor: 'rgba(27, 68, 82, 0.3)', // #1B4452 at 30%
                 zIndex: 1,
             }} />
 
@@ -48,11 +49,12 @@ export default function PublicLayout() {
                     flex: 1,
                     overflowY: 'auto',
                     padding: '2rem',
-                    paddingTop: '120px',
+                    paddingTop: '120px', // adjust to navbar height
                     color: '#fff',
                 }}>
                     <Outlet />
                 </main>
+                <Footer/>
             </div>
         </div>
     );

@@ -1,7 +1,13 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 import { useRegistration } from '../../../store/useRegistration';
 import './UserInfo.css';
+import FormNavBtns from '../../../components/FormNavBtns/FormNavBtns.tsx';
+import backBtn from '../../../assets/icons/backBtn.svg'
+import nextBtn from '../../../assets/icons/nextBtn.svg'
+import flowSVG from '../../../assets/icons/FormFlow/flow.svg'
 
 export default function UserInfo() {
     const navigate = useNavigate();
@@ -20,10 +26,14 @@ export default function UserInfo() {
         setLocalData((prev) => ({ ...prev, [name]: value }));
     };
 
+    const handlePhoneChange = (value: string) => {
+        setLocalData((prev) => ({ ...prev, phone: value }));
+    };
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setFormData(localData); // Push local changes to context
-        navigate('/register/step2'); // Go to next step
+        setFormData(localData);
+        navigate('/register/step2');
     };
 
     const handleBack = () => {
@@ -32,16 +42,19 @@ export default function UserInfo() {
 
     return (
         <div className="form-container">
-            <h3>Applicant Details</h3>
+            <h3 className="title">Applicant Details</h3>
+            <div className="flow">
+                <img src={flowSVG} alt="" style={{ width: '100%', height: 'auto' }} />
+            </div>
 
             <form onSubmit={handleSubmit} className="form-body">
+                <div className="input">
                 <div className="form-input">
-                    <label htmlFor="fullName" className="form-label">Full Name</label>
                     <input
                         className="form-field"
                         type="text"
-                        id="fullName"
                         name="fullName"
+                        placeholder="Full Name"
                         value={localData.fullName}
                         onChange={handleChange}
                         required
@@ -49,12 +62,11 @@ export default function UserInfo() {
                 </div>
 
                 <div className="form-input">
-                    <label htmlFor="email" className="form-label">Email</label>
                     <input
                         className="form-field"
                         type="email"
-                        id="email"
                         name="email"
+                        placeholder="Email"
                         value={localData.email}
                         onChange={handleChange}
                         required
@@ -62,53 +74,51 @@ export default function UserInfo() {
                 </div>
 
                 <div className="form-input">
-                    <label htmlFor="phone" className="form-label">Phone</label>
-                    <input
-                        className="form-field"
-                        type="tel"
-                        id="phone"
-                        name="phone"
+                    <PhoneInput
+                        country={'ke'}
                         value={localData.phone}
-                        onChange={handleChange}
-                        required
+                        onChange={handlePhoneChange}
+                        inputClass="form-field"
+                        placeholder="Phone Number"
+                        inputStyle={{ width: '100%', height: '100%'}}
                     />
                 </div>
 
                 <div className="form-input">
-                    <label htmlFor="organization" className="form-label">Organization</label>
                     <input
                         className="form-field"
                         type="text"
-                        id="organization"
                         name="organization"
+                        placeholder="Organization"
                         value={localData.organization}
                         onChange={handleChange}
                     />
                 </div>
 
                 <div className="form-input">
-                    <label htmlFor="designation" className="form-label">Designation</label>
                     <input
                         className="form-field"
                         type="text"
-                        id="designation"
                         name="designation"
+                        placeholder="Designation"
                         value={localData.designation}
                         onChange={handleChange}
                     />
                 </div>
+                </div>
 
-                {/* Navigation Buttons */}
-                <div className="form-buttons mt-4 space-x-2">
-                    <button
-                        type="button"
-                        className="form-button secondary"
+                <div className="form-buttons">
+                    <FormNavBtns
+                        svgSrc={backBtn}
+                        alt="Go back"
                         onClick={handleBack}
-                    >
-                        ← Back
-                    </button>
+                    />
 
-                    <button type="submit" className="form-button">Next →</button>
+                    <FormNavBtns
+                        svgSrc={nextBtn}
+                        alt="Continue"
+                        type="submit"
+                    />
                 </div>
             </form>
         </div>

@@ -1,6 +1,14 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useRegistration } from '../../../store/useRegistration';
+import PhoneInput from "react-phone-input-2";
+import FormNavBtns from "../../../components/FormNavBtns/FormNavBtns.tsx";
+import './Attendees.css';
+import backBtn from "../../../assets/icons/backBtn.svg";
+import nextBtn from "../../../assets/icons/nextBtn.svg";
+import addBtn from "../../../assets/icons/add.svg"
+import removeBtn from "../../../assets/icons/removeBtn.svg";
+import flowSVG from "../../../assets/icons/FormFlow/flow3.svg";
 
 
 type Attendee = {
@@ -25,6 +33,13 @@ export default function Attendees() {
         updated[index][field] = value;
         setAttendees(updated);
     };
+    const handlePhoneChange = (value: string, index: number) => {
+        setAttendees((prev) =>
+            prev.map((attendee, i) =>
+                i === index ? { ...attendee, phone: value } : attendee
+            )
+        );
+    };
 
     const addAttendee = () => {
         setAttendees([...attendees, { fullName: '', email: '', phone: '' , organization: '' }]);
@@ -38,24 +53,62 @@ export default function Attendees() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setFormData({ attendees });
+
+        const isEmptyAttendee =
+            attendees.length === 1 &&
+            !attendees[0].fullName &&
+            !attendees[0].email &&
+            !attendees[0].phone &&
+            !attendees[0].organization;
+
+        if (isEmptyAttendee) {
+            // Submit as undefined to skip attendee validation
+            setFormData({ ...formData, attendees: undefined });
+            navigate('/register/step5');
+            return;
+        }
+
+        const isValid = attendees.every(a =>
+            a.fullName && a.email && a.phone && a.organization
+        );
+
+        if (attendees.length > 0 && !isValid) {
+            alert("Please fill out all fields for each attendee.");
+            return;
+        }
+
+        setFormData({ ...formData, attendees: attendees.length > 0 ? attendees : undefined });
         navigate('/register/step5');
+    };
+    const handleBack = () => {
+        navigate('/register/step2');
     };
 
     return (
-        <div className="form-container h-full flex flex-col">
-            <h3>Attendees</h3>
-
-            <form onSubmit={handleSubmit} className="form-body flex-1 flex flex-col">
-                {/* Scrollable Attendees List */}
-                <div className="overflow-y-auto max-h-[60vh] pr-2 flex-1">
+        <div className="form-container">
+            <div className="flow">
+                <img src={flowSVG} alt="" style={{ width: '100%', height: 'auto' }} />
+            </div>
+            <h3 className="title">Attendees</h3>
+            <form onSubmit={handleSubmit} className="form-body">
+                <div className="form">
+                {/* Controls */}
+                <div className="form-attsection-left">
+                <div className="addBtnSection">
+                    <button type="button" onClick={addAttendee}>
+                        <img src={addBtn} alt="" style={{ width: '100%', height: '100%' }} />
+                    </button>
+                    <span>Add Attendees</span>
+                </div>
+                </div>
+                <div className="form-attsection-right">
                     {attendees.map((attendee, index) => (
-                        <div key={index} className="form-attendee-group mb-4 border-b pb-4">
+                        <div key={index} className="form-attendee-group">
                             <div className="form-input">
-                                <label className="form-label">Full Name</label>
                                 <input
                                     className="form-field"
                                     type="text"
+                                    placeholder="Full Name"
                                     value={attendee.fullName}
                                     onChange={(e) => handleChange(index, 'fullName', e.target.value)}
                                     required
@@ -63,10 +116,10 @@ export default function Attendees() {
                             </div>
 
                             <div className="form-input">
-                                <label className="form-label">Email</label>
                                 <input
                                     className="form-field"
                                     type="email"
+                                    placeholder="Email"
                                     value={attendee.email}
                                     onChange={(e) => handleChange(index, 'email', e.target.value)}
                                     required
@@ -74,20 +127,21 @@ export default function Attendees() {
                             </div>
 
                             <div className="form-input">
-                                <label className="form-label">Phone</label>
-                                <input
-                                    className="form-field"
-                                    type="tel"
+                                <PhoneInput
+                                    country={'ke'}
                                     value={attendee.phone}
-                                    onChange={(e) => handleChange(index, 'phone', e.target.value)}
-                                    required
+                                    onChange={(phone) => handlePhoneChange(phone, index)}
+                                    inputClass="form-field"
+                                    placeholder="Phone Number"
+                                    inputStyle={{ width: '100%', height: '100%' }}
                                 />
                             </div>
+
                             <div className="form-input">
-                                    <label className="form-label">Organization</label>
                                     <input
                                         className="form-field"
                                         type="text"
+                                        placeholder="Organization"
                                         value={attendee.organization}
                                         onChange={(e) => handleChange(index, 'organization', e.target.value)}
                                         required
@@ -96,23 +150,28 @@ export default function Attendees() {
 
                             <button
                                 type="button"
-                                className="form-button small danger mt-2"
                                 onClick={() => removeAttendee(index)}
                                 disabled={attendees.length === 1}
                             >
-                                Remove
+                                <img src={removeBtn} alt="" style={{ width: '50%', height: '50%' }} />
                             </button>
                         </div>
                     ))}
                 </div>
+                </div>
+                {/* Navigation Buttons */}
+                <div className="form-buttons">
+                    <FormNavBtns
+                        svgSrc={backBtn}
+                        alt="Go back"
+                        onClick={handleBack}
+                    />
 
-                {/* Controls */}
-                <div className="mt-4 space-y-2">
-                    <button type="button" className="form-button" onClick={addAttendee}>
-                        + Add Attendee
-                    </button>
-
-                    <button type="submit" className="form-button">Next →</button>
+                    <FormNavBtns
+                        svgSrc={nextBtn}
+                        alt="Continue"
+                        type="submit"
+                    />
                 </div>
             </form>
         </div>

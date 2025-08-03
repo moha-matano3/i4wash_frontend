@@ -23,6 +23,15 @@ export default function Navbar() {
                             <li>
                                 <Link to="/forums/i4wash-kisumu">I4WASH Kisumu</Link>
                             </li>
+                            <li>
+                                <Link to="/forums/i4wash-kisumu">I4WASH Kisumu</Link>
+                            </li>
+                            <li>
+                                <Link to="/forums/i4wash-kisumu">I4WASH Kisumu</Link>
+                            </li>
+                            <li>
+                                <Link to="/forums/i4wash-kisumu">I4WASH Kisumu</Link>
+                            </li>
                         </ul>
                     )}
                 </li>
