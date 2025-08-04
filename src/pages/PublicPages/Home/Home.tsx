@@ -1,5 +1,5 @@
 import './Home.css';
-
+import CountdownTimer from "../../../components/CountdownTimer/CountdownTimer.tsx"
 export default function Home() {
     return (
         <div className="container">
@@ -22,6 +22,10 @@ export default function Home() {
             <button className="explore-button">
                 Explore I4WASH Malindi
             </button>
+            <CountdownTimer>
+
+            </CountdownTimer>
+
         </div>
     );
 }

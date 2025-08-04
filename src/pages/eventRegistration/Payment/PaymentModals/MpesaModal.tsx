@@ -71,7 +71,7 @@ export default function MpesaModal({ phone, amount, onSuccess, onClose }: Stripe
     return (
         <div className="modal">
             <h4>Mpesa Payment</h4>
-            <p>Pay KES {amount} via Mpesa to Paybill XXXX</p>
+            <p>Pay KES {amount}.00 via Mpesa to Paybill XXXX</p>
 
             {loading && <p>Processing...</p>}
             {error && <p style={{ color: 'red' }}>{error}</p>}

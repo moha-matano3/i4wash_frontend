@@ -38,20 +38,16 @@ export default function CountdownTimer() {
     return (
         <div className="countdown-container">
             <div className="countdown-item">
-                <span className="countdown-value">{timeLeft.days}</span>
-                <span className="countdown-label">Days</span>
+                <span className="countdown-value">{timeLeft.days}  :</span>
             </div>
             <div className="countdown-item">
-                <span className="countdown-value">{timeLeft.hours}</span>
-                <span className="countdown-label">Hours</span>
+                <span className="countdown-value">{timeLeft.hours}  :</span>
             </div>
             <div className="countdown-item">
-                <span className="countdown-value">{timeLeft.minutes}</span>
-                <span className="countdown-label">Minutes</span>
+                <span className="countdown-value">{timeLeft.minutes}  :</span>
             </div>
             <div className="countdown-item">
                 <span className="countdown-value">{timeLeft.seconds}</span>
-                <span className="countdown-label">Seconds</span>
             </div>
         </div>
     );

@@ -24,7 +24,7 @@ function App() {
                 </Route>
 
                 <Route path="/" element={<PublicLayout />}>
-                    <Route path="concept-note" element={<ConceptNote />} />
+                    <Route path="Explore" element={<ConceptNote />} />
                 </Route>
 
                 {/* Registration flow pages */}

@@ -59,8 +59,8 @@ export default function StripeModal({ amount, onSuccess, onClose }: StripeModalP
 
     return (
         <div className="modal">
-            <h4>Stripe Card Payment</h4>
-            <p>Pay KES {amount} using your card</p>
+            <h4>Card Payment</h4>
+            <p>Pay KES {amount}.00 using your card</p>
 
             <div className="card-element-wrapper">
                 <CardElement />

@@ -6,14 +6,6 @@
     align-items: center;
     justify-content: center;
 }
-.title{
-    color: #76EADA;
-    font-weight: 900;
-    font-size: 28px;
-    letter-spacing: 1px;
-    border-bottom: 3px solid #76EADA;
-    margin: 0;
-}
 
 .form-buttons {
     width: 100%;

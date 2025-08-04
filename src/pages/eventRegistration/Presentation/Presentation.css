@@ -34,6 +34,7 @@
     right: 0;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 .form-buttons {
     width: 100%;
@@ -108,8 +109,8 @@
 
 
 .upload-box {
-    width: 500px;
-    height: 500px;
+    width: 25rem;
+    height: 25rem;
     background-color: rgba(41, 142, 166, 0.7);
     border-radius: 2rem;
     display: flex;
