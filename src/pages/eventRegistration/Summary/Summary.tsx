@@ -64,8 +64,8 @@ export default function Summary() {
           <p><strong>Ready:</strong> {formData.presentationReady ? 'Yes' : 'No'}</p>
           {formData.presentationReady && (
             <p>
-              <strong>File:</strong> {formData.presentationFileUrl
-                ? <a href={formData.presentationFileUrl} target="_blank">View</a>
+              <strong>File:</strong> {formData.presentationFile
+                ? formData.presentationFile.filename
                 : 'Not uploaded'}
             </p>
           )}

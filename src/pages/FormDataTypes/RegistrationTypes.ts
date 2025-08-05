@@ -22,10 +22,13 @@ export type FormDataType = {
   organization: string;
   designation: string;
   presentationReady: 'Yes' | 'No';
-  presentationFileUrl: string;
+  presentationFile?: {
+    filename: string;
+    base64: string;
+  };
   exhibitionBoothNeeded: 'Yes' | 'No';
   exhibitionBoothCount: number;
   hasAttendees: 'Yes' | 'No';
   attendees: Attendee[];
-  /*payment?: PaymentInfo;*/
+  payment?: PaymentInfo;
 };

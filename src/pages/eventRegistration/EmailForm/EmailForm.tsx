@@ -30,7 +30,7 @@ export default function EmailForm() {
 
             if (response.ok) {
                 alert('Email sent successfully!');
-                navigate('/thank-you');
+                navigate('/');
             } else {
                 alert('Failed to send email.');
             }

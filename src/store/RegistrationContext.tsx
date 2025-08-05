@@ -14,7 +14,7 @@ const defaultData: FormDataType = {
   organization: '',
   designation: '',
   presentationReady: 'No',
-  presentationFileUrl: '',
+  presentationFile: undefined,
   exhibitionBoothNeeded: 'No',
   exhibitionBoothCount: 0,
   hasAttendees: 'No',

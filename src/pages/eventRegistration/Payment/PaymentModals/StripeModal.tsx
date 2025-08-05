@@ -1,5 +1,5 @@
+import { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-
 
 interface StripeModalProps {
     amount: number;
@@ -10,6 +10,8 @@ interface StripeModalProps {
 export default function StripeModal({ amount, onSuccess, onClose }: StripeModalProps) {
     const stripe = useStripe();
     const elements = useElements();
+
+    const [currency, setCurrency] = useState<'KES' | 'EUR'>('KES');
 
     const handleConfirm = async () => {
         if (!stripe || !elements) return;
@@ -22,7 +24,6 @@ export default function StripeModal({ amount, onSuccess, onClose }: StripeModalP
         }
 
         try {
-            // Step 1: Create a PaymentMethod
             const { error, paymentMethod } = await stripe.createPaymentMethod({
                 type: 'card',
                 card: cardElement,
@@ -34,20 +35,21 @@ export default function StripeModal({ amount, onSuccess, onClose }: StripeModalP
                 return;
             }
 
-            // Step 2: Send paymentMethod.id & amount to backend to create PaymentIntent
-            const response = await fetch('/api/method/your_app.api.stripe.create_payment_intent', {
+            // Send to backend
+            const response = await fetch('/api/stripe/charge', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     payment_method_id: paymentMethod.id,
                     amount,
+                    currency,
                 }),
             });
 
             const data = await response.json();
 
             if (data.success) {
-                onSuccess(data.payment_intent_id); // Just like refCode in Mpesa
+                onSuccess(data.payment_intent_id);
             } else {
                 alert("Payment failed: " + data.message);
             }
@@ -60,7 +62,16 @@ export default function StripeModal({ amount, onSuccess, onClose }: StripeModalP
     return (
         <div className="modal">
             <h4>Stripe Card Payment</h4>
-            <p>Pay KES {amount} using your card</p>
+
+            <div>
+                <label>Select Currency:</label>
+                <select value={currency} onChange={(e) => setCurrency(e.target.value as 'KES' | 'EUR')}>
+                    <option value="KES">KES - Kenyan Shillings</option>
+                    <option value="EUR">EUR - Euro</option>
+                </select>
+            </div>
+
+            <p>Pay {currency} {amount}</p>
 
             <div className="card-element-wrapper">
                 <CardElement />

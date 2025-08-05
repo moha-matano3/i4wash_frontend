@@ -8,14 +8,34 @@ export default function Presentation() {
     const navigate = useNavigate();
     const { formData, setFormData } = useRegistration();
 
-    const [presentationReady, setPresentationReady] = useState(formData.presentationReady);
-    const [presentationFileUrl, setPresentationFileUrl] = useState(formData.presentationFileUrl || '');
+    const [presentationReady, setPresentationReady] = useState<'Yes' | 'No'>(formData.presentationReady || 'No');
+    const [presentationFile, setPresentationFile] = useState<{
+        filename: string;
+        base64: string;
+    } | undefined>(formData.presentationFile);
 
-    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // Convert file to base64
+    const convertFileToBase64 = (file: File): Promise<string> => {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result as string);
+            reader.onerror = error => reject(error);
+        });
+    };
+
+    const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (file) {
-            const fakeUrl = `/uploads/${file.name}`;
-            setPresentationFileUrl(fakeUrl);
+            try {
+                const base64 = await convertFileToBase64(file);
+                setPresentationFile({
+                    filename: file.name,
+                    base64,
+                });
+            } catch (error) {
+                console.error("File upload failed:", error);
+            }
         }
     };
 
@@ -23,10 +43,11 @@ export default function Presentation() {
         e.preventDefault();
         setFormData({
             presentationReady,
-            presentationFileUrl: presentationReady ? presentationFileUrl : '',
+            presentationFile: presentationReady === 'Yes' ? presentationFile : undefined,
         });
         navigate('/register/step3');
     };
+
     const handleBack = () => {
         navigate('/register/step1');
     };
@@ -38,15 +59,16 @@ export default function Presentation() {
                 <label className="presentation-question">
                     <span>Do you have a presentation ready?</span>
                     <select
-                        value={presentationReady ? 'yes' : 'no'}
-                        onChange={(e) => setPresentationReady(e.target.value === 'yes')}
+                        value={presentationReady}
+                        onChange={(e) => setPresentationReady(e.target.value as 'Yes' | 'No')}
                         className="input-field"
                     >
-                        <option value="no">No</option>
-                        <option value="yes">Yes</option>
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
                     </select>
                 </label>
-                {presentationReady && (
+
+                {presentationReady === 'Yes' && (
                     <div className="upload-container">
                         <span className="upload-label">Upload your presentation</span>
                         <div className="upload-box">
@@ -57,6 +79,11 @@ export default function Presentation() {
                                 className="file-input"
                             />
                         </div>
+                        {presentationFile && (
+                            <p className="mt-2 text-sm text-green-600">
+                                Uploaded: {presentationFile.filename}
+                            </p>
+                        )}
                     </div>
                 )}
             </div>
