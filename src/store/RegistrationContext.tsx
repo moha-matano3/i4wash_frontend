@@ -1,56 +1,32 @@
+// src/context/RegistrationContext.tsx
 import { createContext, useState, type ReactNode } from 'react';
-
-type Attendee = {
-    fullName: string;
-    email: string;
-    phone: string;
-    organization: string;
-};
-
-type RegistrationData = {
-    fullName: string;
-    email: string;
-    phone: string;
-    organization: string;
-    designation: string;
-    presentationReady: boolean;
-    presentationFileUrl: string;
-    exhibitionBoothNeeded: boolean;
-    exhibitionBoothCount: number;
-    attendees: Attendee[];
-    payment?: {
-        method: string;
-        phone: string;
-        amount: number;
-        status: string;
-        reference: string;
-    };
-};
+import type { FormDataType } from './RegistrationTypes.ts';
 
 type RegistrationContextType = {
-    formData: RegistrationData;
-    setFormData: (data: Partial<RegistrationData>) => void;
+    formData: FormDataType;
+    setFormData: (data: Partial<FormDataType>) => void;
 };
 
-const defaultData: RegistrationData = {
+const defaultData: FormDataType = {
     fullName: '',
     email: '',
     phone: '',
     organization: '',
     designation: '',
-    presentationReady: false,
-    presentationFileUrl: '',
-    exhibitionBoothNeeded: false,
+    presentationReady: 'No',
+    presentationFile: undefined,
+    exhibitionBoothNeeded: 'No',
     exhibitionBoothCount: 0,
+    hasAttendees: 'No',
     attendees: [],
 };
 
 export const RegistrationContext = createContext<RegistrationContextType | undefined>(undefined);
 
 export const RegistrationProvider = ({ children }: { children: ReactNode }) => {
-    const [formData, updateFormData] = useState<RegistrationData>(defaultData);
+    const [formData, updateFormData] = useState<FormDataType>(defaultData);
 
-    const setFormData = (newData: Partial<RegistrationData>) => {
+    const setFormData = (newData: Partial<FormDataType>) => {
         updateFormData((prev) => ({ ...prev, ...newData }));
     };
 

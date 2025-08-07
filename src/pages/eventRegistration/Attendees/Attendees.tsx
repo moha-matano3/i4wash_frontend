@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useRegistration } from '../../../store/useRegistration';
+import { useRegistration } from '../../../store/RegistrationContext';
+import type { Attendee } from "../../../store/RegistrationTypes.ts";
 import PhoneInput from "react-phone-input-2";
 import FormNavBtns from "../../../components/FormNavBtns/FormNavBtns.tsx";
 import './Attendees.css';
@@ -11,21 +12,15 @@ import removeBtn from "../../../assets/icons/removeBtn.svg";
 import flowSVG from "../../../assets/icons/FormFlow/flow2.svg";
 
 
-type Attendee = {
-    fullName: string;
-    email: string;
-    phone: string;
-    organization: string;
-};
-
 export default function Attendees() {
     const navigate = useNavigate();
     const { formData, setFormData } = useRegistration();
 
+    // const [hasAttendees, setHasAttendees] = useState(formData.attendees.length > 0);
     const [attendees, setAttendees] = useState<Attendee[]>(
         formData.attendees.length > 0
             ? formData.attendees
-            : [{ fullName: '', email: '', phone: '', organization: ''}]
+            : [{ fullName: '', email: '', attendeePhone: '', attendeeOrganization: '' }]
     );
 
     const handleChange = (index: number, field: keyof Attendee, value: string) => {
@@ -33,20 +28,19 @@ export default function Attendees() {
         updated[index][field] = value;
         setAttendees(updated);
     };
-    const handlePhoneChange = (value: string, index: number) => {
-        setAttendees((prev) =>
-            prev.map((attendee, i) =>
-                i === index ? { ...attendee, phone: value } : attendee
-            )
-        );
+
+    const handlePhoneChange = (phone: string, index: number) => {
+        const updated = [...attendees];
+        updated[index].attendeePhone = phone;
+        setAttendees(updated);
     };
 
     const addAttendee = () => {
-        setAttendees([...attendees, { fullName: '', email: '', phone: '' , organization: '' }]);
+        setAttendees([...attendees, { fullName: '', email: '', attendeePhone: '', attendeeOrganization: '' }]);
     };
 
     const removeAttendee = (index: number) => {
-        if (attendees.length === 1) return; // prevent removing all
+        if (attendees.length === 1) return;
         const updated = attendees.filter((_, i) => i !== index);
         setAttendees(updated);
     };
@@ -54,30 +48,10 @@ export default function Attendees() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        const isEmptyAttendee =
-            attendees.length === 1 &&
-            !attendees[0].fullName &&
-            !attendees[0].email &&
-            !attendees[0].phone &&
-            !attendees[0].organization;
+        setFormData({
+            attendees:  attendees : [],
+        });
 
-        if (isEmptyAttendee) {
-            // Submit as undefined to skip attendee validation
-            setFormData({ ...formData, attendees: undefined });
-            navigate('/register/step5');
-            return;
-        }
-
-        const isValid = attendees.every(a =>
-            a.fullName && a.email && a.phone && a.organization
-        );
-
-        if (attendees.length > 0 && !isValid) {
-            alert("Please fill out all fields for each attendee.");
-            return;
-        }
-
-        setFormData({ ...formData, attendees: attendees.length > 0 ? attendees : undefined });
         navigate('/register/step3');
     };
     const handleBack = () => {
@@ -101,7 +75,6 @@ export default function Attendees() {
                     <span>Add Attendees</span>
                 </div>
                 </div>
-
                 <div className="form-attsection-right">
                     {attendees.map((attendee, index) => (
                         <div key={index} className="form-attendee-group">
@@ -130,7 +103,7 @@ export default function Attendees() {
                             <div className="form-input">
                                 <PhoneInput
                                     country={'ke'}
-                                    value={attendee.phone}
+                                    value={attendee.attendeePhone}
                                     onChange={(phone) => handlePhoneChange(phone, index)}
                                     inputClass="form-field"
                                     placeholder="Phone Number"
@@ -143,8 +116,8 @@ export default function Attendees() {
                                         className="form-field"
                                         type="text"
                                         placeholder="Organization"
-                                        value={attendee.organization}
-                                        onChange={(e) => handleChange(index, 'organization', e.target.value)}
+                                        value={attendee.attendeeOrganization}
+                                        onChange={(e) => handleChange(index, 'attendeeOrganization', e.target.value)}
                                         required
                                     />
                             </div>
@@ -160,6 +133,7 @@ export default function Attendees() {
                     ))}
                 </div>
                 </div>
+                        )}
                 {/* Navigation Buttons */}
                 <div className="form-buttons">
                     <FormNavBtns
