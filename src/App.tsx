@@ -1,5 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import EventRegistrationLayout from './layouts/EventRegistrationLayout.tsx';
 import UserInfo from './pages/eventRegistration/UserInfo/UserInfo.tsx';
 import Presentation from './pages/eventRegistration/Presentation/Presentation.tsx';
@@ -12,6 +15,9 @@ import ConceptNote from './pages/PublicPages/ConceptNote/ConceptNote.tsx';
 import PublicLandingLayout from "./layouts/PublicLandingLayout.tsx";
 import EmailForm from "./pages/eventRegistration/EmailForm/EmailForm.tsx";
 import PublicLayout from "./layouts/PublicLayout.tsx";
+import ForumPage from './pages/PublicPages/Forums/ForumPage.tsx';
+import AboutI4WASH from "./pages/PublicPages/AboutI4WASH/AboutI4WASH.tsx";
+
 
 
 function App() {
@@ -25,13 +31,15 @@ function App() {
 
                 <Route path="/" element={<PublicLayout />}>
                     <Route path="Explore" element={<ConceptNote />} />
+                    <Route path="forum/:year" element={<ForumPage />} />
+                    <Route path="AboutUs" element={<AboutI4WASH />} />
                 </Route>
 
                 {/* Registration flow pages */}
                 <Route path="/register" element={<EventRegistrationLayout />}>
                     <Route path="step1" element={<UserInfo />} />
-                    <Route path="step2" element={<Presentation />} />
-                    <Route path="step3" element={<Attendees />} />
+                    <Route path="step2" element={<Attendees />} />
+                    <Route path="step3" element={<Presentation />} />
                     <Route path="step4" element={<Booth />} />
                     <Route path="step5" element={<Summary />} />
                     <Route path="review" element={<Payment />} />

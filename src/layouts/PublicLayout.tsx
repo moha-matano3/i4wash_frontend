@@ -18,19 +18,20 @@ export default function PublicLayout() {
                 height: '100%',
                 width: '100%',
                 backgroundImage: `url(${oceanImage})`,
+                backgroundColor: '#fff',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 zIndex: 0,
             }} />
 
-            {/* Updated color overlay (rgba(41, 142, 166, 0.7)) */}
+             {/*Updated color overlay (rgba(41, 142, 166, 0.7)) */}
             <div style={{
                 position: 'absolute',
                 top: 0,
                 left: 0,
                 height: '100%',
                 width: '100%',
-                backgroundColor: 'rgba(41, 142, 166, 0.7)',
+                backgroundColor: 'rgba(255, 255, 255, 0.8)',
                 zIndex: 1,
             }} />
 
@@ -48,7 +49,6 @@ export default function PublicLayout() {
                     flex: 1,
                     overflowY: 'auto',
                     padding: '2rem',
-                    paddingTop: '120px',
                     color: '#fff',
                 }}>
                     <Outlet />

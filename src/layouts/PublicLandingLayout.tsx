@@ -49,7 +49,7 @@ export default function PublicLandingLayout() {
                     flex: 1,
                     overflowY: 'auto',
                     padding: '2rem',
-                    paddingTop: '120px', // adjust to navbar height
+                    paddingTop: '4rem', // adjust to navbar height
                     color: '#fff',
                 }}>
                     <Outlet />

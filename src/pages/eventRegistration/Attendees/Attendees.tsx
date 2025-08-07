@@ -8,7 +8,7 @@ import backBtn from "../../../assets/icons/backBtn.svg";
 import nextBtn from "../../../assets/icons/nextBtn.svg";
 import addBtn from "../../../assets/icons/add.svg"
 import removeBtn from "../../../assets/icons/removeBtn.svg";
-import flowSVG from "../../../assets/icons/FormFlow/flow3.svg";
+import flowSVG from "../../../assets/icons/FormFlow/flow2.svg";
 
 
 type Attendee = {
@@ -78,10 +78,10 @@ export default function Attendees() {
         }
 
         setFormData({ ...formData, attendees: attendees.length > 0 ? attendees : undefined });
-        navigate('/register/step5');
+        navigate('/register/step3');
     };
     const handleBack = () => {
-        navigate('/register/step2');
+        navigate('/register/step1');
     };
 
     return (
@@ -101,6 +101,7 @@ export default function Attendees() {
                     <span>Add Attendees</span>
                 </div>
                 </div>
+
                 <div className="form-attsection-right">
                     {attendees.map((attendee, index) => (
                         <div key={index} className="form-attendee-group">

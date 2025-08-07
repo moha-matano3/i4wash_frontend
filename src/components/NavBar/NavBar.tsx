@@ -21,16 +21,13 @@ export default function Navbar() {
                     {showForumsDropdown && (
                         <ul className="dropdown-menu">
                             <li>
-                                <Link to="/forums/i4wash-kisumu">I4WASH Kisumu</Link>
+                                <Link to="/forum/Kisumu2024">I4WASH Kisumu</Link>
                             </li>
                             <li>
-                                <Link to="/forums/i4wash-kisumu">I4WASH Kisumu</Link>
+                                <Link to="/forum/Nakuru2023">I4WASH Nakuru</Link>
                             </li>
                             <li>
-                                <Link to="/forums/i4wash-kisumu">I4WASH Kisumu</Link>
-                            </li>
-                            <li>
-                                <Link to="/forums/i4wash-kisumu">I4WASH Kisumu</Link>
+                                <Link to="/forum/Kampala2023">I4WASH Kampala</Link>
                             </li>
                         </ul>
                     )}
@@ -41,12 +38,9 @@ export default function Navbar() {
                 </li>
 
                 <li className={location.pathname === '/about' ? 'active' : ''}>
-                    <Link to="/about">About</Link>
+                    <Link to="/AboutUs">About</Link>
                 </li>
 
-                <li className={location.pathname === '/account' ? 'active' : ''}>
-                    <Link to="/account">Account</Link>
-                </li>
             </ul>
         </nav>
     );

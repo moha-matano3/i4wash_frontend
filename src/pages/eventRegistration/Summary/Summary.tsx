@@ -4,6 +4,7 @@ import flowSVG from "../../../assets/icons/FormFlow/flow4.svg";
 import FormNavBtns from "../../../components/FormNavBtns/FormNavBtns.tsx";
 import backBtn from "../../../assets/icons/backBtn.svg";
 import nextBtn from "../../../assets/icons/nextBtn.svg";
+import "./Summary.css"
 
 export default function Summary() {
     const { formData } = useRegistration();

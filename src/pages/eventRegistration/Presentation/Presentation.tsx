@@ -6,7 +6,7 @@ import './Presentation.css';
 import FormNavBtns from "../../../components/FormNavBtns/FormNavBtns.tsx";
 import backBtn from "../../../assets/icons/backBtn.svg";
 import nextBtn from "../../../assets/icons/nextBtn.svg";
-import flowSVG from "../../../assets/icons/FormFlow/flow2.svg";
+import flowSVG from "../../../assets/icons/FormFlow/flow3.svg";
 import uploadSVG from "../../../assets/icons/upload.svg";
 import radioBtnSVG from "../../../assets/icons/radioBtns/radioBtn.svg"
 import radioBtnSVGChecked from "../../../assets/icons/radioBtns/radioBtnChecked.svg"
@@ -32,10 +32,10 @@ export default function Presentation() {
             presentationReady,
             presentationFileUrl: presentationReady ? presentationFileUrl : '',
         });
-        navigate('/register/step3');
+        navigate('/register/step4');
     };
     const handleBack = () => {
-        navigate('/register/step1');
+        navigate('/register/step2');
     };
 
     return (
