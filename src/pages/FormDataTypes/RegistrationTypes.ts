@@ -4,7 +4,7 @@ export type Attendee = {
   fullName: string;
   email: string;
   attendeePhone: string;
-  organization: string;
+  attendeeOrganization: string;
 };
 
 export type PaymentInfo = {

@@ -11,10 +11,19 @@ export default function Booth() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (needsBooth === 'Yes') {
+            if (!boothCount || boothCount < 1 || boothCount > 5) {
+                alert('Please enter a valid booth count between 1 and 5.');
+                return;
+            }
+        }
+
         setFormData({
             exhibitionBoothNeeded: needsBooth,
             exhibitionBoothCount: needsBooth === 'Yes' ? boothCount : 0,
         });
+
         navigate('/register/step4');
     };
 
@@ -45,7 +54,14 @@ export default function Booth() {
                             min={1}
                             max={5}
                             value={boothCount}
-                            onChange={(e) => setBoothCount(Number(e.target.value))}
+                            onChange={(e) => {
+                                const value = Number(e.target.value);
+                                if (value >= 1 && value <= 5) {
+                                    setBoothCount(value);
+                                } else {
+                                    setBoothCount(1); 
+                                }
+                            }}
                             required
                         />
                     </div>

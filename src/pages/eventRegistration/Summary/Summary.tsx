@@ -61,22 +61,26 @@ export default function Summary() {
         {/* Presentation */}
         <section className="summary-section">
           <h4>Presentation</h4>
-          <p><strong>Ready:</strong> {formData.presentationReady ? 'Yes' : 'No'}</p>
-          {formData.presentationReady && (
-            <p>
-              <strong>File:</strong> {formData.presentationFile
-                ? formData.presentationFile.filename
-                : 'Not uploaded'}
-            </p>
+          {formData.presentationReady === 'Yes' ? (
+            <>
+              <p><strong>Ready:</strong> Yes</p>
+              <p><strong>File:</strong> {formData.presentationFile?.filename || '⚠️ Marked Yes, but no file uploaded'}</p>
+            </>
+          ) : (
+            <p><strong>Ready:</strong> No</p>
           )}
         </section>
 
         {/* Booth Info */}
         <section className="summary-section">
           <h4>Exhibition Booth</h4>
-          <p><strong>Needed:</strong> {formData.exhibitionBoothNeeded ? 'Yes' : 'No'}</p>
-          {formData.exhibitionBoothNeeded && (
-            <p><strong>Count:</strong> {formData.exhibitionBoothCount}</p>
+          {formData.exhibitionBoothNeeded === 'Yes' ? (
+            <>
+              <p><strong>Needed:</strong> Yes</p>
+              <p><strong>Count:</strong> {formData.exhibitionBoothCount || 'Not specified'}</p>
+            </>
+          ) : (
+            <p><strong>Needed:</strong> No</p>
           )}
         </section>
 
@@ -86,7 +90,7 @@ export default function Summary() {
           {formData.attendees.length > 0 ? (
             formData.attendees.map((a, i) => (
               <div key={i}>
-                <p><strong>{a.fullName}</strong> — {a.email}, {a.attendeePhone}</p>
+                <p><strong>{a.fullName}</strong> — {a.email}, {a.attendeePhone}, {a.attendeeOrganization}</p>
               </div>
             ))
           ) : (

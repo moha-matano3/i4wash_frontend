@@ -11,7 +11,7 @@ export default function Attendees() {
   const [attendees, setAttendees] = useState<Attendee[]>(
     formData.attendees.length > 0
       ? formData.attendees
-      : [{ fullName: '', email: '', attendeePhone: '', organization: '' }]
+      : [{ fullName: '', email: '', attendeePhone: '', attendeeOrganization: '' }]
   );
 
   const handleChange = (index: number, field: keyof Attendee, value: string) => {
@@ -21,7 +21,7 @@ export default function Attendees() {
   };
 
   const addAttendee = () => {
-    setAttendees([...attendees, { fullName: '', email: '', attendeePhone: '', organization: '' }]);
+    setAttendees([...attendees, { fullName: '', email: '', attendeePhone: '', attendeeOrganization: '' }]);
   };
 
   const removeAttendee = (index: number) => {
@@ -101,8 +101,8 @@ export default function Attendees() {
                   <input
                     className="form-field"
                     type="text"
-                    value={attendee.organization}
-                    onChange={(e) => handleChange(index, 'organization', e.target.value)}
+                    value={attendee.attendeeOrganization}
+                    onChange={(e) => handleChange(index, 'attendeeOrganization', e.target.value)}
                     required
                   />
                 </div>
