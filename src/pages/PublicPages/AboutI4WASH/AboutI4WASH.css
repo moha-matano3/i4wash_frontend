@@ -1,0 +1,59 @@
+.about-i4wash {
+    background-color: #ffffff;
+    padding: 4rem 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+}
+
+.about-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.about-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #0077b6;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.about-intro {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.about-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #023e8a;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+}
+
+.about-cta {
+    background-color: #e0f7fa;
+    padding: 2rem;
+    margin-top: 3rem;
+    border-left: 6px solid #007f5f;
+    border-radius: 8px;
+}
+
+.about-cta h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #007f5f;
+    margin-bottom: 1rem;
+}
+
+.about-highlight {
+    font-weight: 600;
+    color: #1b4332;
+}

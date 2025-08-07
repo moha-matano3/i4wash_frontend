@@ -1,0 +1,70 @@
+.footer {
+    background-color: rgba(41, 142, 166, 0.7); /* translucent blue */
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    height: 12.5rem;
+    width: 100%;
+    flex-wrap: wrap; /* allow wrapping on smaller screens */
+}
+
+/* Equal widths for all sections */
+.footer-section-left,
+.footer-section-centre,
+.footer-section-right {
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Optional: Add unique background colors for debugging or design */
+.footer-section-left {
+    background-color: #242424;
+}
+
+.footer-section-centre {
+    background-color: #1e1e1e;
+}
+
+.footer-section-right {
+    background-color: #2a2a2a;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        height: auto;
+        padding: 2rem 1rem;
+        text-align: center;
+        gap: 1rem; /* spacing between sections */
+    }
+
+    .footer-section-left,
+    .footer-section-centre,
+    .footer-section-right {
+        width: 100%;
+        padding: 0.5rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .footer-section-left:first-child {
+        border-top: none; /* remove top border from first section */
+    }
+
+    .footer a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        display: inline-block;
+        padding: 0.5rem 0;
+    }
+
+    .footer a:hover {
+        text-decoration: underline;
+    }
+}
