@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Partner.css';
-import water from "../../../assets/images/water2.jpg";
+import water from "../../../assets/images/I4WASHbanner.png";
 
 
 export default function Partner() {

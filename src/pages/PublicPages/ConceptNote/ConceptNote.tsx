@@ -1,7 +1,7 @@
 import "./ConceptNote.css";
 import water from "../../../assets/images/water.jpg"
-import water2 from "../../../assets/images/water2.jpg"
-import water3 from "../../../assets/images/water3.jpg"
+import water2 from "../../../assets/images/I4WASHbanner.png"
+import water3 from "../../../assets/images/Malindi.jpg"
 
 export default function ConceptNote() {
     return (

@@ -41,6 +41,9 @@ export default function Navbar() {
                             <li>
                                 <Link to="/forum/Kampala2023">I4WASH Kampala</Link>
                             </li>
+                            <li>
+                                <Link to="/forum/Malindi2022">I4WASH Malindi</Link>
+                            </li>
                         </ul>
                     )}
                 </li>
