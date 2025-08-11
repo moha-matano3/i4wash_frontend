@@ -1,70 +1,97 @@
 .footer {
-    background-color: rgba(41, 142, 166, 0.7); /* translucent blue */
+    background: linear-gradient(
+            rgba(41, 142, 166, 0.85),
+            rgba(28, 102, 120, 0.85)
+    );
     color: #fff;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    font-size: 0.9rem;
-    height: 12.5rem;
+    align-items: center; /* align to top for cleaner look */
+    font-size: 1rem; /* matches 16px from Figma */
+    padding: 0rem 3rem; /* smaller top padding */
+    height: 12rem; /* increased height */
     width: 100%;
-    flex-wrap: wrap; /* allow wrapping on smaller screens */
+    flex-wrap: wrap;
+    gap: 2rem;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Equal widths for all sections */
 .footer-section-left,
 .footer-section-centre,
 .footer-section-right {
-    flex: 1;
-    text-align: center;
-    padding: 1rem;
+    height: 100%;
+    flex: 1 1 18.75rem;
+    text-align: left;
+    padding: 0 2rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
 }
 
-/* Optional: Add unique background colors for debugging or design */
-.footer-section-left {
-    background-color: #242424;
-}
-
-.footer-section-centre {
-    background-color: #1e1e1e;
-}
-
+/* Remove divider on last section */
 .footer-section-right {
-    background-color: #2a2a2a;
+    border-right: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Headings inside footer */
+.footer h4 {
+    height: 15%;
+    font-size: 1.125rem; /* 18px ÷ 16px base = 1.125rem */
+    font-weight: 500;
+    margin-bottom: 0.1rem;
+    padding-bottom: 0.2rem;
+    color: #76EADA;
+}
+
+/* Footer links */
+.footer a {
+    height: 85%;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.footer a:hover {
+    color: #76EADA;
+    transform: translateX(3px);
+}
+
+/* Paragraph text */
+.footer p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0.5rem 0;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
     .footer {
         flex-direction: column;
-        height: auto;
-        padding: 2rem 1rem;
+        align-items: center;
+        padding: 2rem 1.5rem;
         text-align: center;
-        gap: 1rem; /* spacing between sections */
     }
 
     .footer-section-left,
     .footer-section-centre,
     .footer-section-right {
-        width: 100%;
-        padding: 0.5rem 0;
+        text-align: center;
         border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 1rem;
     }
 
     .footer-section-left:first-child {
-        border-top: none; /* remove top border from first section */
+        border-top: none;
     }
 
     .footer a {
-        color: white;
-        text-decoration: none;
-        font-size: 1rem;
-        font-weight: 500;
         display: inline-block;
-        padding: 0.5rem 0;
-    }
-
-    .footer a:hover {
-        text-decoration: underline;
+        margin: 0.3rem 0.5rem;
     }
 }

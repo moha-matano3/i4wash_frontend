@@ -1,0 +1,38 @@
+/* Programme.css */
+
+.programme-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    color: #222;
+    line-height: 1.6;
+}
+
+.programme-container h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #005f73;
+}
+
+.programme-container h2 {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    color: #0a9396;
+}
+
+.programme-container ul {
+    padding-left: 1.5rem;
+}
+
+.programme-container ul li {
+    margin-bottom: 0.5rem;
+}
+
+.programme-container p {
+    margin: 0.5rem 0;
+}
+
+.programme-container .highlight {
+    font-weight: bold;
+    color: #ae2012;
+}

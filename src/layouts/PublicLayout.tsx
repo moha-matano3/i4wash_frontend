@@ -31,7 +31,7 @@ export default function PublicLayout() {
                 left: 0,
                 height: '100%',
                 width: '100%',
-                backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                backgroundColor: 'rgba(255, 255, 255, 1)',
                 zIndex: 1,
             }} />
 
@@ -48,7 +48,6 @@ export default function PublicLayout() {
                 <main style={{
                     flex: 1,
                     overflowY: 'auto',
-                    padding: '2rem',
                     color: '#fff',
                 }}>
                     <Outlet />

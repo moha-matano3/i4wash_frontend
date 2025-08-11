@@ -13,6 +13,18 @@ export default function Navbar() {
             </div>
 
             <ul className="navbar-links">
+                <li className={location.pathname.startsWith('/register') ? 'active' : ''}>
+                    <Link to="/register/step1">Registration</Link>
+                </li>
+                <li className={location.pathname.startsWith('/register') ? 'active' : ''}>
+                    <Link to="/Convenership">Convene</Link>
+                </li>
+                <li className={location.pathname.startsWith('/register') ? 'active' : ''}>
+                    <Link to="/Partnership">Partner</Link>
+                </li>
+                <li className={location.pathname.startsWith('/register') ? 'active' : ''}>
+                    <Link to="/Programme">Programme</Link>
+                </li>
                 <li
                     className={`dropdown ${location.pathname.startsWith('/forums') ? 'active' : ''}`}
                     onClick={() => setShowForumsDropdown(prev => !prev)}
@@ -32,11 +44,6 @@ export default function Navbar() {
                         </ul>
                     )}
                 </li>
-
-                <li className={location.pathname.startsWith('/register') ? 'active' : ''}>
-                    <Link to="/register/step1">Registration</Link>
-                </li>
-
                 <li className={location.pathname === '/about' ? 'active' : ''}>
                     <Link to="/AboutUs">About</Link>
                 </li>

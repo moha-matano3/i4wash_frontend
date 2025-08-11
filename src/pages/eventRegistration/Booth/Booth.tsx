@@ -8,20 +8,23 @@ import nextBtn from "../../../assets/icons/nextBtn.svg";
 import flowSVG from "../../../assets/icons/FormFlow/flow4.svg";
 import radioBtnSVGChecked from "../../../assets/icons/radioBtns/radioBtnChecked.svg";
 import radioBtnSVG from "../../../assets/icons/radioBtns/radioBtn.svg";
+import './Booth.css'
 
 export default function Booth() {
     const navigate = useNavigate();
     const { formData, setFormData } = useRegistration();
 
-    const [needsBooth, setNeedsBooth] = useState(formData.exhibitionBoothNeeded ?? false);
+    const [needsBooth, setNeedsBooth] = useState<true | false>(formData.exhibitionBoothNeeded || false);
     const [boothCount, setBoothCount] = useState(formData.exhibitionBoothCount || 0);
 
     const handleNext = (e: React.FormEvent) => {
         e.preventDefault();
 
-        if (needsBooth && (boothCount < 1 || boothCount > 5)) {
-            alert("Please select between 1 and 5 booths.");
-            return;
+        if (needsBooth) {
+            if (!boothCount || boothCount < 1 || boothCount > 5) {
+                alert('Please enter a valid booth count between 1 and 5.');
+                return;
+            }
         }
 
         setFormData({
@@ -49,6 +52,8 @@ export default function Booth() {
                         <label className="presentation-question">
                             <div className="prompt">
                                 <span>Do you require a booth?</span>
+                                <p>We offer limited exhibition booths at a cost, an exhibition booth covers one 3x3 tent,
+                                    dressed table and chairs, and décor in your corporate colors for the full 3 days.</p>
                             </div>
                             <div className="radio-group">
                                 <label className="custom-radio">
@@ -87,19 +92,27 @@ export default function Booth() {
                     </div>
 
                     {needsBooth && (
-                        <div className="form-input">
-                            <label className="form-label">How many booths? (Max 5)</label>
-                            <input
-                                className="form-field"
-                                type="number"
-                                name="boothCount"
-                                min={1}
-                                max={5}
-                                value={boothCount}
-                                onChange={(e) => setBoothCount(Number(e.target.value))}
-                                required
-                            />
+                        <div className="form-section-right">
+                            <div className="booth-count-field">
+                                <label className="form-label">
+                                    How many booths? <span className="form-note">(Max 5)</span>
+                                </label>
+                                <select
+                                    className="form-select booth-select"
+                                    name="boothCount"
+                                    value={boothCount}
+                                    onChange={(e) => setBoothCount(Number(e.target.value))}
+                                    required
+                                >
+                                    {[1, 2, 3, 4, 5].map((count) => (
+                                        <option key={count} value={count}>
+                                            {count}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
                         </div>
+
                     )}
                 </div>
 

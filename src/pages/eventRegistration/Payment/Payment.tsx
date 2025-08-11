@@ -71,35 +71,38 @@ export default function Payment() {
             <div className="form-body">
                 {showModal && modalType === 'Mpesa' && (
                     <div className="modal-overlay">
-                        <MpesaModal
-                            phone={payment.phone}
-                            amount={payment.amount}
-                            onSuccess={handlePaymentSuccess}
-                            onClose={() => setShowModal(false)}
-                        />
+                        <div className="modal-content">
+                            <MpesaModal
+                                phone={payment.phone}
+                                amount={payment.amount}
+                                onSuccess={handlePaymentSuccess}
+                                onClose={() => setShowModal(false)}
+                            />
+                        </div>
                     </div>
                 )}
 
                 {showModal && modalType === 'Card' && (
                     <div className="modal-overlay">
-                        <StripeWrapper>
-                            <StripeModal
-                                amount={payment.amount}
-                                onSuccess={handlePaymentSuccess}
-                                onClose={() => setShowModal(false)}
-                            />
-                        </StripeWrapper>
+                        <div className="modal-content">
+                            <StripeWrapper>
+                                <StripeModal
+                                    amount={payment.amount}
+                                    onSuccess={handlePaymentSuccess}
+                                    onClose={() => setShowModal(false)}
+                                />
+                            </StripeWrapper>
+                        </div>
                     </div>
                 )}
-                <div className="form">
-                    <div className="form-section-left">
+                <div className="payment-form">
                         <div className="payment-box">
                             <div className="payment" style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>
-                                <label className="form-label">Total</label>
+                                <label className="payment-label">Total</label>
                                 {payment.amount.toLocaleString()} KES
                             </div>
                             <div className="payment" style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>
-                                <label className="form-label">Payment Method</label>
+                                <label className="payment-label">Payment Method</label>
                                 <div className="radio-group">
                                     <label className="custom-radio">
                                         <input
@@ -134,11 +137,6 @@ export default function Payment() {
                                     </label>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div className="form-section-right">
-                        <div className="payment-box">
                             {payment.method === 'Mpesa' && (
                                 <div className="payment-card" style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>
                                     Pay via Mpesa: {payment.amount.toLocaleString()} KES
@@ -155,7 +153,6 @@ export default function Payment() {
                                 <img src={pay} alt="Pay" style={{ width: '100%', height: 'auto' }} />
                             </button>
                         </div>
-                    </div>
                 </div>
 
                 <div className="form-buttons">

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useRegistration } from '../../../store/RegistrationContext';
+import { useRegistration } from '../../../store/useRegistration.ts';
 import type { Attendee } from "../../../store/RegistrationTypes.ts";
 import PhoneInput from "react-phone-input-2";
 import FormNavBtns from "../../../components/FormNavBtns/FormNavBtns.tsx";
@@ -49,8 +49,10 @@ export default function Attendees() {
         e.preventDefault();
 
         setFormData({
-            attendees:  attendees : [],
+            ...formData,
+            attendees: attendees,
         });
+
 
         navigate('/register/step3');
     };
@@ -133,7 +135,6 @@ export default function Attendees() {
                     ))}
                 </div>
                 </div>
-                        )}
                 {/* Navigation Buttons */}
                 <div className="form-buttons">
                     <FormNavBtns

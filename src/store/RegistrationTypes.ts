@@ -21,14 +21,14 @@ export type FormDataType = {
     phone: string;
     organization: string;
     designation: string;
-    presentationReady: 'Yes' | 'No';
+    presentationReady: true | false;
     presentationFile?: {
         filename: string;
         base64: string;
     };
-    exhibitionBoothNeeded: 'Yes' | 'No';
+    exhibitionBoothNeeded: true | false;
     exhibitionBoothCount: number;
-    hasAttendees: 'Yes' | 'No';
+    hasAttendees: true | false;
     attendees: Attendee[];
     payment?: PaymentInfo;
 };

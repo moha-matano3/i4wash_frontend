@@ -1,9 +1,10 @@
 import './Home.css';
-import CountdownTimer from "../../../components/CountdownTimer/CountdownTimer.tsx"
+import { useNavigate } from 'react-router-dom';
 import LogoCarousel from "../../../components/LogoCarousel/LogoCarousel.tsx";
 import exploreBtn from "../../../assets/icons/ExploreBtn.svg";
 
 export default function Home() {
+    const navigate = useNavigate();
     return (
         <div className="container">
             {/* Subheader */}
@@ -23,12 +24,12 @@ export default function Home() {
             </p>
 
             {/* Explore Button */}
-            <button className="explore-button">
-                <img src={exploreBtn} alt="" style={{ width: '100%', height: '100%' }} />
+            <button className="explore-button" onClick={() => navigate('/Explore')}>
+                <img src={exploreBtn} alt="Explore Button" style={{ width: '100%', height: '100%' }} />
             </button>
-            <LogoCarousel />
-            <CountdownTimer />
 
+            <LogoCarousel />
+            {/*<CountdownTimer />*/}
         </div>
     );
 }

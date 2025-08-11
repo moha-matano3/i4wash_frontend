@@ -27,7 +27,7 @@
     font-size: clamp(1rem, 2vw, 1.375rem);
     line-height: 1.5;
     width: 100%;
-    max-width: 100ch;                   /* readable line length */
+    max-width: 90ch;                   /* readable line length */
     margin-bottom: 3rem;
 }
 

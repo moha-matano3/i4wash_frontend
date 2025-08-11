@@ -1,44 +1,87 @@
+import "./ConceptNote.css";
+import water from "../../../assets/images/water.jpg"
+import water2 from "../../../assets/images/water2.jpg"
+import water3 from "../../../assets/images/water3.jpg"
 
 export default function ConceptNote() {
     return (
-        <div style={{ maxWidth: '900px', margin: '0 auto', color: 'white' }}>
-            <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>
-                Concept Note – Innovate4Wash
-            </h1>
+        <>
+            <div className="banner" style={{ backgroundImage: `url(${water})` }} >
+                Innovate4WASH (I4WASH) 2025: Scaling Resilient WASH Solutions
+            </div>
+            <div className="concept-note-container">
 
-            <p style={{ marginBottom: '1rem' }}>
-                <strong>Title:</strong> Innovate4Wash – Driving Innovation in Water, Sanitation & Hygiene
-            </p>
+                <section className="content-section image-right">
+                    <img
+                        src={water3}
+                        alt="I4WASH Forum"
+                        className="section-image"
+                    />
+                    <p>
+                        I4WASH is Africa's premier platform for driving innovation and collaboration in Water, Sanitation, and Hygiene (WASH). More than just a conference,
+                        it's a movement that brings together government, the private sector, civil society, researchers, and communities to develop scalable, sustainable
+                        solutions for WASH challenges across the continent.
+                    </p>
+                </section>
 
-            <p style={{ marginBottom: '1rem' }}>
-                <strong>Overview:</strong> Innovate4Wash is a platform designed to bring together innovators, entrepreneurs,
-                NGOs, and government stakeholders committed to improving water, sanitation, and hygiene (WASH) outcomes across Africa.
-                Through curated exhibitions, thought-provoking discussions, and a vibrant startup showcase, the platform seeks to
-                inspire practical solutions and foster meaningful partnerships.
-            </p>
+                <section className="content-section image-left">
+                    <img
+                        src={water2}
+                        alt="Climate Resilience"
+                        className="section-image"
+                    />
+                    <p>
+                        The 2025 theme, <strong>"Scaling Resilient WASH Solutions – Advancing Sustainable Market-Based Solutions for a Changing Climate in Kenya,"</strong> focuses on climate resilience,
+                        innovation, and inclusive impact. This aligns with Sustainable Development Goals 6 and 13, and Kenya's Constitution, emphasizing climate-smart technologies,
+                        innovative financing, menstrual hygiene, water resource management, and sanitation systems.
+                    </p>
+                </section>
 
-            <p style={{ marginBottom: '1rem' }}>
-                <strong>Objectives:</strong>
-                <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
-                    <li>Provide a platform for showcasing WASH innovations and research.</li>
-                    <li>Facilitate cross-sector collaboration and knowledge sharing.</li>
-                    <li>Highlight the role of youth and technology in solving WASH challenges.</li>
-                    <li>Encourage investment and support for scalable WASH initiatives.</li>
-                </ul>
-            </p>
+                <section className="content-section">
+                    <p>
+                        Since 2017, I4WASH has showcased over 1000 solutions across three continents, acting as a catalyst for policy reform, knowledge sharing,
+                        and commercialization of impactful innovations. Attendees can expect engaging sessions, practical tools, high-level dialogues,
+                        and real-world solutions designed to build resilient, inclusive, and future-ready WASH systems. I4WASH isn't just shaping Africa’s WASH future—it’s accelerating it.
+                    </p>
+                </section>
 
-            <p style={{ marginBottom: '1rem' }}>
-                <strong>Target Audience:</strong> Startups, social enterprises, development partners, WASH experts, policy makers, and academic institutions.
-            </p>
+                <section className="content-section image-right">
+                    <img
+                        src={water}
+                        alt="Diverse Audience"
+                        className="section-image"
+                    />
+                    <h2>Who Should Attend?</h2>
+                    <p>We’re bringing together a diverse audience from all corners of the WASH sector:</p>
+                    <ul>
+                        <li>Government Decision Makers and Trailblazers</li>
+                        <li>WASH Pioneers and Organizations</li>
+                        <li>Corporate Changemakers</li>
+                        <li>Financial Institutions</li>
+                        <li>Stakeholder Alliances including civil society and academia</li>
+                        <li>Community Representatives and WASH Champions</li>
+                    </ul>
+                </section>
 
-            <p style={{ marginBottom: '1rem' }}>
-                <strong>Expected Impact:</strong> Increased visibility and support for innovative WASH solutions, stronger networks between stakeholders,
-                and practical outcomes contributing to SDG 6 – Clean Water and Sanitation for All.
-            </p>
+                <section className="content-section">
+                    <h2>Conference Structure and Priority Areas</h2>
+                    <p>The four-day conference will feature keynote addresses, panel discussions, technical sessions, marketplace exhibitions, and pitches. Thematic sessions focus on:</p>
+                    <ul>
+                        <li>Climate-Resilient WASH Infrastructure</li>
+                        <li>Financing Models for Sustainable WASH Markets</li>
+                        <li>Digital Innovations for WASH Monitoring and Access</li>
+                        <li>Behaviour Change and Community Engagement</li>
+                        <li>Public-Private Partnerships in Climate-Smart WASH</li>
+                        <li>Policy and Regulation for Market-Driven Resilience</li>
+                    </ul>
+                </section>
 
-            <p style={{ marginTop: '2rem', fontStyle: 'italic' }}>
-                "Innovation flows where collaboration grows."
-            </p>
-        </div>
+                <section className="content-section">
+                    <p className="closing-quote">
+                        "Innovation flows where collaboration grows."
+                    </p>
+                </section>
+            </div>
+        </>
     );
 }

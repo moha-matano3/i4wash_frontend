@@ -13,10 +13,12 @@ import Payment from './pages/eventRegistration/Payment/Payment.tsx';
 import Home from './pages/PublicPages/Home/Home.tsx';
 import ConceptNote from './pages/PublicPages/ConceptNote/ConceptNote.tsx';
 import PublicLandingLayout from "./layouts/PublicLandingLayout.tsx";
-import EmailForm from "./pages/eventRegistration/EmailForm/EmailForm.tsx";
+import Convene from "./pages/PublicPages/Convene/Convene.tsx";
 import PublicLayout from "./layouts/PublicLayout.tsx";
 import ForumPage from './pages/PublicPages/Forums/ForumPage.tsx';
 import AboutI4WASH from "./pages/PublicPages/AboutI4WASH/AboutI4WASH.tsx";
+import Programme from "./pages/PublicPages/Programme/Programme.tsx";
+import Partner from "./pages/PublicPages/Partner/Partner.tsx";
 
 
 
@@ -30,9 +32,12 @@ function App() {
                 </Route>
 
                 <Route path="/" element={<PublicLayout />}>
+                    <Route path="Programme" element={<Programme />} />
                     <Route path="Explore" element={<ConceptNote />} />
                     <Route path="forum/:year" element={<ForumPage />} />
                     <Route path="AboutUs" element={<AboutI4WASH />} />
+                    <Route path="Convenership" element={<Convene/>}/>
+                    <Route path="Partnership" element={<Partner/>}/>
                 </Route>
 
                 {/* Registration flow pages */}
@@ -43,7 +48,6 @@ function App() {
                     <Route path="step4" element={<Booth />} />
                     <Route path="step5" element={<Summary />} />
                     <Route path="review" element={<Payment />} />
-                    <Route path="sponsorship" element={<EmailForm/>}/>
                 </Route>
 
                 <Route path="*" element={<div>404 - Not Found</div>} />

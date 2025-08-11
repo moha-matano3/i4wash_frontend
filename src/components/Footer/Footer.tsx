@@ -1,24 +1,33 @@
 import './Footer.css';
 import { Link } from 'react-router-dom';
+import Invitation from '../../assets/Files/I4WASH Forum Malindi - Invitation letter.pdf'
+import CountdownTimer from "../CountdownTimer/CountdownTimer.tsx";
 
 export default function Footer() {
     return (
         <footer className="footer">
             <div className="footer-section-left">
-                <Link to="/register/sponsorship" className="">
-                    Sponsorship Registration
-                </Link>
+                <h4>Resources</h4>
+                <a
+                    href={Invitation}
+                    download="invitation.pdf"
+                    rel="noopener noreferrer"
+                >
+                    Download Invitation
+                </a>
             </div>
+
             <div className="footer-section-centre">
-                <Link to="/register/sponsorship" className="">
-                    Sponsorship Registration
+                <h4>About</h4>
+                <Link to="">
+                    About Innovate4Wash
                 </Link>
             </div>
+
             <div className="footer-section-right">
-                <Link to="/register/sponsorship" className="">
-                    Sponsorship Registration
-                </Link>
+                <CountdownTimer />
             </div>
         </footer>
+
     );
 }

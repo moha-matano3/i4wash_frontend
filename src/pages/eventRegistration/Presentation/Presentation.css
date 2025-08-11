@@ -169,3 +169,68 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+/* Headings */
+.modal-content h2,
+.modal-content h3,
+.modal-content h4 {
+    color: #76EADA;
+    margin-top: 0.5rem;
+}
+
+/* Lists inside modal */
+.modal-content ul,
+.modal-content ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.modal-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Checkbox alignment */
+.agree-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* Continue button */
+.agree-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background: linear-gradient(135deg, #275d6b, #38a3a5);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.3s ease;
+}
+
+.agree-btn:hover:not(.disabled) {
+    background: linear-gradient(135deg, #1f4a55, #2e7c7d);
+    transform: translateY(-2px);
+}
+
+.agree-btn.disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
