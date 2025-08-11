@@ -1,22 +1,67 @@
 .countdown-container {
+    width: 100%;
     display: flex;
-    gap: 1.5rem;
-    justify-content: flex-start;
-    margin-top: 2rem;
+    gap: 20px;
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    align-items: center;
 }
 
-.countdown-item {
-    text-align: center;
-    min-width: 60px;
+.flip-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 }
 
-.countdown-value {
+.flip-card {
+    width: 80px;
+    height: 100px;
+    border-radius: 12px;
+    color: #fff;
     font-size: 2.5rem;
     font-weight: bold;
-    color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 1px #76EADA, 0 0 6px #76EADA;
+    /* no animation by default */
 }
 
-.countdown-label {
+.flip-card.flip {
+    animation: flip 0.7s ease-in-out;
+}
+
+.separator {
+    font-size: 3rem;
+    color: #76EADA;
+    text-shadow: 0 0 8px #76EADA, 0 0 16px #76EADA;
+    margin-top: 10px;
+    user-select: none;
+    position: absolute;
+    right: -25px;
+    top: 45%;
+}
+
+.label {
+    color: #76EADA;
+    margin-top: 10px;
     font-size: 1rem;
-    color: #555;
+    text-shadow: 0 0 5px #76EADA;
+    user-select: none;
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateX(0deg);
+    }
+    50% {
+        transform: rotateX(90deg);
+        opacity: 0.5;
+    }
+    100% {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
 }

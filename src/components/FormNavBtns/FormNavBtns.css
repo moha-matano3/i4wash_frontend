@@ -1,0 +1,16 @@
+.form-nav-btn {
+    all: unset;
+    background-color: transparent !important;
+    border: none;
+    padding: 0 !important;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    appearance: none;
+    box-shadow: none;
+
+}
+
+.form-nav-btn:hover {
+    opacity: 0.8;
+}

@@ -1,0 +1,192 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Partner.css';
+import water from "../../../assets/images/I4WASHbanner.png";
+
+
+export default function Partner() {
+    const navigate = useNavigate();
+    const [showModal, setShowModal] = useState(false);
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email: '',
+        organization: '',
+        message: '',
+        role: 'sponsor',
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        try {
+            const response = await fetch('http://www.i4wash.com:8000/api/method/i4wash_app.i4wash.api.sponsor_email.contact_sponsor', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                alert('Email sent successfully!');
+                setShowModal(false);
+                navigate('/');
+            } else {
+                alert('Failed to send email.');
+            }
+        } catch (error) {
+            console.error(error);
+            alert('Error sending email.');
+        }
+    };
+
+    return (
+        <>
+            <div className="banner" style={{ backgroundImage: `url(${water})` }}>
+                <h1 className="about-title">I4WASH Sponsorship Packages</h1>
+            </div>
+            <div className="packages-container">
+                <p>
+                    The forum fully depends on supporters from larger organizations driven by promoting and developing
+                    the WASH sector to the benefit of local communities – or corporates or financiers who have done well
+                    and want to give back or invest in the next generation of WASH adventures.
+                </p>
+
+                <div className="packages-list sponsors-packages">
+                    <h3>Our Packages</h3>
+                    <div className="packages-grid">
+                        <div className="package-card platinum">
+                            <div className="package-header">
+                                <h4>PLATINUM SUPPORTER</h4>
+                            </div>
+                            <ul className="package-features">
+                                <li>Logo prime position</li>
+                                <li>Keynote/plenary speaking</li>
+                                <li>4 banners</li>
+                                <li>Premium booth</li>
+                                <li>10 passes</li>
+                                <li>Full-page profile</li>
+                                <li>Input into communiqué</li>
+                            </ul>
+                        </div>
+
+                        <div className="package-card gold">
+                            <div className="package-header">
+                                <h4>GOLD SUPPORTER</h4>
+                            </div>
+                            <ul className="package-features">
+                                <li>Prominent logo</li>
+                                <li>Technical session speaking</li>
+                                <li>3 banners</li>
+                                <li>Standard booth</li>
+                                <li>7 passes</li>
+                                <li>Half-page profile</li>
+                                <li>Input into communiqué</li>
+                            </ul>
+                        </div>
+
+                        <div className="package-card silver">
+                            <div className="package-header">
+                                <h4>SILVER SUPPORTER</h4>
+                            </div>
+                            <ul className="package-features">
+                                <li>Standard logo</li>
+                                <li>Panelist speaking</li>
+                                <li>2 banners</li>
+                                <li>Standard booth</li>
+                                <li>5 passes</li>
+                                <li>Quarter-page profile</li>
+                            </ul>
+                        </div>
+
+                        <div className="package-card bronze">
+                            <div className="package-header">
+                                <h4>BRONZE SUPPORTER</h4>
+                            </div>
+                            <ul className="package-features">
+                                <li>Basic logo</li>
+                                <li>1 banner</li>
+                                <li>Standard booth</li>
+                                <li>3 passes</li>
+                                <li>Mention in credits</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <button className="open-modal-btn" onClick={() => setShowModal(true)}>
+                    Contact Us
+                </button>
+
+                {showModal && (
+                    <div className="modal-overlay">
+                        <div className="modal-content">
+                            <button className="modal-close" onClick={() => setShowModal(false)}>×</button>
+                            <h3>Contact for Sponsors / Conveners</h3>
+                            <form className="form-body" onSubmit={handleSubmit}>
+                                <div className="form-input">
+                                    <label className="form-label">Full Name</label>
+                                    <input
+                                        className="form-field"
+                                        type="text"
+                                        name="fullName"
+                                        value={formData.fullName}
+                                        onChange={handleChange}
+                                        required/>
+                                </div>
+
+                                <div className="form-input">
+                                    <label className="form-label">Email</label>
+                                    <input
+                                        className="form-field"
+                                        type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        required/>
+                                </div>
+
+                                <div className="form-input">
+                                    <label className="form-label">Organization</label>
+                                    <input
+                                        className="form-field"
+                                        type="text"
+                                        name="organization"
+                                        value={formData.organization}
+                                        onChange={handleChange}/>
+                                </div>
+
+                                <div className="form-input">
+                                    <label className="form-label">Role</label>
+                                    <select
+                                        className="form-field"
+                                        name="role"
+                                        value={formData.role}
+                                        onChange={handleChange}
+                                    >
+                                        <option value="sponsor">Sponsor</option>
+                                        <option value="convener">Convener</option>
+                                    </select>
+                                </div>
+
+                                <div className="form-input">
+                                    <label className="form-label">Message</label>
+                                    <textarea
+                                        className="form-field"
+                                        name="message"
+                                        rows={4}
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                        required/>
+                                </div>
+
+                                <button type="submit" className="form-button">Send Email</button>
+                            </form>
+                        </div>
+                    </div>
+                )}
+            </div>
+        </>
+    );
+}

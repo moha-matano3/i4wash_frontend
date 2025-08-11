@@ -1,13 +1,47 @@
-.presentation-form {
+.form-container {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    color: white;
     align-items: center;
+    justify-content: center;
+}
+.form-body {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .form{
     display: flex;
     flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+.form-section-left{
+    width: 50%;
+    display: flex;
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.form-section-right{
+    width: 50%;
+    display: flex;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.form-buttons {
+    width: 100%;
+    margin-top: auto; /* pushes buttons to the bottom */
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
 }
 
 .presentation-form h3 {
@@ -16,10 +50,31 @@
 
 .presentation-question {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     gap: 1rem;
     width: 100%;
     max-width: 600px;
+}
+.prompt {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prompt span {
+    font-size: 1.25rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #76EADA;
+}
+
+.prompt p {
+    font-size: 1.25rem;
+    line-height: 1.5;
 }
 
 /*.input-field {*/
@@ -40,19 +95,28 @@
     flex-wrap: wrap;
 }
 
+.upload-labels {
+   display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .upload-label {
     font-size: 1rem;
     white-space: nowrap;
+    margin-top: 0;
 }
 
+
 .upload-box {
-    width: 500px;
-    height: 500px;
+    width: 25rem;
+    height: 25rem;
     background-color: rgba(41, 142, 166, 0.7);
     border-radius: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     overflow: hidden;
     position: relative;
 }
@@ -63,6 +127,7 @@
     opacity: 0;
     position: absolute;
     cursor: pointer;
+    z-index: 1;
 }
 
 .submit-btn {
@@ -74,4 +139,98 @@
     border-radius: 0.8rem;
     font-weight: bold;
     cursor: pointer;
+}
+
+/*custom-radio-buttons*/
+.radio-group{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+.custom-radio {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.custom-radio input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.custom-radio .icon {
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Headings */
+.modal-content h2,
+.modal-content h3,
+.modal-content h4 {
+    color: #76EADA;
+    margin-top: 0.5rem;
+}
+
+/* Lists inside modal */
+.modal-content ul,
+.modal-content ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.modal-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Checkbox alignment */
+.agree-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* Continue button */
+.agree-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background: linear-gradient(135deg, #275d6b, #38a3a5);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.3s ease;
+}
+
+.agree-btn:hover:not(.disabled) {
+    background: linear-gradient(135deg, #1f4a55, #2e7c7d);
+    transform: translateY(-2px);
+}
+
+.agree-btn.disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

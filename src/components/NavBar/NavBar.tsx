@@ -13,6 +13,18 @@ export default function Navbar() {
             </div>
 
             <ul className="navbar-links">
+                <li className={location.pathname.startsWith('/register') ? 'active' : ''}>
+                    <Link to="/register/step1">Registration</Link>
+                </li>
+                <li className={location.pathname.startsWith('/register') ? 'active' : ''}>
+                    <Link to="/Convenership">Convene</Link>
+                </li>
+                <li className={location.pathname.startsWith('/register') ? 'active' : ''}>
+                    <Link to="/Partnership">Partner</Link>
+                </li>
+                <li className={location.pathname.startsWith('/register') ? 'active' : ''}>
+                    <Link to="/Programme">Programme</Link>
+                </li>
                 <li
                     className={`dropdown ${location.pathname.startsWith('/forums') ? 'active' : ''}`}
                     onClick={() => setShowForumsDropdown(prev => !prev)}
@@ -21,23 +33,24 @@ export default function Navbar() {
                     {showForumsDropdown && (
                         <ul className="dropdown-menu">
                             <li>
-                                <Link to="/forums/i4wash-kisumu">I4WASH Kisumu</Link>
+                                <Link to="/forum/Kisumu2024">I4WASH Kisumu</Link>
+                            </li>
+                            <li>
+                                <Link to="/forum/Nakuru2023">I4WASH Nakuru</Link>
+                            </li>
+                            <li>
+                                <Link to="/forum/Kampala2023">I4WASH Kampala</Link>
+                            </li>
+                            <li>
+                                <Link to="/forum/Malindi2022">I4WASH Malindi</Link>
                             </li>
                         </ul>
                     )}
                 </li>
-
-                <li className={location.pathname.startsWith('/register') ? 'active' : ''}>
-                    <Link to="/register/step1">Registration</Link>
-                </li>
-
                 <li className={location.pathname === '/about' ? 'active' : ''}>
-                    <Link to="/about">About</Link>
+                    <Link to="/AboutUs">About</Link>
                 </li>
 
-                <li className={location.pathname === '/account' ? 'active' : ''}>
-                    <Link to="/account">Account</Link>
-                </li>
             </ul>
         </nav>
     );

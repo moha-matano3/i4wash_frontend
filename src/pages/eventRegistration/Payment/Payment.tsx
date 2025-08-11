@@ -1,54 +1,53 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import "./Payment.css";
 import { useRegistration } from '../../../store/useRegistration';
-import * as React from "react";
 import MpesaModal from './PaymentModals/MpesaModal.tsx';
 import StripeModal from './PaymentModals/StripeModal.tsx';
 import StripeWrapper from './PaymentModals/Checkout/StripeWrapper.tsx';
+import flowSVG from "../../../assets/icons/FormFlow/flow5.svg";
+import FormNavBtns from "../../../components/FormNavBtns/FormNavBtns.tsx";
+import backBtn from "../../../assets/icons/backBtn.svg";
+import nextBtn from "../../../assets/icons/nextBtn.svg";
+import pay from "../../../assets/icons/pay.svg";
+import radioBtnSVGChecked from "../../../assets/icons/radioBtns/radioBtnChecked.svg";
+import radioBtnSVG from "../../../assets/icons/radioBtns/radioBtn.svg";
 
 export default function Payment() {
     const navigate = useNavigate();
-    const { setFormData } = useRegistration();
+    const { setFormData, formData } = useRegistration();
+
+    const applicantFee = 35000;
+    const boothFee = 50000;
+    const attendeeFee = 35000;
+
+    const price = () => {
+        const numberOfBooths = formData.exhibitionBoothCount || 0;
+        const numberOfAttendees = formData.attendees?.length || 0;
+        return applicantFee + (numberOfBooths * boothFee) + (numberOfAttendees * attendeeFee);
+    };
 
     const [payment, setPayment] = useState({
         method: 'Mpesa',
         phone: '',
-        amount: 7000,
+        amount: price(),
         reference: '',
     });
 
     const [showModal, setShowModal] = useState(false);
     const [modalType, setModalType] = useState<'Mpesa' | 'Card' | null>(null);
-    const [phoneError, setPhoneError] = useState('');
 
-    const validatePhone = (phone: string) => {
-        if (payment.method === 'Mpesa') {
-            if (!/^2547\d{8}$/.test(phone)) {
-                return 'Phone number must start with 2547 and be 12 digits long';
-            }
-        }
-        return '';
-    };
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-        const { name, value } = e.target;
-        setPayment((prev) => ({ ...prev, [name]: value }));
-
-        if (name === 'phone' && payment.method === 'Mpesa') {
-            const error = validatePhone(value);
-            setPhoneError(error);
-        }
+    const handleMethodChange = (method: 'Mpesa' | 'Card') => {
+        setPayment((prev) => ({ ...prev, method }));
     };
 
     const handleOpenModal = () => {
-        if (payment.method === 'Mpesa') {
-            const error = validatePhone(payment.phone);
-            setPhoneError(error);
-            if (error) return;
-        }
-
         setModalType(payment.method as 'Mpesa' | 'Card');
         setShowModal(true);
+    };
+
+    const handleBack = () => {
+        navigate('/register/step5');
     };
 
     const handlePaymentSuccess = (referenceCode?: string) => {
@@ -65,80 +64,102 @@ export default function Payment() {
 
     return (
         <div className="form-container">
-            <h3>Payment Details</h3>
-
+            <h3 className="title">Payment Details</h3>
+            <div className="flow">
+                <img src={flowSVG} alt="" style={{ width: '100%', height: 'auto' }} />
+            </div>
             <div className="form-body">
-                <div className="form-input">
-                    <label className="form-label">Payment Method</label>
-                    <select
-                        name="method"
-                        className="form-field"
-                        value={payment.method}
-                        onChange={handleChange}
-                    >
-                        <option value="Mpesa">Mpesa</option>
-                        <option value="Card">Card</option>
-                    </select>
-                </div>
-
-                <div className="form-input">
-                    <label className="form-label">Amount (KES)</label>
-                    <input
-                        type="number"
-                        name="amount"
-                        className="form-field"
-                        value={payment.amount}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-
-                {/* Show Phone Number only for Mpesa */}
-                {payment.method === 'Mpesa' && (
-                    <div className="form-input">
-                        <label className="form-label">Phone Number</label>
-                        <input
-                            type="tel"
-                            name="phone"
-                            className="form-field"
-                            value={payment.phone}
-                            onChange={handleChange}
-                            placeholder="e.g. 254712345678"
-                            required
-                        />
-                        {phoneError && <p style={{ color: 'red', fontSize: '0.9rem' }}>{phoneError}</p>}
+                {showModal && modalType === 'Mpesa' && (
+                    <div className="modal-overlay">
+                        <div className="modal-content">
+                            <MpesaModal
+                                phone={payment.phone}
+                                amount={payment.amount}
+                                onSuccess={handlePaymentSuccess}
+                                onClose={() => setShowModal(false)}
+                            />
+                        </div>
                     </div>
                 )}
 
-                <button
-                    type="button"
-                    className="form-button"
-                    onClick={handleOpenModal}
-                    disabled={payment.method === 'Mpesa' && !!phoneError}
-                >
-                    Make Payment →
-                </button>
+                {showModal && modalType === 'Card' && (
+                    <div className="modal-overlay">
+                        <div className="modal-content">
+                            <StripeWrapper>
+                                <StripeModal
+                                    amount={payment.amount}
+                                    onSuccess={handlePaymentSuccess}
+                                    onClose={() => setShowModal(false)}
+                                />
+                            </StripeWrapper>
+                        </div>
+                    </div>
+                )}
+                <div className="payment-form">
+                        <div className="payment-box">
+                            <div className="payment" style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>
+                                <label className="payment-label">Total</label>
+                                {payment.amount.toLocaleString()} KES
+                            </div>
+                            <div className="payment" style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>
+                                <label className="payment-label">Payment Method</label>
+                                <div className="radio-group">
+                                    <label className="custom-radio">
+                                        <input
+                                            type="radio"
+                                            name="paymentMethod"
+                                            value="Mpesa"
+                                            checked={payment.method === 'Mpesa'}
+                                            onChange={() => handleMethodChange('Mpesa')}
+                                        />
+                                        <img
+                                            className="icon"
+                                            src={payment.method === 'Mpesa' ? radioBtnSVGChecked : radioBtnSVG}
+                                            alt="Mpesa radio"
+                                        />
+                                        Mpesa
+                                    </label>
+
+                                    <label className="custom-radio">
+                                        <input
+                                            type="radio"
+                                            name="paymentMethod"
+                                            value="Card"
+                                            checked={payment.method === 'Card'}
+                                            onChange={() => handleMethodChange('Card')}
+                                        />
+                                        <img
+                                            className="icon"
+                                            src={payment.method === 'Card' ? radioBtnSVGChecked : radioBtnSVG}
+                                            alt="Card radio"
+                                        />
+                                        Card
+                                    </label>
+                                </div>
+                            </div>
+                            {payment.method === 'Mpesa' && (
+                                <div className="payment-card" style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>
+                                    Pay via Mpesa: {payment.amount.toLocaleString()} KES
+                                </div>
+                            )}
+
+                            {payment.method === 'Card' && (
+                                <div className="payment-card" style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>
+                                    Pay via Card: {payment.amount.toLocaleString()} KES (Visa or Mastercard)
+                                </div>
+                            )}
+
+                            <button type="button" className="pay-btn" onClick={handleOpenModal}>
+                                <img src={pay} alt="Pay" style={{ width: '100%', height: 'auto' }} />
+                            </button>
+                        </div>
+                </div>
+
+                <div className="form-buttons">
+                    <FormNavBtns svgSrc={backBtn} alt="Go back" onClick={handleBack} />
+                    <FormNavBtns svgSrc={nextBtn} alt="Continue" type="submit" />
+                </div>
             </div>
-
-            {/* Modal Rendering */}
-            {showModal && modalType === 'Mpesa' && (
-                <MpesaModal
-                    phone={payment.phone}
-                    amount={payment.amount}
-                    onSuccess={handlePaymentSuccess}
-                    onClose={() => setShowModal(false)}
-                />
-            )}
-
-            {showModal && modalType === 'Card' && (
-                <StripeWrapper>
-                    <StripeModal
-                        amount={payment.amount}
-                        onSuccess={handlePaymentSuccess}
-                        onClose={() => setShowModal(false)}
-                    />
-                </StripeWrapper>
-            )}
         </div>
     );
 }

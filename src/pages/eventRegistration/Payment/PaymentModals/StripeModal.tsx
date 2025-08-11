@@ -24,6 +24,7 @@ export default function StripeModal({ amount, onSuccess, onClose }: StripeModalP
         }
 
         try {
+            // Step 1: Create a PaymentMethod
             const { error, paymentMethod } = await stripe.createPaymentMethod({
                 type: 'card',
                 card: cardElement,
@@ -49,7 +50,7 @@ export default function StripeModal({ amount, onSuccess, onClose }: StripeModalP
             const data = await response.json();
 
             if (data.success) {
-                onSuccess(data.payment_intent_id);
+                onSuccess(data.payment_intent_id); // Just like refCode in Mpesa
             } else {
                 alert("Payment failed: " + data.message);
             }
