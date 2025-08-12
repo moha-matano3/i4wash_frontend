@@ -13,11 +13,11 @@ const defaultData: FormDataType = {
   phone: '',
   organization: '',
   designation: '',
-  presentationReady: 'No',
+  presentationReady: false,
   presentationFile: undefined,
-  exhibitionBoothNeeded: 'No',
+  exhibitionBoothNeeded: false,
   exhibitionBoothCount: 0,
-  hasAttendees: 'No',
+  hasAttendees: false,
   attendees: [],
 };
 

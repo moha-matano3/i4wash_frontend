@@ -76,7 +76,6 @@ export default function UserInfo() {
                 <div className="form-input">
                     <PhoneInput
                         country={'ke'}
-                        name="phone"
                         value={localData.phone}
                         onChange={handlePhoneChange}
                         inputClass="form-field"
