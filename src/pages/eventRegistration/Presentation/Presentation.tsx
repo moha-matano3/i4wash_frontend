@@ -9,6 +9,7 @@ import nextBtn from "../../../assets/icons/nextBtn.svg";
 import flowSVG from "../../../assets/icons/FormFlow/flow3.svg";
 import uploadSVG from "../../../assets/icons/upload.svg";
 import radioBtnSVG from "../../../assets/icons/radioBtns/radioBtn.svg";
+import '../Payment/Payment.css'
 import radioBtnSVGChecked from "../../../assets/icons/radioBtns/radioBtnChecked.svg";
 
 export default function Presentation() {
@@ -82,7 +83,53 @@ export default function Presentation() {
                 <div className="modal-overlay">
                     <div className="modal-content">
                         <h2>Presentation Guidelines</h2>
-                        {/* ... (unchanged modal text) */}
+                        <p>Before proceeding, please read the following guidelines:</p>
+
+                        <ul>
+                            <li>Presentations must be in PDF or PowerPoint format.</li>
+                            <li>Content should be appropriate, clear, and aligned with the event theme.</li>
+                            <li>All submitted presentations are subject to review before the event.</li>
+                            <li>You can still submit later if you're not ready now.</li>
+                        </ul>
+
+                        <h3>Additional Pitch Guidelines</h3>
+                        <p><strong>Kindly be advised that:</strong></p>
+                        <ul>
+                            <li>The pitch duration will be <strong>10 minutes</strong> (hard stop, no extensions).</li>
+                            <li>During your pitch, slides will be projected behind you. Only <strong>Microsoft PowerPoint</strong> is accepted; PDF or Google Slides will also be accepted.</li>
+                            <li>Please avoid too much text — an image is worth 1000 words.</li>
+                            <li>Maximum of <strong>5 slides</strong> allowed.</li>
+                            <li>All presentations will be reviewed for quality and consistency one week before Innovate4WASH (on <strong>29th October 2025</strong>).</li>
+                            <li>A coaching & rehearsal session will be held on <strong>4th November 2025</strong> from 2pm to 4pm in the plenary room. Please confirm attendance in advance.</li>
+                        </ul>
+
+                        <h4>Step One</h4>
+                        <ol>
+                            <li>Full names of the person making the presentation</li>
+                            <li>Their designation</li>
+                            <li>A passport picture of the presenter</li>
+                            <li>Title & main focus topic of your pitch</li>
+                        </ol>
+
+                        <h4>Step Two — In your 10-minute pitch, cover the following:</h4>
+                        <ol>
+                            <li>
+                                Introduce yourself and summarize the mission of your organization/project/initiative, including:
+                                <ul>
+                                    <li>Key activities (1 sentence)</li>
+                                    <li>How you generate value/impact/profit</li>
+                                    <li>Level of maturity — what you’ve achieved so far</li>
+                                    <li>Key partners</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Explain the main challenge, issue, or barrier you are facing (e.g., lack of financing, need for partners, technical solution, etc.).
+                            </li>
+                            <li>
+                                Clearly articulate your ask to the audience — the question you hope someone can answer or connect you with a solution.
+                            </li>
+                        </ol>
+
                         <label className="agree-checkbox">
                             <input
                                 type="checkbox"
@@ -95,7 +142,7 @@ export default function Presentation() {
                         <button
                             onClick={closeModal}
                             disabled={!agreeChecked}
-                            className={`agree-btn ${agreeChecked ? '' : 'disabled'}`}
+                            className={`agree-btn${agreeChecked ? '' : ' disabled'}`}
                         >
                             Continue
                         </button>
