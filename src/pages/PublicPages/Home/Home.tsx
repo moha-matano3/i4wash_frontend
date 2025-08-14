@@ -1,6 +1,6 @@
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
-import LogoCarousel from "../../../components/LogoCarousel/LogoCarousel.tsx";
+// import LogoCarousel from "../../../components/LogoCarousel/LogoCarousel.tsx";
 import exploreBtn from "../../../assets/icons/ExploreBtn.svg";
 
 export default function Home() {
@@ -28,7 +28,7 @@ export default function Home() {
                 <img src={exploreBtn} alt="Explore Button" style={{ width: '100%', height: '100%' }} />
             </button>
 
-            <LogoCarousel />
+            {/*<LogoCarousel />*/}
             {/*<CountdownTimer />*/}
         </div>
     );

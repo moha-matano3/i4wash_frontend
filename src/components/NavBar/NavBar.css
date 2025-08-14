@@ -17,9 +17,15 @@
 }
 
 .navbar-logo{
+    width: 40%;
+    height: 100%;
     color: #fff;
     text-decoration: none;
     font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 .navbar-links {
     list-style: none;

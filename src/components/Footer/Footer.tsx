@@ -2,6 +2,7 @@ import './Footer.css';
 import { Link } from 'react-router-dom';
 import Invitation from '../../assets/Files/I4WASH Forum Malindi - Invitation letter.pdf'
 import CountdownTimer from "../CountdownTimer/CountdownTimer.tsx";
+import React from "react";
 
 export default function Footer() {
     return (
@@ -19,7 +20,7 @@ export default function Footer() {
 
             <div className="footer-section-centre">
                 <h4>About</h4>
-                <Link to="">
+                <Link to="/AboutUs">
                     About Innovate4Wash
                 </Link>
             </div>

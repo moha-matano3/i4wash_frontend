@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import './Partner.css';
 import water from "../../../assets/images/I4WASHbanner.png";
 
-
 export default function Partner() {
     const navigate = useNavigate();
     const [showModal, setShowModal] = useState(false);
@@ -45,17 +44,37 @@ export default function Partner() {
     return (
         <>
             <div className="banner" style={{ backgroundImage: `url(${water})` }}>
-                <h1 className="about-title">I4WASH Sponsorship Packages</h1>
+                <h1 className="about-title">I4WASH Sponsorship & Partnership</h1>
             </div>
+
             <div className="packages-container">
+                {/* Sponsors Content */}
                 <p>
                     The forum fully depends on supporters from larger organizations driven by promoting and developing
                     the WASH sector to the benefit of local communities – or corporates or financiers who have done well
                     and want to give back or invest in the next generation of WASH adventures.
                 </p>
+                {/* Partners Content */}
+                <div className="partners-section">
+                    <h3>Why Partner with I4WASH?</h3>
+                    <p>
+                        Innovate4WASH is more than an event — it’s a high-stakes ecosystem for impact.
+                        As a partner, you stand at the point where vision meets execution, where your investment
+                        fuels the WASH revolution across Africa.
+                    </p>
+                    <ul>
+                        <li><strong>Shape the Narrative:</strong> Influence the dialogue and future direction of Africa’s WASH sector, elevating your organization as a sector leader.</li>
+                        <li><strong>Unlock Deal-Making:</strong> Access a curated environment built for forging powerful partnerships, securing investments, and driving the commercialization of impactful innovations.</li>
+                        <li><strong>Amplify Your Impact:</strong> Engage directly with decision-makers, innovators, and financiers, gaining unparalleled access to the people and solutions that will help you achieve your strategic goals.</li>
+                    </ul>
+                    <p>
+                        Join us in building a legacy of resilient communities and a water-secure Africa.
+                        Together, we’re not just supporting change — we’re making it happen.
+                    </p>
+                </div>
 
                 <div className="packages-list sponsors-packages">
-                    <h3>Our Packages</h3>
+                    <h3>Our Sponsorship Packages</h3>
                     <div className="packages-grid">
                         <div className="package-card platinum">
                             <div className="package-header">
@@ -115,10 +134,13 @@ export default function Partner() {
                         </div>
                     </div>
                 </div>
+
+                {/* Contact Button */}
                 <button className="open-modal-btn" onClick={() => setShowModal(true)}>
                     Contact Us
                 </button>
 
+                {/* Modal */}
                 {showModal && (
                     <div className="modal-overlay">
                         <div className="modal-content">
@@ -166,7 +188,7 @@ export default function Partner() {
                                         onChange={handleChange}
                                     >
                                         <option value="sponsor">Sponsor</option>
-                                        <option value="convener">Convener</option>
+                                        {/*<option value="convener">Convener</option>*/}
                                     </select>
                                 </div>
 

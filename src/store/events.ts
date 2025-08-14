@@ -1,17 +1,17 @@
 import craneBanner from '../assets/images/crane.jpg';
 
 import nakuru1 from '../assets/images/nakuru.jpg';
-import nakuru2 from '../assets/images/Nakuru/Naivasha_booth_nozovo.jpg'
+import nakuru2 from '../assets/images/Nakuru/Naivasha_forum_hall.jpg'
 import nakuru3 from '../assets/images/Nakuru/Naivasha_booth_nozovo.jpg'
 import nakuru4 from '../assets/images/Nakuru/Naivasha_booths.jpg'
-import nakuru5 from '../assets/images/Nakuru/Naivasha_forum_hall.jpg'
+import nakuru5 from '../assets/images/Nakuru/Naivasha_presentation.jpg'
 import nakuru6 from '../assets/images/Nakuru/Naivasha_location.jpg'
 import nakuru7 from '../assets/images/Nakuru/Naivasha_panel.jpg'
 import nakuru8 from '../assets/images/Nakuru/Naivasha_lorentz_booth.jpg'
-import nakuru9 from '../assets/images/Nakuru/Naivasha_presentation.jpg'
 
-import kampala1 from '../assets/images/crane.jpg';
-import kampala2 from '../assets/images/Kampala/_MG_4616 copy.jpg';
+
+import kampala1 from '../assets/images/Kampala/_MG_5315 copy.jpg';
+import kampala2 from '../assets/images/Kampala/_MG_4612 copy.jpg';
 import kampala3 from '../assets/images/Kampala/_MG_4616 copy.jpg';
 import kampala4 from '../assets/images/Kampala/_MG_4580 copy.jpg';
 import kampala5 from '../assets/images/Kampala/_MG_5034 copy.jpg';
@@ -21,7 +21,7 @@ import kampala8 from '../assets/images/Kampala/_MG_5311 copy.jpg';
 import kampala9 from '../assets/images/Kampala/_MG_5360 copy.jpg';
 
 import kisumu1 from '../assets/images/kisumu.jpg';
-import kisumu2 from '../assets/images/crane.jpg';
+// import kisumu2 from '../assets/images/crane.jpg';
 
 import malindi1 from '../assets/images/Malindi.jpg';
 import malindi2 from '../assets/images/Malindi/2J5A1470.jpg';
@@ -72,7 +72,6 @@ export const events: Record<string, ForumEvent> = {
             { src: nakuru6, caption: "Panel on financing WASH innovations" },
             { src: nakuru7, caption: "Exhibition booth with new technologies" },
             { src: nakuru8, caption: "Panel on financing WASH innovations" },
-            { src: nakuru9, caption: "Panel on financing WASH innovations" },
         ],
         banner: nakuru1,
     },
@@ -124,8 +123,8 @@ export const events: Record<string, ForumEvent> = {
             'Promoted climate-smart WASH technologies including water recycling and reuse',
         ],
         images: [
-            { src: kampala1, caption: "Panel on financing WASH innovations" },
-            { src: kisumu2, caption: "Exhibition booth with new technologies" }
+            // { src: kampala1, caption: "Panel on financing WASH innovations" },
+            // { src: kisumu2, caption: "Exhibition booth with new technologies" }
         ],
         banner: kisumu1,
     },
