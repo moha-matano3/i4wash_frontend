@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Convene.css';
-import partnership from "../../../assets/images/partnership.jpg";
+import water from "../../../assets/images/kisumu.jpg";
 
 export default function Convene() {
     const navigate = useNavigate();
@@ -43,7 +43,7 @@ export default function Convene() {
 
     return (
         <>
-            <div className="banner" style={{ backgroundImage: `url(${partnership})` }}>
+            <div className="banner" style={{ backgroundImage: `url(${water})` }}>
                 <h1 className="about-title">I4WASH Conveners & Co-Designers Packages</h1>
             </div>
 

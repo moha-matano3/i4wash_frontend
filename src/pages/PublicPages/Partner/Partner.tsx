@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Partner.css';
-import partnership from "../../../assets/images/partnership.jpg";
+import water from "../../../assets/images/I4WASHbanner.png";
 
 export default function Partner() {
     const navigate = useNavigate();
@@ -43,7 +43,7 @@ export default function Partner() {
 
     return (
         <>
-            <div className="banner" style={{ backgroundImage: `url(${partnership})` }}>
+            <div className="banner" style={{ backgroundImage: `url(${water})` }}>
                 <h1 className="about-title">I4WASH Sponsorship & Partnership</h1>
             </div>
 

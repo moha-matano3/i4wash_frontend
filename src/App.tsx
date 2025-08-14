@@ -9,7 +9,7 @@ import Presentation from './pages/eventRegistration/Presentation/Presentation.ts
 import Booth from './pages/eventRegistration/Booth/Booth.tsx';
 import Attendees from './pages/eventRegistration/Attendees/Attendees.tsx';
 import Summary from './pages/eventRegistration/Summary/Summary.tsx';
-// import Payment from './pages/eventRegistration/Payment/Payment.tsx';
+import Payment from './pages/eventRegistration/Payment/Payment.tsx';
 import Home from './pages/PublicPages/Home/Home.tsx';
 import ConceptNote from './pages/PublicPages/ConceptNote/ConceptNote.tsx';
 import PublicLandingLayout from "./layouts/PublicLandingLayout.tsx";
@@ -47,7 +47,7 @@ function App() {
                     <Route path="step3" element={<Presentation />} />
                     <Route path="step4" element={<Booth />} />
                     <Route path="step5" element={<Summary />} />
-                    {/*<Route path="review" element={<Payment />} />*/}
+                    <Route path="review" element={<Payment />} />
                 </Route>
 
                 <Route path="*" element={<div>404 - Not Found</div>} />

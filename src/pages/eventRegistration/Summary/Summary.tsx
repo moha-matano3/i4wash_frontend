@@ -71,7 +71,7 @@ export default function Summary() {
             const timer = setTimeout(() => {
                 setModalVisible(false);
                 setMessage('');
-                navigate('/');
+                navigate('/register/review');
             }, 3000);
 
             return () => clearTimeout(timer);
