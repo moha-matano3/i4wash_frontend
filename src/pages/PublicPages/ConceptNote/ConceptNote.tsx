@@ -1,19 +1,20 @@
 import "./ConceptNote.css";
-import water from "../../../assets/images/water.jpg"
-import water2 from "../../../assets/images/I4WASHbanner.png"
-import water3 from "../../../assets/images/Malindi.jpg"
+import water from "../../../assets/images/panel.jpg"
+import water2 from "../../../assets/images/Nakuru/Naivasha_booths.jpg"
+import sitevisit from "../../../assets/images/sitevisit.jpg"
+import booth from  "../../../assets/images/booth-closeup.jpg"
 
 export default function ConceptNote() {
     return (
         <>
             <div className="banner" style={{ backgroundImage: `url(${water})` }} >
-                Innovate4WASH (I4WASH) 2025: Scaling Resilient WASH Solutions
+                <h1 className="about-title">Innovate4WASH (I4WASH) 2025: Scaling Resilient WASH Solutions</h1>
             </div>
             <div className="concept-note-container">
 
                 <section className="content-section image-right">
                     <img
-                        src={water3}
+                        src={booth}
                         alt="I4WASH Forum"
                         className="section-image"
                     />
@@ -47,7 +48,7 @@ export default function ConceptNote() {
 
                 <section className="content-section image-right">
                     <img
-                        src={water}
+                        src={sitevisit}
                         alt="Diverse Audience"
                         className="section-image"
                     />

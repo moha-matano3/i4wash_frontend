@@ -19,7 +19,7 @@ export default function Footer() {
 
             <div className="footer-section-centre">
                 <h4>About</h4>
-                <Link to="">
+                <Link to="/AboutUs">
                     About Innovate4Wash
                 </Link>
             </div>

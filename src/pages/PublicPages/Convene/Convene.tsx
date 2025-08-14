@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Convene.css';
-import water from "../../../assets/images/kisumu.jpg";
-
+import partnership from "../../../assets/images/partnership.jpg";
 
 export default function Convene() {
     const navigate = useNavigate();
@@ -12,7 +11,7 @@ export default function Convene() {
         email: '',
         organization: '',
         message: '',
-        role: 'sponsor',
+        role: 'convener',
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -44,12 +43,35 @@ export default function Convene() {
 
     return (
         <>
-            <div className="banner" style={{ backgroundImage: `url(${water})` }}>
+            <div className="banner" style={{ backgroundImage: `url(${partnership})` }}>
                 <h1 className="about-title">I4WASH Conveners & Co-Designers Packages</h1>
             </div>
+
             <div className="packages-container">
+                {/* Convener Intro Content */}
+                <div className="convener-intro">
+                    <p>
+                        Innovate4WASH is more than an event — it’s a high-stakes ecosystem for impact.
+                        As a convener, you are the architect of a WASH revolution, standing at the nexus where
+                        capital, policy, and groundbreaking innovation converge.
+                    </p>
+                    <p>
+                        Your role with I4WASH is pivotal — you’re not just gathering stakeholders; you’re designing
+                        the platform where sustainable change becomes reality. This is your opportunity to:
+                    </p>
+                    <ul>
+                        <li><strong>Shape the Narrative:</strong> Steer the dialogue and set the direction for Africa’s WASH sector, positioning your leadership at the forefront of this movement.</li>
+                        <li><strong>Enable Collaboration:</strong> Create a trust-filled space where powerful partnerships are forged, investments secured, and transformative solutions take root.</li>
+                        <li><strong>Catalyze Scale:</strong> Connect influential government leaders, entrepreneurs, and financiers to unlock solutions and networks that accelerate strategic impact.</li>
+                    </ul>
+                    <p>
+                        We invite you to lead the charge in building a legacy of resilient communities and a water-secure Africa.
+                        Together, we are not just envisioning change — we are making it happen.
+                    </p>
+                </div>
+
+                {/* Package Cards */}
                 <div className="packages-list i4wash-packages">
-                    <p>Join co-designer calls before the marketplace to define themes and agenda.</p>
                     <h3>Our Packages</h3>
                     <div className="packages-grid">
                         <div className="package-card conveners">
@@ -84,10 +106,13 @@ export default function Convene() {
                         </div>
                     </div>
                 </div>
+
+                {/* Contact Button */}
                 <button className="open-modal-btn" onClick={() => setShowModal(true)}>
                     Contact Us
                 </button>
 
+                {/* Modal */}
                 {showModal && (
                     <div className="modal-overlay">
                         <div className="modal-content">
@@ -134,7 +159,7 @@ export default function Convene() {
                                         value={formData.role}
                                         onChange={handleChange}
                                     >
-                                        <option value="sponsor">Sponsor</option>
+                                        {/*<option value="sponsor">Sponsor</option>*/}
                                         <option value="convener">Convener</option>
                                     </select>
                                 </div>

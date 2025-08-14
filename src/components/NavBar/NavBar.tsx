@@ -1,6 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import './Navbar.css';
+import logoTXT from '../../assets/logo/logo-txt.png';
+import logoIMG from '../../assets/logo/logo-img.png';
 
 export default function Navbar() {
     const location = useLocation();
@@ -9,7 +11,10 @@ export default function Navbar() {
     return (
         <nav className="navbar">
             <div className="navbar-logo">
-                <Link to="/">Logo</Link>
+                <Link to="/">
+                    <img src={logoIMG} style={{ width: '12%', height: '12%' }} />
+                    <img src={logoTXT} style={{ width: '30%', height: '30%' }} />
+                </Link>
             </div>
 
             <ul className="navbar-links">
