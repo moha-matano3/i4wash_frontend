@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './EmailForm.css';
+import { api } from '../../../lib/api';
 
 export default function EmailForm() {
     const navigate = useNavigate();
@@ -22,13 +23,9 @@ export default function EmailForm() {
 
         // Send data to backend endpoint
         try {
-            const response = await fetch('http://www.i4wash.com:8000/api/method/i4wash_app.i4wash.api.sponsor_email.contact_sponsor', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
-            });
+            const response = await api.post('/method/i4wash_app.i4wash.api.sponsor_email.contact_sponsor', formData);
 
-            if (response.ok) {
+            if (response.status === 200) {
                 alert('Email sent successfully!');
                 navigate('/');
             } else {

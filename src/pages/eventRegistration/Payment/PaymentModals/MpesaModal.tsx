@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { api } from '../../../../lib/api';
 
 interface MpesaModalProps {
     phone: string;
@@ -18,18 +19,20 @@ export default function MpesaModal({ phone, amount, onSuccess, onClose }: MpesaM
             setError('');
 
             try {
-                const res = await fetch('http://www.i4wash.com:8000/api/method/i4wash_app.i4wash.api.payment_api.initiate_stk_push', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
+                const res = await api.post(
+                    '/method/i4wash_app.i4wash.api.payment_api.initiate_stk_push',
+                    {
                         phone,
                         amount,
                         account_reference: 'i4wash2025',
                         transaction_desc: 'i4WASH Event Payment',
-                    }),
-                });
+                    },
+                    {
+                        headers: { 'Content-Type': 'application/json' },
+                    }
+                );
 
-                const result = await res.json();
+                const result = await res.data;
 
                 const message = result?.message;
 

@@ -6,6 +6,7 @@ import backBtn from "../../../assets/icons/backBtn.svg";
 import nextBtn from "../../../assets/icons/nextBtn.svg";
 import "./Summary.css"
 import { useEffect, useState } from "react";
+import { api } from '../../../lib/api.ts';
 
 export default function Summary() {
     const { formData } = useRegistration();
@@ -39,24 +40,21 @@ export default function Summary() {
         setModalVisible(true);
 
         try {
-            const res = await fetch('http://www.i4wash.com:8000/api/method/i4wash_app.i4wash.api.registration.create_event_registration', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
+            const res = await api.post(
+                '/method/i4wash_app.i4wash.api.registration.create_event_registration',
+                formData
+            );
 
-            const data = await res.json();
+            const data = res.data; // Axios already parses JSON
 
             if (data.message?.status === 'success') {
-                setMessage('✅ Registration Successful! Your ID is: ' + data.message.registration_id);
+                setMessage(`✅ Registration Successful! Your ID is: ${data.message.registration_id}`);
             } else {
                 setMessage('❌ Something went wrong.');
             }
         } catch (err) {
             if (err instanceof Error) {
-                setMessage('❌ Submission failed: ' + err.message);
+                setMessage(`❌ Submission failed: ${err.message}`);
             } else {
                 setMessage('❌ Submission failed due to an unknown error.');
             }
