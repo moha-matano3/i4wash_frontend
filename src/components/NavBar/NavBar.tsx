@@ -11,9 +11,9 @@ export default function Navbar() {
     return (
         <nav className="navbar">
             <div className="navbar-logo">
-                <Link to="/">
-                    <img src={logoIMG} style={{ width: '12%', height: '12%' }} />
-                    <img src={logoTXT} style={{ width: '30%', height: '30%' }} />
+                <Link to="/" className="logo-link">
+                    <img src={logoIMG} className="logo-img" alt="Logo icon" />
+                    <img src={logoTXT} className="logo-text" alt="Logo text" />
                 </Link>
             </div>
 
