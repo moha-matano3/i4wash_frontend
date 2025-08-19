@@ -15,8 +15,11 @@ FROM nginx:alpine
 # Copy the dist folder to Nginx's default HTML folder
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Expose port 80
-EXPOSE 80
+# Copy a custom Nginx config to change the listening port
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Expose port 8080
+EXPOSE 8080
 
 # Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
