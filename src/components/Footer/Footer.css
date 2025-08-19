@@ -1,4 +1,43 @@
 /* =========================
+   GLOBAL FONT NORMALIZATION
+   ========================= */
+html {
+    font-size: 16px; /* base for rem units */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;       /* 16px */
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1rem, 3vw, 2rem);
+    background-color: #298ea6;
+    color: #fff;
+    font-size: 1rem; /* consistent */
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1rem;
+    transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+    color: #76EADA;
+}
+
+/* =========================
    FOOTER BASE STYLES
    ========================= */
 .footer {
@@ -8,10 +47,13 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    padding: clamp(1rem, 4vw, 2rem);
+    padding: clamp(0.8rem, 2vw, 1.5rem) clamp(1rem, 3vw, 2rem);
+    max-height: 15rem;       /* 240px */
+    height: auto;            /* grow with content */
+    line-height: 1.4;
+    font-size: clamp(0.85rem, 2vw, 0.95rem); /* smaller text */
     backdrop-filter: blur(6px);
     box-shadow: 0 -0.15em 0.4em rgba(0, 0, 0, 0.1);
-    font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
 
 /* =========================
@@ -22,19 +64,18 @@
     flex: 1;
     min-width: clamp(12rem, 40%, 20rem);
     margin-bottom: 1rem;
-    height: 100%;
 }
 
 .footer h4 {
-    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     font-weight: 600;
-    margin-bottom: 0.75em;
+    margin-bottom: 0.5rem;
 }
 
 .footer a {
     color: #fff;
     text-decoration: none;
-    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
@@ -43,19 +84,34 @@
     transform: scale(1.05);
 }
 
-/* Countdown timer alignment */
+/* Countdown timer / right section */
 .footer-section-right {
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
+/* Footer content stick bottom-left */
+.footer-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1.5rem 2.5rem; /* optional spacing from edges */
+    font-size: 2rem;
+    color: #aaa;
+}
+
 .footer-content a {
-    font-size: 0.9rem;
     color: #aaa;
     text-decoration: none;
     transition: color 0.3s ease;
-    margin-bottom: 0;
+}
+
+.footer-content a:hover {
+    color: #76EADA;
+}
+.footer-brand{
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
 }
 
 /* =========================
@@ -68,7 +124,8 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 0.8rem 1rem; /* shorter footer */
+        padding: 0.8rem 1rem;
+        max-height: none; /* allow auto height */
     }
 
     /* Hide left + centre on phones */
@@ -81,13 +138,40 @@
     .footer-section-right {
         justify-content: center;
         width: 100%;
-        margin: 0; /* remove extra space */
+        margin: 0;
     }
 }
 
 /* 💻 Medium screens (769px–1200px) */
 @media (min-width: 48.1em) and (max-width: 75em) {
     .footer {
-        padding: 1.5rem 2rem;
+        padding: clamp(1rem, 2.5vw, 1.5rem) clamp(1rem, 3vw, 2rem);
     }
 }
+
+/* 🖥 Large screens (>1200px) */
+@media (min-width: 75.1em) {
+    .footer {
+        padding: clamp(1rem, 2vw, 2rem);
+    }
+}
+/* Windows-specific tweaks */
+@supports (-ms-ime-align:auto) {
+    html {
+        font-size: 15px; /* slightly smaller base */
+    }
+
+    .navbar {
+        font-size: 0.95rem;
+    }
+
+    .footer {
+        font-size: 0.9rem;
+        padding: clamp(0.65rem, 2vw, 1.4rem) clamp(1rem, 3vw, 2rem);
+    }
+
+    .footer h4 {
+        font-size: clamp(0.85rem, 2vw, 1.1rem);
+    }
+}
+
