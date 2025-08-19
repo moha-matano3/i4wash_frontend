@@ -25,7 +25,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 0%;
+    width: 0;
     height: 3px;
     background: #d4af37;
     transition: width 0.4s ease;
@@ -197,6 +197,32 @@
     box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6), 0 0 15px rgba(212, 175, 55, 0.5);
 }
 
-.banner {
-    /*background-image: url("../../../assets/images/water3.jpg");*/
+/* 📱 Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+    .package-card {
+        width: clamp(14rem, 85vw, 18rem);   /* scales with screen */
+        min-height: clamp(18rem, 60vh, 24rem); /* shorter cards on mobile */
+        padding: 1rem;                      /* reduce padding */
+        text-align: center;                 /* better for narrow screens */
+    }
+
+    .package-card .package-header {
+        font-size: clamp(1rem, 4vw, 1.1rem); /* smaller header */
+        padding: 0.4rem 0.6rem;
+    }
+
+    .package-features {
+        padding-left: 1rem;
+        font-size: clamp(0.8rem, 3.2vw, 0.9rem);
+        line-height: 1.4;
+    }
+
+    .package-features li {
+        margin-bottom: 0.25rem;
+        padding-left: 1.2rem;
+    }
+
+    .package-features li::before {
+        font-size: 0.85rem; /* smaller checkmark */
+    }
 }

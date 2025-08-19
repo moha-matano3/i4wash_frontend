@@ -15,6 +15,11 @@ export default function Footer() {
                 >
                     Download Invitation
                 </a>
+                <div className="footer-content">
+                    <Link to="https://quercus-group.com" target="_blank" rel="noopener noreferrer">
+                        Powered by <span className="footer-brand">Quercus Group</span>
+                    </Link>
+                </div>
             </div>
 
             <div className="footer-section-centre">

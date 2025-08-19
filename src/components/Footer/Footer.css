@@ -8,38 +8,39 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    padding: 1.5rem 2rem;
+    padding: clamp(1rem, 4vw, 2rem);
     backdrop-filter: blur(6px);
-    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -0.15em 0.4em rgba(0, 0, 0, 0.1);
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
 
 /* =========================
    FOOTER SECTIONS
    ========================= */
 .footer-section-left,
-.footer-section-centre,
-.footer-section-right {
+.footer-section-centre {
     flex: 1;
-    min-width: 200px;
+    min-width: clamp(12rem, 40%, 20rem);
     margin-bottom: 1rem;
+    height: 100%;
 }
 
 .footer h4 {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 3vw, 1.2rem);
     font-weight: 600;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.75em;
 }
 
 .footer a {
     color: #fff;
     text-decoration: none;
-    font-size: 0.95rem;
-    transition: color 0.2s ease;
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .footer a:hover {
     color: #76EADA;
-    transform: scale(10%);
+    transform: scale(1.05);
 }
 
 /* Countdown timer alignment */
@@ -49,36 +50,44 @@
     align-items: center;
 }
 
+.footer-content a {
+    font-size: 0.9rem;
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-bottom: 0;
+}
+
 /* =========================
    RESPONSIVENESS
    ========================= */
 
-/* 📱 Mobile */
-@media (max-width: 768px) {
+/* 📱 Mobile (up to 768px) */
+@media (max-width: 48em) {
     .footer {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 1.5rem;
+        padding: 0.8rem 1rem; /* shorter footer */
     }
 
+    /* Hide left + centre on phones */
     .footer-section-left,
-    .footer-section-centre,
-    .footer-section-right {
-        flex: none;
-        width: 100%;
-        margin-bottom: 1.2rem;
-        justify-content: center;
+    .footer-section-centre {
+        display: none;
     }
 
+    /* Only show right section, centered */
     .footer-section-right {
         justify-content: center;
+        width: 100%;
+        margin: 0; /* remove extra space */
     }
 }
 
-/* 💻 Medium screens */
-@media (min-width: 769px) and (max-width: 1200px) {
+/* 💻 Medium screens (769px–1200px) */
+@media (min-width: 48.1em) and (max-width: 75em) {
     .footer {
-        padding: 1.5rem 1.5rem;
+        padding: 1.5rem 2rem;
     }
 }

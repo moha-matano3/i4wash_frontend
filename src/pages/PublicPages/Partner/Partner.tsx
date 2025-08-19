@@ -88,6 +88,7 @@ export default function Partner() {
                                 <li>10 passes</li>
                                 <li>Full-page profile</li>
                                 <li>Input into communiqué</li>
+                                <li>KES: 4,000,000</li>
                             </ul>
                         </div>
 
@@ -103,6 +104,7 @@ export default function Partner() {
                                 <li>7 passes</li>
                                 <li>Half-page profile</li>
                                 <li>Input into communiqué</li>
+                                <li>KES: 3,000,000</li>
                             </ul>
                         </div>
 
@@ -117,6 +119,7 @@ export default function Partner() {
                                 <li>Standard booth</li>
                                 <li>5 passes</li>
                                 <li>Quarter-page profile</li>
+                                <li>KES: 2,000,000</li>
                             </ul>
                         </div>
 
@@ -130,6 +133,7 @@ export default function Partner() {
                                 <li>Standard booth</li>
                                 <li>3 passes</li>
                                 <li>Mention in credits</li>
+                                <li>KES: 1,000,000</li>
                             </ul>
                         </div>
                     </div>
