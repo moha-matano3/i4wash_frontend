@@ -1,0 +1,6 @@
+.partners-section {
+    padding-left: clamp(1rem, 5vw, 85px);
+    padding-right: clamp(1rem, 5vw, 85px);
+    margin: 0 auto;
+    /*max-width: 1200px; !* optional: prevents text from stretching too wide *!*/
+}

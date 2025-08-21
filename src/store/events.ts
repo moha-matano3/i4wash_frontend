@@ -19,19 +19,21 @@ import kampala6 from '../assets/images/Kampala/_MG_5035 copy.jpg';
 import kampala7 from '../assets/images/Kampala/_MG_5263 copy.jpg';
 import kampala8 from '../assets/images/Kampala/_MG_5311 copy.jpg';
 import kampala9 from '../assets/images/Kampala/_MG_5360 copy.jpg';
+import kampala10 from '../assets/images/Kampala/_MG_5319 copy.jpg';
 
 import kisumu1 from '../assets/images/kisumu.jpg';
 // import kisumu2 from '../assets/images/crane.jpg';
 
 import malindi1 from '../assets/images/Malindi.jpg';
 import malindi2 from '../assets/images/Malindi/2J5A1470.jpg';
-import malindi3 from '../assets/images/Malindi/2J5A1575.jpg';
+import malindi3 from '../assets/images/Malindi/2J5A1496.jpg';
 import malindi4 from '../assets/images/Malindi/2J5A1575.jpg';
-import malindi5 from '../assets/images/Malindi/2J5A1750.jpg';
-import malindi6 from '../assets/images/Malindi/2J5A1989.jpg';
-import malindi7 from '../assets/images/Malindi/2J5A2009.jpg';
-import malindi8 from '../assets/images/Malindi/2J5A2063.jpg';
-import malindi9 from '../assets/images/Malindi/2J5A2072.jpg';
+import malindi5 from '../assets/images/Malindi/2J5A1575.jpg';
+import malindi6 from '../assets/images/Malindi/2J5A1750.jpg';
+import malindi7 from '../assets/images/Malindi/2J5A1989.jpg';
+import malindi8 from '../assets/images/Malindi/2J5A2009.jpg';
+import malindi9 from '../assets/images/Malindi/2J5A2063.jpg';
+import malindi10 from '../assets/images/Malindi/2J5A2072.jpg';
 
 export interface ForumImage {
     src: string;
@@ -79,7 +81,7 @@ export const events: Record<string, ForumEvent> = {
         title: 'I4WASH Kampala',
         year: 2023,
         theme: 'Accelerating Financing of Climate SMART WASH solutions',
-        description: `I4WASH Kampala 2023 focused on bridging the financing gap for climate-smart WASH solutions across Eastern Africa. The forum created space for collaboration between governments, innovators, and financiers to drive sustainable water management. The event served as a hub to present policies, funding mechanisms, and interventions aimed at scaling impactful WASH solutions.`,
+        description: `I4WASH Kampala 2023 focused on bridging the financing gap for climate-smart WASH solutions across Eastern Africa. The forum created space for collaboration between governments, innovators, and financiers to drive sustainable water management. The event served as a hub to present policies, funding mechanisms, and interventions aimed at scaling impactful WASH solutions. We partnered with Water and Sanitation Entreprenuers Association Uganda (WASEU), SARDA and QUERCUS Group.`,
         highlights: [
             'Understood government policies and programs promoting sustainable water management',
             'Highlighted innovative water and sanitation solutions in Eastern Africa and their value',
@@ -104,6 +106,7 @@ export const events: Record<string, ForumEvent> = {
             { src: kampala7, caption: "" },
             { src: kampala8, caption: "" },
             { src: kampala9, caption: "" },
+            { src: kampala10, caption: "" }
         ],
         banner: craneBanner,
     },
@@ -131,7 +134,7 @@ export const events: Record<string, ForumEvent> = {
     'Malindi2022': {
         title: 'I4WASH Malindi',
         year: 2022,
-        theme: 'Achieving SDG 6 in a Changing Climate',
+        theme: 'A WASH Marketplace forum for accelerating sustainable solutions and innovative finance for WASH',
         description: `The 2022 Forum in Malindi highlighted the pivotal role of the private sector in ensuring water security amid climate challenges. The event brought together stakeholders to build trust, encourage dialogue, and enhance capacities that drive the adoption of climate-resilient innovations in the WASH sector. Participants collaborated to promote scalable business models and innovative technologies focused on water reuse, climate adaptation, and sustainable employment opportunities.`,
         highlights: [
             'Demonstrated the private sector’s impact on advancing water security and innovation',
@@ -151,6 +154,7 @@ export const events: Record<string, ForumEvent> = {
             { src: malindi7, caption: "" },
             { src: malindi8, caption: "" },
             { src: malindi9, caption: "" },
+            { src: malindi10, caption: "" },
 
         ],
         banner: malindi1,

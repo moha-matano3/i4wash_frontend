@@ -29,6 +29,10 @@ export default function AboutI4WASH() {
                         those at the last mile.
                     </p>
 
+                    <p className="closing-quote">
+                        "Scaling Resilient WASH Solutions: Advancing Sustainable Market-Based Solutions for a Changing Climate in Kenya."
+                    </p>
+
                     <h2 className="about-subtitle">Our Mission</h2>
                     <p>
                         I4WASH exists to bridge bold ideas with bold action. Our mission is to support the design,

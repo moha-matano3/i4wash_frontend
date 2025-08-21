@@ -5,12 +5,13 @@
     width: 100%;
     display: flex;
     gap: clamp(0.5rem, 3vw, 1.5rem); /* scales between small & large screens */
-    padding: clamp(1rem, 4vw, 2rem);
+    padding: clamp(0.5rem, 2vw, 1rem);
     border-radius: 1.25rem;
     backdrop-filter: blur(10px);
     align-items: center;
     justify-content: center;
     flex-wrap: nowrap; /* always horizontal */
+    max-height: 80%;
 }
 
 /* =========================
@@ -28,7 +29,7 @@
    ========================= */
 .flip-card {
     width: clamp(3.5rem, 12vw, 5rem);   /* was 80px */
-    height: clamp(4.5rem, 15vw, 6.25rem); /* was 100px */
+    /*height: clamp(4.5rem, 15vw, 6.25rem); !* was 100px *!*/
     border-radius: 0.75rem;
     color: #fff;
     font-size: clamp(1.5rem, 6vw, 2.5rem); /* scales text */
@@ -36,7 +37,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 1px #76EADA, 0 0 6px #76EADA;
+    box-shadow: 0 0 1px #fff, 0 0 5px #fff;
     transition: all 0.3s ease;
 }
 
@@ -50,7 +51,7 @@
 .separator {
     font-size: clamp(1.5rem, 8vw, 3rem); /* was 3rem fixed */
     color: #76EADA;
-    text-shadow: 0 0 8px #76EADA, 0 0 16px #76EADA;
+    text-shadow: 0 0 8px #fff, 0 0 16px #fff;
     margin-top: 0.5rem;
     user-select: none;
     position: absolute;
@@ -62,10 +63,10 @@
    LABEL
    ========================= */
 .label {
-    color: #76EADA;
+    color: #fff;
     margin-top: 0.5rem;
     font-size: clamp(0.75rem, 2.5vw, 1rem); /* scales down on phone */
-    text-shadow: 0 0 5px #76EADA;
+    /*text-shadow: 0 0 5px #76EADA;*/
     user-select: none;
 }
 

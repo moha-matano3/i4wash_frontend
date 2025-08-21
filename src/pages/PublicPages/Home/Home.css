@@ -1,42 +1,95 @@
 /* =========================
+   GLOBAL LAYOUT
+   ========================= */
+html, body {
+    height: 100%;
+    margin: 0;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
    CONTAINER LAYOUT
    ========================= */
 .container {
-    flex: 1; /* Take up remaining vertical space between navbar and footer */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    max-width: clamp(60rem, 80%, 120rem); /* responsive container width */
+    justify-content: center;       /* vertical centering inside section */
+    align-items: flex-start;       /* left-aligned text */
+    /*max-width: clamp(60rem, 80%, 120rem); !* responsive width *!*/
     margin: 0 auto;
-    min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
+    height: 100%;                  /* fill parent section */
     box-sizing: border-box;
+    padding: 10rem;
+}
+
+/* =========================
+   SECTION LAYOUT
+   ========================= */
+.section {
+    width: 100%;
+    height: 100vh;                 /* full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;       /* vertical alignment */
+    align-items: flex-start;       /* horizontal alignment */
+    padding: 5rem;
+    box-sizing: border-box;
+    scroll-snap-align: start;      /* snap to top */
+}
+
+/* =========================
+   SECTION BACKGROUNDS
+   ========================= */
+.hero {
+    color: #fff;
+    height: 100vh;
+    justify-content: flex-start;
+
+}
+
+.about {
+    background-color: #f5f5f5;
+    color: #242424;
+}
+
+.speakers {
+    background-color: #e0e0e0;
+    color: #242424;
+}
+
+.contact {
+    background-color: #242424;
+    color: #fff;
 }
 
 /* =========================
    TEXT STYLES
    ========================= */
 .subheader {
-    font-size: clamp(1rem, 1.5vw, 1.3rem); /* responsive scaling */
-    margin-bottom: 0.5em;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    color: #ffffff;
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem); /* smaller tagline */
+    margin-bottom: 0.75em;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: inherit;
 }
 
 .main-header {
-    font-size: clamp(1.8rem, 4vw, 3.2rem); /* scales with screen size */
-    margin: 0 0 1em;
-    font-weight: 700;
-    line-height: 1.2;
+    font-size: clamp(2.2rem, 5vw, 4rem); /* big and bold */
+    margin: 0 0 0.6em;
+    font-weight: 800;
+    line-height: 1.15;
 }
 
 .description {
-    font-size: clamp(0.95rem, 1.6vw, 1.2rem);
-    line-height: 1.6;
-    max-width: 65ch; /* readable text width */
-    margin-bottom: 3em;
+    font-size: clamp(1rem, 1.4vw, 1.3rem); /* balanced paragraph size */
+    line-height: 1.65;
+    max-width: 75ch; /* wider for better readability */
+    margin-bottom: 2em;
 }
+
 
 /* =========================
    EXPLORE BUTTON
@@ -45,7 +98,7 @@
     background: none;
     border: none;
     padding: 0;
-    width: clamp(14rem, 22vw, 20rem); /* bigger responsive button width */
+    width: clamp(18rem, 30vw, 26rem);
     height: auto;
     cursor: pointer;
     display: inline-block;
@@ -60,7 +113,7 @@
    RESPONSIVENESS
    ========================= */
 
-/* 📱 Mobile (<768px) */
+/* Mobile (<768px) */
 @media (max-width: 48em) {
     .container {
         align-items: center;
@@ -84,24 +137,29 @@
         width: 70%;
         max-width: 16rem;
     }
-}
 
-/* 💻 Medium screens (768px–1200px) */
-@media (min-width: 48em) and (max-width: 75em) {
+    .section {
+        justify-content: flex-start;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+/* Medium to Large screens (768px–1920px) */
+@media (min-width: 48em) and (max-width: 120em) {
     .main-header {
-        font-size: clamp(2rem, 3vw, 2.5rem);
+        font-size: clamp(2rem, 2.5vw, 3rem);
     }
 
     .subheader {
-        font-size: clamp(1.1rem, 2vw, 1.3rem);
+        font-size: clamp(1.1rem, 1.5vw, 1.6rem);
     }
 
     .description {
-        max-width: 65ch;
+        max-width: 50ch; /* keeps it readable on wide screens */
     }
 }
 
-/* 🖥️ Large screens (1201px and above) */
+/* Large screens (>1200px) */
 @media (min-width: 75em) {
     .main-header {
         font-size: clamp(2.8rem, 3.5vw, 4rem);
@@ -116,4 +174,3 @@
         font-size: clamp(1.1rem, 1.5vw, 1.4rem);
     }
 }
-
