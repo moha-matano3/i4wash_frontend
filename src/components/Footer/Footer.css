@@ -21,7 +21,6 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1rem, 3vw, 2rem);
-    background-color: #298ea6;
     color: #fff;
     font-size: 1rem; /* consistent */
 }
@@ -37,23 +36,30 @@ body {
     color: #76EADA;
 }
 
+
 /* =========================
    FOOTER BASE STYLES
    ========================= */
 .footer {
-    background-color: rgba(41, 142, 166, 0.7);
+    background-color: rgba(41, 142, 166, 0.3);
     color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    padding: clamp(0.8rem, 2vw, 1.5rem) clamp(1rem, 3vw, 2rem);
-    max-height: 15rem;       /* 240px */
-    height: auto;            /* grow with content */
-    line-height: 1.4;
-    font-size: clamp(0.85rem, 2vw, 0.95rem); /* smaller text */
+    gap: 1rem; /* spacing between items */
+
+    padding: 0 clamp(0.5rem, 1.5vw, 1rem) clamp(0.4rem, 1vw, 0.75rem) clamp(0.5rem, 1.5vw, 1rem);
+    width: 100%;
+    max-width: 100vw;
+
+    height: auto; /* footer grows naturally */
+    max-height: 12rem;
+    font-size: clamp(0.8rem, 1.8vw, 1rem);
+
     backdrop-filter: blur(6px);
     box-shadow: 0 -0.15em 0.4em rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* prevent padding issues */
 }
 
 /* =========================
@@ -61,9 +67,11 @@ body {
    ========================= */
 .footer-section-left,
 .footer-section-centre {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
     min-width: clamp(12rem, 40%, 20rem);
-    margin-bottom: 1rem;
+    margin-top: 0;
+
 }
 
 .footer h4 {
@@ -83,7 +91,11 @@ body {
     color: #76EADA;
     transform: scale(1.05);
 }
-
+.qg-logo{
+    height: 1.5rem;
+    padding: 0;
+    margin: 0;
+}
 /* Countdown timer / right section */
 .footer-section-right {
     display: flex;
@@ -93,10 +105,7 @@ body {
 
 /* Footer content stick bottom-left */
 .footer-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 1.5rem 2.5rem; /* optional spacing from edges */
+    padding: 1rem 0.5rem; /* optional spacing from edges */
     font-size: 2rem;
     color: #aaa;
 }
@@ -111,7 +120,7 @@ body {
     color: #76EADA;
 }
 .footer-brand{
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-size: clamp(0.4rem, 1vw, 0.6rem);
 }
 
 /* =========================
@@ -167,7 +176,7 @@ body {
 
     .footer {
         font-size: 0.9rem;
-        padding: clamp(0.65rem, 2vw, 1.4rem) clamp(1rem, 3vw, 2rem);
+        /*padding: clamp(0.65rem, 2vw, 1.4rem) clamp(1rem, 3vw, 2rem);*/
     }
 
     .footer h4 {

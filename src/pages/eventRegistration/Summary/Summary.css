@@ -6,13 +6,13 @@
 
 .summary-section {
     flex: 1 1 22%; /* Four equal columns with some room to shrink */
-    min-width:  15rem; /* So it doesn’t get too narrow on small screens */
+    /*min-width:  15rem; !* So it doesn’t get too narrow on small screens *!*/
     padding: 1.5rem;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    min-height: 37.5rem; /* consistent height */
+    min-height: 25rem; /* consistent height */
     background-color: #1B4452;
 }
 

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Partner.css';
-import partnership from "../../../assets/images/partnership.jpg";
+import partnership from "../../../assets/images/partner.jpg";
 
 export default function Partner() {
     const navigate = useNavigate();
@@ -44,33 +44,71 @@ export default function Partner() {
     return (
         <>
             <div className="banner" style={{ backgroundImage: `url(${partnership})` }}>
-                <h1 className="about-title">I4WASH Sponsorship & Partnership</h1>
+                <h1 className="about-title">Sponsorship & Partnership</h1>
             </div>
 
             <div className="packages-container">
-                {/* Sponsors Content */}
-                <p>
-                    The forum fully depends on supporters from larger organizations driven by promoting and developing
-                    the WASH sector to the benefit of local communities – or corporates or financiers who have done well
-                    and want to give back or invest in the next generation of WASH adventures.
-                </p>
                 {/* Partners Content */}
                 <div className="partners-section">
-                    <h3>Why Partner with I4WASH?</h3>
+                    <p>
+                        The forum fully depends on supporters from larger organizations driven by promoting and
+                        developing
+                        the WASH sector to the benefit of local communities – or corporates or financiers who have done
+                        well
+                        and want to give back or invest in the next generation of WASH adventures.
+                    </p>
+                    <h2>Why Partner with I4WASH?</h2>
                     <p>
                         Innovate4WASH is more than an event — it’s a high-stakes ecosystem for impact.
                         As a partner, you stand at the point where vision meets execution, where your investment
                         fuels the WASH revolution across Africa.
                     </p>
                     <ul>
-                        <li><strong>Shape the Narrative:</strong> Influence the dialogue and future direction of Africa’s WASH sector, elevating your organization as a sector leader.</li>
-                        <li><strong>Unlock Deal-Making:</strong> Access a curated environment built for forging powerful partnerships, securing investments, and driving the commercialization of impactful innovations.</li>
-                        <li><strong>Amplify Your Impact:</strong> Engage directly with decision-makers, innovators, and financiers, gaining unparalleled access to the people and solutions that will help you achieve your strategic goals.</li>
+                        <li><strong>Shape the Narrative:</strong> Influence the dialogue and future direction of
+                            Africa’s WASH sector, elevating your organization as a sector leader.
+                        </li>
+                        <li><strong>Unlock Deal-Making:</strong> Access a curated environment built for forging powerful
+                            partnerships, securing investments, and driving the commercialization of impactful
+                            innovations.
+                        </li>
+                        <li><strong>Amplify Your Impact:</strong> Engage directly with decision-makers, innovators, and
+                            financiers, gaining unparalleled access to the people and solutions that will help you
+                            achieve your strategic goals.
+                        </li>
                     </ul>
                     <p>
                         Join us in building a legacy of resilient communities and a water-secure Africa.
                         Together, we’re not just supporting change — we’re making it happen.
                     </p>
+                    <h2>What Your Sponsorship Supports</h2>
+                    <p>Your support allows us to organize the Innovate4WASH marketplace forum and thereby:</p>
+
+                    <div className="sponsorship-grid">
+                        <div className="sponsorship-block">
+                            <h3>Sponsorship Impact</h3>
+                            <ul>
+                                <li>Enables innovators, enablers and financiers in East Africa’s WASH sector to come
+                                    together
+                                </li>
+                                <li>Increases discovery of innovative solutions, finance, and potential partnerships
+                                </li>
+                                <li>Surfaces business opportunities, synergies, and collaborations</li>
+                                <li>Supports a portfolio of impactful interventions for East Africa’s WASH sector</li>
+                            </ul>
+                        </div>
+
+                        <div className="sponsorship-block">
+                            <h3>Forum Outcomes</h3>
+                            <ul>
+                                <li>Understand government policies and programmes for sustainable water management</li>
+                                <li>Showcase innovations in the Eastern African market and their value</li>
+                                <li>Facilitate capital seekers and providers to connect</li>
+                                <li>Provide insights into financing sources and requirements for WASH initiatives</li>
+                                <li>Showcase intervention areas beyond financing</li>
+                                <li>Create partnerships for sustainable water and sanitation management</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="packages-list sponsors-packages">
@@ -84,6 +122,7 @@ export default function Partner() {
                                 <li>Logo prime position</li>
                                 <li>Keynote/plenary speaking</li>
                                 <li>4 banners</li>
+                                <li>1 Panel discussion.</li>
                                 <li>Premium booth</li>
                                 <li>10 passes</li>
                                 <li>Full-page profile</li>
@@ -100,6 +139,7 @@ export default function Partner() {
                                 <li>Prominent logo</li>
                                 <li>Technical session speaking</li>
                                 <li>3 banners</li>
+                                <li>1 Panel discussion.</li>
                                 <li>Standard booth</li>
                                 <li>7 passes</li>
                                 <li>Half-page profile</li>
@@ -116,6 +156,7 @@ export default function Partner() {
                                 <li>Standard logo</li>
                                 <li>Panelist speaking</li>
                                 <li>2 banners</li>
+                                <li>1 Panel discussion.</li>
                                 <li>Standard booth</li>
                                 <li>5 passes</li>
                                 <li>Quarter-page profile</li>
@@ -130,6 +171,7 @@ export default function Partner() {
                             <ul className="package-features">
                                 <li>Basic logo</li>
                                 <li>1 banner</li>
+                                <li>1 Panel discussion.</li>
                                 <li>Standard booth</li>
                                 <li>3 passes</li>
                                 <li>Mention in credits</li>

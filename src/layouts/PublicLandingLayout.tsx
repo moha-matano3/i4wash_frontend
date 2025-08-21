@@ -48,8 +48,7 @@ export default function PublicLandingLayout() {
                 <main style={{
                     flex: 1,
                     overflowY: 'auto',
-                    padding: '2rem',
-                    paddingTop: '4rem', // adjust to navbar height
+                    padding: '1rem clamp(1rem, 2vw, 2rem)',
                     color: '#fff',
                 }}>
                     <Outlet />

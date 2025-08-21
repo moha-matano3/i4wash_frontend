@@ -44,7 +44,7 @@ export default function Convene() {
     return (
         <>
             <div className="banner" style={{ backgroundImage: `url(${partnership})` }}>
-                <h1 className="about-title">I4WASH Conveners & Co-Designers Packages</h1>
+                <h1 className="about-title">Convener Packages</h1>
             </div>
 
             <div className="packages-container">
@@ -79,12 +79,12 @@ export default function Convene() {
                                 <h4>Convenor</h4>
                             </div>
                             <ul className="package-features">
-                                <li>Closed door meetings with co-designers.</li>
-                                <li>Mapping of local stakeholders before the forum.</li>
-                                <li>Post-forum report.</li>
-                                <li>Marketplace access and refreshments.</li>
+                                <li>20 Minutes conevener session</li>
+                                <li>3 tickets marketplace access and refreshments.</li>
+                                <li>1 Exhibition booth.</li>
                                 <li>High-level speaking opportunities.</li>
-                                <li>Exhibition booth.</li>
+                                <li>1 Panel discussion.</li>
+                                <li>Additional participants at a discounted rate of 15%</li>
                                 <li>Marketing through booklet and wide communication.</li>
                                 <li>Financial support in KES: 500,000.</li>
                             </ul>
@@ -92,14 +92,13 @@ export default function Convene() {
 
                         <div className="package-card co-design">
                             <div className="package-header">
-                                <h4>Co-design</h4>
+                                <h4>Convenor</h4>
                             </div>
                             <ul className="package-features">
-                                <li>Closed door meetings with co-designers.</li>
-                                <li>Mapping of local stakeholders before the forum.</li>
-                                <li>Post-forum report.</li>
-                                <li>Marketplace access and refreshments.</li>
-                                <li>Exhibition booth.</li>
+                                <li>10 Minutes conevener session</li>
+                                <li>2 tickets for marketplace access and refreshments.</li>
+                                <li>1 Exhibition booth</li>
+                                <li>Additional participants at a discounted rate of 10%</li>
                                 <li>Marketing through booklet and wide communication.</li>
                                 <li>Financial support in KES: 300,000.</li>
                             </ul>

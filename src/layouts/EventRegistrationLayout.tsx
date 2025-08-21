@@ -22,7 +22,7 @@ export default function EventRegistrationLayout() {
                 style={{
                     height: '80%',
                     width: '80%',
-                    background: 'rgba(27, 68, 82, 0.6)',
+                    background: 'rgba(27, 68, 82, 0.9)',
                     borderRadius: '1rem',
                     padding: '2rem',
                 }}
