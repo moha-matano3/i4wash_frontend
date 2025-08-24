@@ -52,11 +52,12 @@ html, body {
 
 .contact {
     background-color: #ffffff;
+    padding: 2rem;
 }
 .head {
     position: relative;
     display: inline-block;
-    padding-bottom: 2rem;
+    /*padding-bottom: 2rem;*/
     font-size: 1.8rem;
     font-weight: 700;
     color: #222;
@@ -71,6 +72,10 @@ html, body {
     height: 3px;
     background: #d4af37;
     transition: width 0.4s ease;
+}
+
+.head:hover::after {
+    width: 100%;
 }
 
 /* =========================
