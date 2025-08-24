@@ -30,7 +30,7 @@ export default function AboutI4WASH() {
                     </p>
 
                     <p className="closing-quote">
-                        "Scaling Resilient WASH Solutions: Advancing Sustainable Market-Based Solutions for a Changing Climate in Kenya."
+                        “The world needs more coordination, collaboration and communication. Silo thinking and silo-organization is too prevalent. Knowledge gaps prevent funding from reaching solutions, and solutions from reaching the problems they can solve”
                     </p>
 
                     <h2 className="about-subtitle">Our Mission</h2>
@@ -61,7 +61,9 @@ export default function AboutI4WASH() {
                     </p>
 
                     <div className="about-cta">
-                        <h2>Join the Movement</h2>
+                        <a href="/register/step1">
+                            <h2>Join the Movement</h2>
+                        </a>
                         <p>
                             I4WASH is where Africa’s WASH future is being imagined, built, and accelerated.
                             Whether you're a policymaker, startup, donor, NGO, SME, financial institution, or

@@ -29,7 +29,7 @@ export default function Booth() {
 
         setFormData({
             exhibitionBoothNeeded: needsBooth,
-            exhibitionBoothCount: needsBooth ? boothCount : 0,
+            exhibitionBoothCount: needsBooth ? boothCount : 1,
         });
 
         navigate('/register/step5');

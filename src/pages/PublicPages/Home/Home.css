@@ -18,7 +18,7 @@ html, body {
     flex-direction: column;
     justify-content: center;       /* vertical centering inside section */
     align-items: flex-start;       /* left-aligned text */
-    /*max-width: clamp(60rem, 80%, 120rem); !* responsive width *!*/
+    max-width: clamp(60rem, 80%, 120rem); /* responsive width */
     margin: 0 auto;
     height: 100%;                  /* fill parent section */
     box-sizing: border-box;
@@ -50,19 +50,27 @@ html, body {
 
 }
 
-.about {
-    background-color: #f5f5f5;
-    color: #242424;
-}
-
-.speakers {
-    background-color: #e0e0e0;
-    color: #242424;
-}
-
 .contact {
-    background-color: #242424;
-    color: #fff;
+    background-color: #ffffff;
+}
+.head {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.head::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #d4af37;
+    transition: width 0.4s ease;
 }
 
 /* =========================
@@ -146,18 +154,48 @@ html, body {
 }
 /* Medium to Large screens (768px–1920px) */
 @media (min-width: 48em) and (max-width: 120em) {
-    .main-header {
-        font-size: clamp(2rem, 2.5vw, 3rem);
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;       /* vertical centering inside section */
+        align-items: flex-start;       /* left-aligned text */
+        /*max-width: clamp(60rem, 80%, 120rem); !* responsive width *!*/
+        margin: 0 auto;
+        height: 100%;                  /* fill parent section */
+        box-sizing: border-box;
+        padding: 1rem;
     }
 
+    .main-header {
+        font-size: clamp(0.25rem, 0.375vw, 0.5rem); /* 50% smaller */
+        margin-bottom: 0.25rem;
+        /* If you need side padding, set it explicitly */
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        padding-top: 0;
+    }
     .subheader {
-        font-size: clamp(1.1rem, 1.5vw, 1.6rem);
+        font-size: clamp(0.275rem, 0.3125vw, 0.375rem); /* 50% smaller again */
+        margin-bottom: 0.2rem;
+        padding: 0.05rem 0;
     }
 
     .description {
-        max-width: 50ch; /* keeps it readable on wide screens */
+        font-size: clamp(0.125rem, 0.15625vw, 0.1875rem);
+        /* 50% smaller again */
+        margin-bottom: 0.175rem;
+        padding: 0.05rem 0;
+        line-height: 1.3; /* tighter spacing */
+
     }
 }
+
+/* Global fix for zoom scaling */
+body {
+    max-width: 100%;
+    overflow-x: hidden;   /* kill horizontal scroll caused by zoom */
+}
+
 
 /* Large screens (>1200px) */
 @media (min-width: 75em) {

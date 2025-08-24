@@ -223,102 +223,104 @@ export default function Attendees() {
                 <img src={flowSVG} alt="" style={{ width: '100%', height: 'auto' }} />
             </div>
             <form onSubmit={handleSubmit} className="form-body">
-
-                {/* Question: Are you coming with attendees? */}
-                <div className="form-question">
-                    <label>Are you coming with attendees?</label>
-                    <div>
-                        <label>
-                            <input
-                                type="radio"
-                                name="hasAttendees"
-                                value="yes"
-                                checked={hasAttendees === true}
-                                onChange={() => setHasAttendees(true)}
-                            /> Yes
-                        </label>
-                        <label style={{ marginLeft: '1rem' }}>
-                            <input
-                                type="radio"
-                                name="hasAttendees"
-                                value="no"
-                                checked={hasAttendees === false}
-                                onChange={() => setHasAttendees(false)}
-                            /> No
-                        </label>
-                    </div>
-                </div>
-
-                {hasAttendees && (
-                    <div className="form">
-                        {/* Controls */}
-                        <div className="form-attsection-left">
-                            <div className="addBtnSection">
-                                <button type="button" onClick={addAttendee}>
-                                    <img src={addBtn} alt="" style={{ width: '100%', height: '100%' }} />
-                                </button>
-                                <span>Add Attendees</span>
+                <div className="form">
+                    {/* Left Section: Question */}
+                    <div className="form-attsection-left">
+                        <div className="form-question">
+                            <label>Are you coming with attendees?</label>
+                            <div>
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="hasAttendees"
+                                        value="yes"
+                                        checked={hasAttendees === true}
+                                        onChange={() => setHasAttendees(true)}
+                                    /> Yes
+                                </label>
+                                <label style={{ marginLeft: '1rem' }}>
+                                    <input
+                                        type="radio"
+                                        name="hasAttendees"
+                                        value="no"
+                                        checked={hasAttendees === false}
+                                        onChange={() => setHasAttendees(false)}
+                                    /> No
+                                </label>
                             </div>
                         </div>
-                        <div className="form-attsection-right">
-                            {attendees.map((attendee, index) => (
-                                <div key={index} className="form-attendee-group">
-                                    <div className="form-input">
-                                        <input
-                                            className="form-field"
-                                            type="text"
-                                            placeholder="Full Name"
-                                            value={attendee.fullName}
-                                            onChange={(e) => handleChange(index, 'fullName', e.target.value)}
-                                            required
-                                        />
-                                    </div>
-
-                                    <div className="form-input">
-                                        <input
-                                            className="form-field"
-                                            type="email"
-                                            placeholder="Email"
-                                            value={attendee.email}
-                                            onChange={(e) => handleChange(index, 'email', e.target.value)}
-                                            required
-                                        />
-                                    </div>
-
-                                    <div className="form-input">
-                                        <PhoneInput
-                                            country={'ke'}
-                                            value={attendee.attendeePhone}
-                                            onChange={(phone) => handlePhoneChange(phone, index)}
-                                            inputClass="form-field"
-                                            placeholder="Phone Number"
-                                            inputStyle={{ width: '100%', height: '100%' }}
-                                        />
-                                    </div>
-
-                                    <div className="form-input">
-                                        <input
-                                            className="form-field"
-                                            type="text"
-                                            placeholder="Organization"
-                                            value={attendee.attendeeOrganization}
-                                            onChange={(e) => handleChange(index, 'attendeeOrganization', e.target.value)}
-                                            required
-                                        />
-                                    </div>
-
-                                    <button
-                                        type="button"
-                                        onClick={() => removeAttendee(index)}
-                                        disabled={attendees.length === 1}
-                                    >
-                                        <img src={removeBtn} alt="" style={{ width: '50%', height: '50%' }} />
-                                    </button>
-                                </div>
-                            ))}
-                        </div>
                     </div>
-                )}
+
+                    {/* Right Section: Attendee Form (only if yes) */}
+                    <div className="form-attsection-right">
+                        {hasAttendees && (
+                            <>
+                                <div className="addBtnSection">
+                                    <button type="button" onClick={addAttendee}>
+                                        <img src={addBtn} alt="" style={{ width: '100%', height: '100%' }} />
+                                    </button>
+                                    <span>Add Attendees</span>
+                                </div>
+
+                                {attendees.map((attendee, index) => (
+                                    <div key={index} className="form-attendee-group">
+                                        <div className="form-input">
+                                            <input
+                                                className="form-field"
+                                                type="text"
+                                                placeholder="Full Name"
+                                                value={attendee.fullName}
+                                                onChange={(e) => handleChange(index, 'fullName', e.target.value)}
+                                                required
+                                            />
+                                        </div>
+
+                                        <div className="form-input">
+                                            <input
+                                                className="form-field"
+                                                type="email"
+                                                placeholder="Email"
+                                                value={attendee.email}
+                                                onChange={(e) => handleChange(index, 'email', e.target.value)}
+                                                required
+                                            />
+                                        </div>
+
+                                        <div className="form-input">
+                                            <PhoneInput
+                                                country={'ke'}
+                                                value={attendee.attendeePhone}
+                                                onChange={(phone) => handlePhoneChange(phone, index)}
+                                                inputClass="form-field"
+                                                placeholder="Phone Number"
+                                                inputStyle={{ width: '100%', height: '100%' }}
+                                            />
+                                        </div>
+
+                                        <div className="form-input">
+                                            <input
+                                                className="form-field"
+                                                type="text"
+                                                placeholder="Organization"
+                                                value={attendee.attendeeOrganization}
+                                                onChange={(e) => handleChange(index, 'attendeeOrganization', e.target.value)}
+                                                required
+                                            />
+                                        </div>
+
+                                        <button
+                                            type="button"
+                                            onClick={() => removeAttendee(index)}
+                                            disabled={attendees.length === 1}
+                                        >
+                                            <img src={removeBtn} alt="" style={{ width: '50%', height: '50%' }} />
+                                        </button>
+                                    </div>
+                                ))}
+                            </>
+                        )}
+                    </div>
+                </div>
 
                 {/* Navigation Buttons */}
                 <div className="form-buttons">

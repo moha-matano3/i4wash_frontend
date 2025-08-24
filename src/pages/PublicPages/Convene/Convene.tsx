@@ -22,7 +22,7 @@ export default function Convene() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://www.i4wash.com:8000/api/method/i4wash_app.i4wash.api.sponsor_email.contact_sponsor', {
+            const response = await fetch('https://api.i4wash.com/api/method/i4wash_app.i4wash.api.sponsor_email.contact_sponsor', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
@@ -80,7 +80,7 @@ export default function Convene() {
                             </div>
                             <ul className="package-features">
                                 <li>20 Minutes conevener session</li>
-                                <li>3 tickets marketplace access and refreshments.</li>
+                                <li>3 tickets marketplace for access and refreshments.</li>
                                 <li>1 Exhibition booth.</li>
                                 <li>High-level speaking opportunities.</li>
                                 <li>1 Panel discussion.</li>

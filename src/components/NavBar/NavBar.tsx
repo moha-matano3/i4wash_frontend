@@ -51,10 +51,10 @@ export default function Navbar() {
                     Forums ▾
                     {showForumsDropdown && (
                         <ul className="dropdown-menu">
-                            <li><Link to="/forum/Kisumu2024" onClick={() => setMenuOpen(false)}>I4WASH Kisumu</Link></li>
-                            <li><Link to="/forum/Nakuru2023" onClick={() => setMenuOpen(false)}>I4WASH Nakuru</Link></li>
-                            <li><Link to="/forum/Kampala2023" onClick={() => setMenuOpen(false)}>I4WASH Kampala</Link></li>
-                            <li><Link to="/forum/Malindi2022" onClick={() => setMenuOpen(false)}>I4WASH Malindi</Link></li>
+                            <li><Link to="/forum/Kisumu2024" onClick={() => setMenuOpen(false)}>2024 I4WASH Kisumu</Link></li>
+                            <li><Link to="/forum/Nakuru2023" onClick={() => setMenuOpen(false)}>2023 I4WASH Nakuru</Link></li>
+                            <li><Link to="/forum/Kampala2023" onClick={() => setMenuOpen(false)}>2023 I4WASH Kampala</Link></li>
+                            <li><Link to="/forum/Malindi2022" onClick={() => setMenuOpen(false)}>2022 I4WASH Malindi</Link></li>
                         </ul>
                     )}
                 </li>

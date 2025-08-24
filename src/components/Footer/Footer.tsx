@@ -16,6 +16,13 @@ export default function Footer() {
                     >
                         Download Invitation
                     </a>
+                <a
+                    href={Invitation}
+                    download="invitation.pdf"
+                    rel="noopener noreferrer"
+                >
+                    Download Logistic note
+                </a>
             </div>
 
             <div className="footer-section-centre">

@@ -10,30 +10,56 @@ import nakuru7 from '../assets/images/Nakuru/Naivasha_panel.jpg'
 import nakuru8 from '../assets/images/Nakuru/Naivasha_lorentz_booth.jpg'
 
 
-import kampala1 from '../assets/images/Kampala/_MG_5315 copy.jpg';
-import kampala2 from '../assets/images/Kampala/_MG_4612 copy.jpg';
-import kampala3 from '../assets/images/Kampala/_MG_4616 copy.jpg';
-import kampala4 from '../assets/images/Kampala/_MG_4580 copy.jpg';
-import kampala5 from '../assets/images/Kampala/_MG_5034 copy.jpg';
-import kampala6 from '../assets/images/Kampala/_MG_5035 copy.jpg';
-import kampala7 from '../assets/images/Kampala/_MG_5263 copy.jpg';
-import kampala8 from '../assets/images/Kampala/_MG_5311 copy.jpg';
-import kampala9 from '../assets/images/Kampala/_MG_5360 copy.jpg';
-import kampala10 from '../assets/images/Kampala/_MG_5319 copy.jpg';
+import kampala1 from '../assets/images/Kampala/_MG_4554 copy.jpg';
+import kampala2 from '../assets/images/Kampala/_MG_4580 copy.jpg';
+import kampala3 from '../assets/images/Kampala/_MG_4605 copy.jpg';
+import kampala4 from '../assets/images/Kampala/_MG_4612 copy.jpg';
+import kampala5 from '../assets/images/Kampala/_MG_4616 copy.jpg';
+import kampala6 from '../assets/images/Kampala/_MG_4628 copy.jpg';
+import kampala7 from '../assets/images/Kampala/_MG_4738 copy.jpg';
+import kampala8 from '../assets/images/Kampala/_MG_4757 copy.jpg';
+import kampala9 from '../assets/images/Kampala/_MG_4961 copy.jpg';
+import kampala10 from '../assets/images/Kampala/_MG_5034 copy.jpg';
+import kampala11 from '../assets/images/Kampala/_MG_5035 copy.jpg';
+import kampala12 from '../assets/images/Kampala/_MG_5263 copy.jpg';
+import kampala13 from '../assets/images/Kampala/_MG_5277 copy.jpg';
+import kampala14 from '../assets/images/Kampala/_MG_5286.jpg';
+import kampala15 from '../assets/images/Kampala/_MG_5311 copy.jpg';
+import kampala16 from '../assets/images/Kampala/_MG_5315 copy.jpg';
+import kampala17 from '../assets/images/Kampala/_MG_5319 copy.jpg';
+import kampala18 from '../assets/images/Kampala/_MG_5360 copy.jpg';
 
 import kisumu1 from '../assets/images/kisumu.jpg';
-// import kisumu2 from '../assets/images/crane.jpg';
+import kisumu2 from '../assets/images/Kisumu/CKS07428.jpg';
+import kisumu3 from '../assets/images/Kisumu/CKS07459.jpg';
+import kisumu4 from '../assets/images/Kisumu/CKS07462.jpg';
+import kisumu5 from '../assets/images/Kisumu/CKS07524.jpg';
+import kisumu6 from '../assets/images/Kisumu/CKS07553.jpg';
+import kisumu7 from '../assets/images/Kisumu/CKS07556.jpg';
+import kisumu8 from '../assets/images/Kisumu/CKS07580.jpg';
+import kisumu9 from '../assets/images/Kisumu/CKS07735.jpg';
+import kisumu10 from '../assets/images/Kisumu/IMG_3885.jpg';
+import kisumu11 from '../assets/images/Kisumu/IMG_3995.jpg';
+import kisumu12 from '../assets/images/Kisumu/IMG_3997.jpg';
+import kisumu13 from '../assets/images/Kisumu/IMG_4000.jpg';
+import kisumu14 from '../assets/images/Kisumu/IMG_7839.jpg';
 
 import malindi1 from '../assets/images/Malindi.jpg';
 import malindi2 from '../assets/images/Malindi/2J5A1470.jpg';
 import malindi3 from '../assets/images/Malindi/2J5A1496.jpg';
-import malindi4 from '../assets/images/Malindi/2J5A1575.jpg';
+import malindi4 from '../assets/images/Malindi/2J5A1570.jpg';
 import malindi5 from '../assets/images/Malindi/2J5A1575.jpg';
-import malindi6 from '../assets/images/Malindi/2J5A1750.jpg';
-import malindi7 from '../assets/images/Malindi/2J5A1989.jpg';
-import malindi8 from '../assets/images/Malindi/2J5A2009.jpg';
-import malindi9 from '../assets/images/Malindi/2J5A2063.jpg';
-import malindi10 from '../assets/images/Malindi/2J5A2072.jpg';
+import malindi6 from '../assets/images/Malindi/2J5A1743.jpg';
+import malindi7 from '../assets/images/Malindi/2J5A1750.jpg';
+import malindi8 from '../assets/images/Malindi/2J5A1765.jpg';
+import malindi9 from '../assets/images/Malindi/2J5A1815.jpg';
+import malindi10 from '../assets/images/Malindi/2J5A1989.jpg';
+import malindi11 from '../assets/images/Malindi/2J5A2009.jpg';
+import malindi12 from '../assets/images/Malindi/2J5A2063.jpg';
+import malindi13 from '../assets/images/Malindi/2J5A2072.jpg';
+import malindi14 from '../assets/images/Malindi/2J5A2073.jpg';
+import malindi15 from '../assets/images/Malindi/2J5A2075.jpg';
+
 
 export interface ForumImage {
     src: string;
@@ -106,7 +132,15 @@ export const events: Record<string, ForumEvent> = {
             { src: kampala7, caption: "" },
             { src: kampala8, caption: "" },
             { src: kampala9, caption: "" },
-            { src: kampala10, caption: "" }
+            { src: kampala10, caption: "" },
+            { src: kampala11, caption: "" },
+            { src: kampala12, caption: "" },
+            { src: kampala13, caption: "" },
+            { src: kampala14, caption: "" },
+            { src: kampala15, caption: "" },
+            { src: kampala16, caption: "" },
+            { src: kampala17, caption: "" },
+            { src: kampala18, caption: "" }
         ],
         banner: craneBanner,
     },
@@ -126,8 +160,19 @@ export const events: Record<string, ForumEvent> = {
             'Promoted climate-smart WASH technologies including water recycling and reuse',
         ],
         images: [
-            // { src: kampala1, caption: "Panel on financing WASH innovations" },
-            // { src: kisumu2, caption: "Exhibition booth with new technologies" }
+            { src: kisumu2, caption: "" },
+            { src: kisumu3, caption: "" },
+            { src: kisumu4, caption: "" },
+            { src: kisumu5, caption: "" },
+            { src: kisumu6, caption: "" },
+            { src: kisumu7, caption: "" },
+            { src: kisumu8, caption: "" },
+            { src: kisumu9, caption: "" },
+            { src: kisumu10, caption: "" },
+            { src: kisumu11, caption: "" },
+            { src: kisumu12, caption: "" },
+            { src: kisumu13, caption: "" },
+            { src: kisumu14, caption: "" }
         ],
         banner: kisumu1,
     },
@@ -155,6 +200,11 @@ export const events: Record<string, ForumEvent> = {
             { src: malindi8, caption: "" },
             { src: malindi9, caption: "" },
             { src: malindi10, caption: "" },
+            { src: malindi11, caption: "" },
+            { src: malindi12, caption: "" },
+            { src: malindi13, caption: "" },
+            { src: malindi14, caption: "" },
+            { src: malindi15, caption: "" },
 
         ],
         banner: malindi1,

@@ -1,12 +1,11 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/NavBar/NavBar.tsx';
-import Footer from '../components/Footer/Footer.tsx';
 import oceanImage from "../assets/ocean.jpg";
 
 export default function PublicLandingLayout() {
     return (
         <div style={{
-            height: '100vh',
+            height: '100dvh',
             width: '100vw',
             position: 'relative',
             overflow: 'hidden',
@@ -31,11 +30,11 @@ export default function PublicLandingLayout() {
                 left: 0,
                 height: '100%',
                 width: '100%',
-                backgroundColor: 'rgba(27, 68, 82, 0.3)', // #1B4452 at 30%
+                backgroundColor: 'rgba(27, 68, 82, 0.3)',
                 zIndex: 1,
             }} />
 
-            {/* Content including Navbar and children */}
+            {/* Content */}
             <div style={{
                 position: 'relative',
                 zIndex: 2,
@@ -48,12 +47,11 @@ export default function PublicLandingLayout() {
                 <main style={{
                     flex: 1,
                     overflowY: 'auto',
-                    padding: '1rem clamp(1rem, 2vw, 2rem)',
+                    padding: `clamp(1rem, 2vw, 2rem) 1rem`,
                     color: '#fff',
                 }}>
                     <Outlet />
                 </main>
-                <Footer/>
             </div>
         </div>
     );

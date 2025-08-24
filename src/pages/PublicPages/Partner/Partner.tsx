@@ -22,7 +22,7 @@ export default function Partner() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://www.i4wash.com:8000/api/method/i4wash_app.i4wash.api.sponsor_email.contact_sponsor', {
+            const response = await fetch('https://api.i4wash.com/api/method/i4wash_app.i4wash.api.sponsor_email.contact_sponsor', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
@@ -123,7 +123,7 @@ export default function Partner() {
                                 <li>Keynote/plenary speaking</li>
                                 <li>4 banners</li>
                                 <li>1 Panel discussion.</li>
-                                <li>Premium booth</li>
+                                <li>1 Exhibition booth</li>
                                 <li>10 passes</li>
                                 <li>Full-page profile</li>
                                 <li>Input into communiqué</li>
@@ -140,7 +140,7 @@ export default function Partner() {
                                 <li>Technical session speaking</li>
                                 <li>3 banners</li>
                                 <li>1 Panel discussion.</li>
-                                <li>Standard booth</li>
+                                <li>1 Exhibition booth</li>
                                 <li>7 passes</li>
                                 <li>Half-page profile</li>
                                 <li>Input into communiqué</li>
@@ -157,7 +157,7 @@ export default function Partner() {
                                 <li>Panelist speaking</li>
                                 <li>2 banners</li>
                                 <li>1 Panel discussion.</li>
-                                <li>Standard booth</li>
+                                <li>1 Exhibition booth</li>
                                 <li>5 passes</li>
                                 <li>Quarter-page profile</li>
                                 <li>KES: 2,000,000</li>
@@ -172,7 +172,7 @@ export default function Partner() {
                                 <li>Basic logo</li>
                                 <li>1 banner</li>
                                 <li>1 Panel discussion.</li>
-                                <li>Standard booth</li>
+                                <li>1 Exhibition booth</li>
                                 <li>3 passes</li>
                                 <li>Mention in credits</li>
                                 <li>KES: 1,000,000</li>
