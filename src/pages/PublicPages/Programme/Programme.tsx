@@ -82,7 +82,43 @@ export default function Programme() {
                     potential partners and investors
                 </p>
 
-                <h3>Full programme to be shared later.</h3>
+                <div className="program-container">
+                    <h2 className="program-title">Tentative Program</h2>
+                    <table className="program-table">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>Day 1</th>
+                            <th>Day 2</th>
+                            <th>Day 3</th>
+                            <th>Day 4</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Morning</td>
+                            <td>Welcoming key notes and pitch by enablers</td>
+                            <td>Pitch by WASH stakeholders</td>
+                            <td>Pitch by WASH stakeholders</td>
+                            <td>Field visits to specified location</td>
+                        </tr>
+                        <tr>
+                            <td>Afternoon</td>
+                            <td>Pitch by WASH stakeholders</td>
+                            <td>Pitch by WASH stakeholders</td>
+                            <td>Pitch by WASH stakeholders and wrap up</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Evening</td>
+                            <td>B2B networking</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </>
     );

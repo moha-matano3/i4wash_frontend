@@ -1,6 +1,7 @@
 import './Footer.css';
 import { Link } from 'react-router-dom';
-import Invitation from "../../assets/Files/I4WASH Forum Malindi-Invitation letter.pdf"
+import Invitation from "../../assets/Files/Invitation.pdf"
+import LogiNote from "../../assets/Files/Malindi Logistics note.pdf"
 import CountdownTimer from "../CountdownTimer/CountdownTimer.tsx";
 import logoIMG from "../../assets/logo/QGLogo.png";
 
@@ -14,10 +15,10 @@ export default function Footer() {
                         download="invitation.pdf"
                         rel="noopener noreferrer"
                     >
-                        Download Invitation
+                        Download Invitation letter
                     </a>
                 <a
-                    href={Invitation}
+                    href={LogiNote}
                     download="invitation.pdf"
                     rel="noopener noreferrer"
                 >

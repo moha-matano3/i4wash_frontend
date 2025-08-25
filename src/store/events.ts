@@ -13,7 +13,6 @@ import nakuru8 from '../assets/images/Nakuru/Naivasha_lorentz_booth.jpg'
 import kampala1 from '../assets/images/Kampala/_MG_4554 copy.jpg';
 import kampala2 from '../assets/images/Kampala/_MG_4580 copy.jpg';
 import kampala3 from '../assets/images/Kampala/_MG_4605 copy.jpg';
-import kampala4 from '../assets/images/Kampala/_MG_4612 copy.jpg';
 import kampala5 from '../assets/images/Kampala/_MG_4616 copy.jpg';
 import kampala6 from '../assets/images/Kampala/_MG_4628 copy.jpg';
 import kampala7 from '../assets/images/Kampala/_MG_4738 copy.jpg';
@@ -50,15 +49,18 @@ import malindi3 from '../assets/images/Malindi/2J5A1496.jpg';
 import malindi4 from '../assets/images/Malindi/2J5A1570.jpg';
 import malindi5 from '../assets/images/Malindi/2J5A1575.jpg';
 import malindi6 from '../assets/images/Malindi/2J5A1743.jpg';
-import malindi7 from '../assets/images/Malindi/2J5A1750.jpg';
+import malindi7 from '../assets/images/Malindi/1bf739df-b573-4a00-9796-30c9466700a6.jfif';
 import malindi8 from '../assets/images/Malindi/2J5A1765.jpg';
-import malindi9 from '../assets/images/Malindi/2J5A1815.jpg';
-import malindi10 from '../assets/images/Malindi/2J5A1989.jpg';
-import malindi11 from '../assets/images/Malindi/2J5A2009.jpg';
+import malindi9 from '../assets/images/Malindi/2a4a7939-565e-4948-97a5-d64aeb674d89.jfif';
+import malindi10 from '../assets/images/Malindi/8ef37d18-04c6-41be-abed-022013ebd2f7.jfif';
+import malindi11 from '../assets/images/Malindi/a624edd3-dbef-40cf-bcfd-8956772b6adc.jfif';
 import malindi12 from '../assets/images/Malindi/2J5A2063.jpg';
 import malindi13 from '../assets/images/Malindi/2J5A2072.jpg';
 import malindi14 from '../assets/images/Malindi/2J5A2073.jpg';
 import malindi15 from '../assets/images/Malindi/2J5A2075.jpg';
+import malindi16 from '../assets/images/Malindi/d1ec0fa6-c1b0-4271-82a2-70c9c9e83ee0.jfif';
+import malindi17 from '../assets/images/Malindi/e503b056-493c-4405-bf28-355f1732dbab.jfif';
+import malindi18 from '../assets/images/Malindi/eaf28bfd-5cb2-419f-9554-7343ef9dd397.jfif';
 
 
 export interface ForumImage {
@@ -126,7 +128,6 @@ export const events: Record<string, ForumEvent> = {
             { src: kampala1, caption: "" },
             { src: kampala2, caption: "" },
             { src: kampala3, caption: "" },
-            { src: kampala4, caption: "" },
             { src: kampala5, caption: "" },
             { src: kampala6, caption: "" },
             { src: kampala7, caption: "" },
@@ -205,6 +206,9 @@ export const events: Record<string, ForumEvent> = {
             { src: malindi13, caption: "" },
             { src: malindi14, caption: "" },
             { src: malindi15, caption: "" },
+            { src: malindi16, caption: "" },
+            { src: malindi17, caption: "" },
+            { src: malindi18, caption: "" },
 
         ],
         banner: malindi1,

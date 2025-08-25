@@ -1,7 +1,7 @@
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
 import LogoCarousel from "../../../components/LogoCarousel/LogoCarousel.tsx";
-import Invitation from "../../../assets/Files/I4WASH Forum Malindi-Invitation letter.pdf"
+import Invitation from "../../../assets/Files/Invitation.pdf"
 import exploreBtn from "../../../assets/icons/ExploreBtn.svg";
 import Footer from "../../../components/Footer/Footer.tsx";
 
@@ -40,9 +40,11 @@ export default function Home() {
 
             {/*<CountdownTimer />*/}
         </section>
-        <section className="contact">
-            <h3 className="head">Our Partners</h3>
-            <LogoCarousel />
+        <section>
+            <div className="contact">
+                <h3 className="head">Our Partners</h3>
+                <LogoCarousel />
+            </div>
         </section>
         <Footer />
     </>

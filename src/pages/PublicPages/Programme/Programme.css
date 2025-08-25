@@ -36,3 +36,49 @@
     font-weight: bold;
     color: #ae2012;
 }
+
+.table-container {
+    margin: 2rem auto;
+    max-width: 900px;
+    text-align: center;
+}
+
+.table-title {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.program-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+.program-table th,
+.program-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.program-table thead th {
+    background-color: #298ea6; /* Blue header */
+    color: white;
+}
+
+/* Make first column (Day) also blue like header */
+.program-table tbody td:first-child {
+    background-color: #298ea6;
+    color: white;
+    font-weight: bold;
+}
+
+/* Zebra striping */
+.program-table tbody tr:nth-child(even) td:not(:first-child) {
+    background-color: #f9f9f9;
+}
+
+.program-table tbody tr:hover td:not(:first-child) {
+    background-color: #f1f1f1;
+}
+

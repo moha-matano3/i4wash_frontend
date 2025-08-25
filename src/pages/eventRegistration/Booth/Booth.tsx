@@ -104,7 +104,7 @@ export default function Booth() {
                                     onChange={(e) => setBoothCount(Number(e.target.value))}
                                     required
                                 >
-                                    {[1, 2, 3, 4, 5].map((count) => (
+                                    {[0, 1, 2, 3, 4, 5].map((count) => (
                                         <option key={count} value={count}>
                                             {count}
                                         </option>
