@@ -23,13 +23,13 @@ export default function Home() {
             {/* Description Paragraph */}
             <p className="description">
                 Innovate4WASH (I4WASH) is East Africa’s premier platform for innovation, collaboration, and impact in the Water, Sanitation, and Hygiene (WASH) sector. More than just a conference, I4WASH is a vibrant community that breaks down silos and brings together public institutions, private sector players, civil society, entrepreneurs, funders, and academia for partnerships and knowledge exchange.
-                Since 2018, the four day marketplace forum has provided visibility to over 1,000 impactful WASH solutions and initiatives, driving scalable and sustainable change across East Africa that leverages innovative finance. From igniting a thriving  WASH entrepreneurship ecosystem to creating resilient communities, I4WASH is shaping the future of water and sanitation in Africa; one solution, one connection, and one breakthrough at a time.
+                Since 2018, the four day marketplace forum has provided visibility to over 1,000 impactful WASH solutions and initiatives, driving scalable and sustainable change across East Africa that leverages innovative finance. From igniting a thriving  WASH entrepreneurship ecosystem to creating resilient communities, I4WASH is shaping the future of water and sanitation in Africa; one solution, one connection, and one breakthrough at a time.  
                 <a
                     href={Invitation}
                     download="invitation.pdf"
                     rel="noopener noreferrer"
                 >
-                    Download Invitation
+                    Download Invitation letter
                 </a>
             </p>
 

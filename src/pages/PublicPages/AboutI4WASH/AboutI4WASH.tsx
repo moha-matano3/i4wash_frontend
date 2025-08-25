@@ -30,7 +30,7 @@ export default function AboutI4WASH() {
                     </p>
 
                     <p className="closing-quote">
-                        “The world needs more coordination, collaboration and communication. Silo thinking and silo-organization is too prevalent. Knowledge gaps prevent funding from reaching solutions, and solutions from reaching the problems they can solve”
+                          The world needs more coordination, collaboration and communication. Silo thinking and silo-organization is too prevalent. Knowledge gaps prevent funding from reaching solutions, and solutions from reaching the problems they can solve
                     </p>
 
                     <h2 className="about-subtitle">Our Mission</h2>
