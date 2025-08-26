@@ -25,7 +25,7 @@ export default function EventRegistrationLayout() {
                         maxWidth: '1200px', // keeps content centered on big screens
                         height: '100%',
                         maxHeight: '90vh', // fits without scrolling
-                        background: 'rgba(27, 68, 82, 0.9)',
+                        background: 'rgba(255, 255, 255, 0.9)',
                         borderRadius: '1rem',
                         padding: '2rem',
                         display: 'flex',
