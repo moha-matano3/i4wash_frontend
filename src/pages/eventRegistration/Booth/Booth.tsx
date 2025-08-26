@@ -8,14 +8,23 @@ import nextBtn from "../../../assets/icons/nextBtn.svg";
 import flowSVG from "../../../assets/icons/FormFlow/flow4.svg";
 import radioBtnSVGChecked from "../../../assets/icons/radioBtns/radioBtnChecked.svg";
 import radioBtnSVG from "../../../assets/icons/radioBtns/radioBtn.svg";
-import './Booth.css'
+import './Booth.css';
 
 export default function Booth() {
     const navigate = useNavigate();
     const { formData, setFormData } = useRegistration();
 
-    const [needsBooth, setNeedsBooth] = useState<true | false>(formData.exhibitionBoothNeeded || false);
-    const [boothCount, setBoothCount] = useState(formData.exhibitionBoothCount || 0);
+    const [needsBooth, setNeedsBooth] = useState<boolean>(formData.exhibitionBoothNeeded || false);
+    const [boothCount, setBoothCount] = useState<number>(formData.exhibitionBoothCount ?? 0);
+
+    const handleNeedsBoothChange = (value: boolean) => {
+        setNeedsBooth(value);
+        if (!value) {
+            setBoothCount(0); // reset to 0 when "No" is selected
+        } else {
+            setBoothCount(1); // default to 1 when "Yes" is selected
+        }
+    };
 
     const handleNext = (e: React.FormEvent) => {
         e.preventDefault();
@@ -29,7 +38,7 @@ export default function Booth() {
 
         setFormData({
             exhibitionBoothNeeded: needsBooth,
-            exhibitionBoothCount: needsBooth ? boothCount : 1,
+            exhibitionBoothCount: needsBooth ? boothCount : 0,
         });
 
         navigate('/register/step5');
@@ -52,8 +61,10 @@ export default function Booth() {
                         <label className="presentation-question">
                             <div className="prompt">
                                 <span>Do you require a booth?</span>
-                                <p>We offer limited exhibition booths at a cost, an exhibition booth covers one 3x3 tent,
-                                    dressed table and chairs, and décor in your corporate colors for the full 3 days.</p>
+                                <p>
+                                    We offer limited exhibition booths at a cost. An exhibition booth covers one 3x3 tent,
+                                    dressed table and chairs, and décor in your corporate colors for the full 3 days.
+                                </p>
                             </div>
                             <div className="radio-group">
                                 <label className="custom-radio">
@@ -62,7 +73,7 @@ export default function Booth() {
                                         name="booth"
                                         value="yes"
                                         checked={needsBooth === true}
-                                        onChange={() => setNeedsBooth(true)}
+                                        onChange={() => handleNeedsBoothChange(true)}
                                     />
                                     <img
                                         className="icon"
@@ -78,7 +89,7 @@ export default function Booth() {
                                         name="booth"
                                         value="no"
                                         checked={needsBooth === false}
-                                        onChange={() => setNeedsBooth(false)}
+                                        onChange={() => handleNeedsBoothChange(false)}
                                     />
                                     <img
                                         className="icon"
@@ -104,7 +115,7 @@ export default function Booth() {
                                     onChange={(e) => setBoothCount(Number(e.target.value))}
                                     required
                                 >
-                                    {[0, 1, 2, 3, 4, 5].map((count) => (
+                                    {(needsBooth ? [1, 2, 3, 4, 5] : [0]).map((count) => (
                                         <option key={count} value={count}>
                                             {count}
                                         </option>
@@ -112,7 +123,6 @@ export default function Booth() {
                                 </select>
                             </div>
                         </div>
-
                     )}
                 </div>
 
