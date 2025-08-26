@@ -4,9 +4,11 @@ import "./LogoCarousel.css";
 // Import your logo images
 import logo1 from "../../../src/assets/logo/carouselLogos/logo1.png";
 import logo2 from "../../../src/assets/logo/carouselLogos/logo2.png";
+import logo3 from "../../../src/assets/logo/carouselLogos/logo3.jpeg";
+import logo4 from "../../../src/assets/logo/carouselLogos/logo4.jpeg";
 
 
-const logos = [logo1, logo2];
+const logos = [logo1, logo2, logo3, logo4];
 
 export default function LogoCarousel() {
     const settings = {
