@@ -64,3 +64,8 @@
     padding: 2rem;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 }
+.modal-close{
+    color: #0a1f25;
+    padding: 0.5rem;
+    border: #0a1f25 solid 1px;
+}
