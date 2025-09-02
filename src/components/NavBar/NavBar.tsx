@@ -33,7 +33,7 @@ export default function Navbar() {
             {/* Links */}
             <ul className={`navbar-links ${menuOpen ? 'open' : ''}`}>
                 <li className={location.pathname.startsWith('/register') ? 'active' : ''}>
-                    <Link to="/register/step1" onClick={() => setMenuOpen(false)}>Registration</Link>
+                    <Link to="/Explore" onClick={() => setMenuOpen(false)}>Concept Note</Link>
                 </li>
                 <li>
                     <Link to="/Convenership" onClick={() => setMenuOpen(false)}>Convene</Link>

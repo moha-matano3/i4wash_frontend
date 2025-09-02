@@ -16,7 +16,6 @@ export default function EventRegistrationLayout() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     padding: '5vw', // responsive padding
-                    overflow: 'hidden', // prevent scroll
                 }}
             >
                 <div

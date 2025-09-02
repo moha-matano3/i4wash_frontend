@@ -34,7 +34,7 @@ export default function Home() {
             </p>
 
             {/* Explore Button */}
-            <button className="explore-button" onClick={() => navigate('/Explore')}>
+            <button className="explore-button" onClick={() => navigate('/register/step1')}>
                 <img src={exploreBtn} alt="Explore Button" style={{ width: '100%', height: '100%' }} />
             </button>
 
