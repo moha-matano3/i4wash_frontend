@@ -29,7 +29,8 @@ export default function EventRegistrationLayout() {
                         padding: '2rem',
                         display: 'flex',
                         flexDirection: 'column',
-                        overflow: 'auto', // allows content inside to scroll if needed
+                        overflow: 'scroll', // allows content inside to scroll if needed
+                        scrollbarGutter: 'stable'
                     }}
                 >
                 <Outlet />
