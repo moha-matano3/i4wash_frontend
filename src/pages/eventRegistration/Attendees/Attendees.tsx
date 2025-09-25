@@ -218,7 +218,7 @@ export default function Attendees() {
 
     return (
         <div className="form-container">
-            <h3 className="title">Attendees</h3>
+            <h3 className="title">Other attendees</h3>
             <div className="flow">
                 <img src={flowSVG} alt="" style={{ width: '100%', height: 'auto' }} />
             </div>
