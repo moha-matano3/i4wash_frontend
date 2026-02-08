@@ -69,7 +69,7 @@
     font-weight: 600;
     display: block;
     margin-bottom: 0.5rem;
-    color: #76EADA;
+    color: rgba(39, 93, 107);
 }
 
 .prompt p {
@@ -174,7 +174,7 @@
 .modal-content h2,
 .modal-content h3,
 .modal-content h4 {
-    color: #76EADA;
+    color: rgba(39, 93, 107);
     margin-top: 0.5rem;
 }
 

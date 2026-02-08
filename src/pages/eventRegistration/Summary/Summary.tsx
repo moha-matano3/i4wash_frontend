@@ -3,7 +3,7 @@ import { useRegistration } from '../../../store/useRegistration';
 import flowSVG from "../../../assets/icons/FormFlow/flow4.svg";
 import FormNavBtns from "../../../components/FormNavBtns/FormNavBtns.tsx";
 import backBtn from "../../../assets/icons/backBtn.svg";
-import nextBtn from "../../../assets/icons/nextBtn.svg";
+import submitBtn from "../../../assets/icons/submitBtn.svg";
 import "./Summary.css"
 import { useEffect, useState } from "react";
 import { api } from '../../../lib/api.ts';
@@ -243,7 +243,7 @@ export default function Summary() {
                             onClick={handleBack}
                         />
                         <FormNavBtns
-                            svgSrc={nextBtn}
+                            svgSrc={submitBtn}
                             alt="Continue"
                             type="submit"
                             onClick={handleContinue}

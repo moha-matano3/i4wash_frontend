@@ -2,8 +2,8 @@
    NAVBAR BASE STYLES
    ========================= */
 .navbar {
-    background-color: rgba(41, 142, 166, 0.7);
-    color: #fff;
+    background-color: rgb(255, 255, 255);
+    color: rgba(39, 93, 107);
     padding: 1rem 2rem; /* increased vertical padding for more height */
     display: flex;
     justify-content: space-between;
@@ -52,13 +52,14 @@
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 2rem; /* slightly more spacing */
+    justify-content: space-around;
     margin: 0;
     padding: 0;
+    color: rgba(39, 93, 107);
 }
 
 .navbar-links a {
-    color: #fff;
+    color: rgba(39, 93, 107) !important;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
@@ -66,7 +67,7 @@
 }
 
 .navbar-links a:hover {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgb(118, 234, 218);
 }
 
 .navbar-links li.active a {
@@ -80,13 +81,14 @@
 .dropdown {
     position: relative;
     cursor: pointer;
+    padding-left: 1rem;
 }
 
 .dropdown-menu {
     position: absolute;
     top: calc(100% + 0.5rem);
     left: 0;
-    background-color: rgba(41, 142, 166, 0.95);
+    background-color: rgba(41, 142, 166, 0.8);
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
     list-style: none;
@@ -99,7 +101,7 @@
 }
 
 .dropdown-menu li a {
-    color: #fff;
+    color: #fff !important;
     text-decoration: none;
     font-size: 0.95rem;
     display: block;
@@ -166,5 +168,74 @@
 
     .navbar-links a {
         font-size: 0.95rem;
+    }
+}
+
+/* Hamburger hidden by default */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100; /* above menu */
+}
+
+.hamburger .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #1B4452;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Animate into X */
+.hamburger .bar.open:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger .bar.open:nth-child(2) {
+    opacity: 0;
+}
+.hamburger .bar.open:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar-links {
+        position: fixed;
+        top: 70px; /* below navbar */
+        right: -100%;
+        flex-direction: column;
+        background: rgba(41, 142, 166, 0.95);
+        width: 70%;
+        height: calc(100vh - 70px);
+        padding: 2rem 1rem;
+        gap: 1.5rem;
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
+
+    .navbar-links.open {
+        right: 0;
+    }
+
+    .navbar-links a {
+        font-size: 1.2rem;
+        display: block;
+    }
+
+    .dropdown-menu {
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        padding: 0.5rem 0;
     }
 }

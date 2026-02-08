@@ -7,19 +7,19 @@
     display: flex !important;
     justify-content: center;
     align-items: center;
-    padding-top: 2rem;
+    /*padding-top: rem;*/
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     flex: 0 0 auto;
 }
 
 .logo-slide img {
-    max-height: 100%;
-    max-width: 100%;
+    max-height: 60%;
+    max-width: 60%;
     object-fit: contain;
     transition: transform 0.3s ease-in-out;
 }
 
 .logo-slide img:hover {
-    transform: scale(1.15);
+    transform: scale(1.03);
 }

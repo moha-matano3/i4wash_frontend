@@ -1,84 +1,186 @@
 /* =========================
+   GLOBAL FONT NORMALIZATION
+   ========================= */
+html {
+    font-size: 16px; /* base for rem units */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;       /* 16px */
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1rem, 3vw, 2rem);
+    color: #fff;
+    font-size: 1rem; /* consistent */
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1rem;
+    transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+    color: #76EADA;
+}
+
+
+/* =========================
    FOOTER BASE STYLES
    ========================= */
 .footer {
-    background-color: rgba(41, 142, 166, 0.7);
+    background-color: rgba(41, 142, 166, 0.3);
     color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    padding: 1.5rem 2rem;
+    gap: 1rem; /* spacing between items */
+
+    padding: 0 clamp(0.5rem, 1.5vw, 1rem) clamp(0.4rem, 1vw, 0.75rem) clamp(0.5rem, 1.5vw, 1rem);
+    width: 100%;
+    max-width: 100vw;
+
+    height: auto; /* footer grows naturally */
+    max-height: 12rem;
+    font-size: clamp(0.8rem, 1.8vw, 1rem);
+
     backdrop-filter: blur(6px);
-    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -0.15em 0.4em rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* prevent padding issues */
 }
 
 /* =========================
    FOOTER SECTIONS
    ========================= */
 .footer-section-left,
-.footer-section-centre,
-.footer-section-right {
-    flex: 1;
-    min-width: 200px;
-    margin-bottom: 1rem;
+.footer-section-centre {
+    display: flex;
+    flex-direction: column;
+    min-width: clamp(12rem, 40%, 20rem);
+    margin-top: 0;
+
 }
 
 .footer h4 {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     font-weight: 600;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
 .footer a {
     color: #fff;
     text-decoration: none;
-    font-size: 0.95rem;
-    transition: color 0.2s ease;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .footer a:hover {
     color: #76EADA;
-    transform: scale(10%);
+    transform: scale(1.05);
 }
-
-/* Countdown timer alignment */
+.qg-logo{
+    height: 3rem;
+    padding: 0;
+    margin: 0;
+}
+/* Countdown timer / right section */
 .footer-section-right {
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
+/* Footer content stick bottom-left */
+.footer-content {
+    padding: 1rem 0.5rem; /* optional spacing from edges */
+    font-size: 2rem;
+    color: #aaa;
+}
+
+.footer-content a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+    color: #76EADA;
+}
+.footer-brand{
+    font-size: clamp(0.4rem, 1vw, 0.6rem);
+}
+
 /* =========================
    RESPONSIVENESS
    ========================= */
 
-/* 📱 Mobile */
-@media (max-width: 768px) {
+/* 📱 Mobile (up to 768px) */
+@media (max-width: 48em) {
     .footer {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 1.5rem;
+        padding: 0.8rem 1rem;
+        max-height: none; /* allow auto height */
     }
 
+    /* Hide left + centre on phones */
     .footer-section-left,
-    .footer-section-centre,
+    .footer-section-centre {
+        display: none;
+    }
+
+    /* Only show right section, centered */
     .footer-section-right {
-        flex: none;
+        justify-content: center;
         width: 100%;
-        margin-bottom: 1.2rem;
-        justify-content: center;
-    }
-
-    .footer-section-right {
-        justify-content: center;
+        margin: 0;
     }
 }
 
-/* 💻 Medium screens */
-@media (min-width: 769px) and (max-width: 1200px) {
+/* 💻 Medium screens (769px–1200px) */
+@media (min-width: 48.1em) and (max-width: 75em) {
     .footer {
-        padding: 1.5rem 1.5rem;
+        padding: clamp(1rem, 2.5vw, 1.5rem) clamp(1rem, 3vw, 2rem);
     }
 }
+
+/* 🖥 Large screens (>1200px) */
+@media (min-width: 75.1em) {
+    .footer {
+        padding: clamp(1rem, 2vw, 2rem);
+    }
+}
+/* Windows-specific tweaks */
+@supports (-ms-ime-align:auto) {
+    html {
+        font-size: 15px; /* slightly smaller base */
+    }
+
+    .navbar {
+        font-size: 0.95rem;
+    }
+
+    .footer {
+        font-size: 0.9rem;
+        /*padding: clamp(0.65rem, 2vw, 1.4rem) clamp(1rem, 3vw, 2rem);*/
+    }
+
+    .footer h4 {
+        font-size: clamp(0.85rem, 2vw, 1.1rem);
+    }
+}
+

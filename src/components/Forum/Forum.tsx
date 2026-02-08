@@ -12,7 +12,7 @@ const Forum: React.FC<ForumProps> = ({ event }) => {
             <div className="forum-banner" style={{backgroundImage: `url(${event.banner})`}}>
                 <div className="forum-banner-overlay">
                     <h1 className="forum-title">
-                        {event.title} {event.year}
+                        {event.year} {event.title}
                     </h1>
                     <p className="forum-theme">{event.theme}</p>
                 </div>

@@ -2,24 +2,14 @@ import Slider from "react-slick";
 import "./LogoCarousel.css";
 
 // Import your logo images
-import logo1 from "../../../src/assets/icons/add.svg";
-import logo2 from "../../../src/assets/icons/add.svg";
-import logo3 from "../../../src/assets/icons/add.svg";
-import logo4 from "../../../src/assets/icons/add.svg";
-import logo5 from "../../../src/assets/icons/add.svg";
-import logo6 from "../../../src/assets/icons/add.svg";
-import logo7 from "../../../src/assets/icons/add.svg";
-import logo8 from "../../../src/assets/icons/add.svg";
-import logo9 from "../../../src/assets/icons/add.svg";
-import logo10 from "../../../src/assets/icons/add.svg";
-import logo11 from "../../../src/assets/icons/add.svg";
-import logo12 from "../../../src/assets/icons/add.svg";
-import logo13 from "../../../src/assets/icons/add.svg";
-import logo14 from "../../../src/assets/icons/add.svg";
-import logo15 from "../../../src/assets/icons/add.svg";
-import logo16 from "../../../src/assets/icons/add.svg";
+import logo1 from "../../../src/assets/logo/carouselLogos/logo1.png";
+import logo2 from "../../../src/assets/logo/carouselLogos/logo2.png";
+import logo3 from "../../assets/logo/carouselLogos/logo3.png";
+import logo4 from "../../assets/logo/carouselLogos/logo4.jpeg";
+import logo5 from "../../assets/logo/carouselLogos/logo5.jpeg";
+import logo6 from "../../assets/logo/carouselLogos/logo6.png";
 
-const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo11,logo12,logo13,logo14,logo15,logo16];
+const logos = [logo4, logo3, logo6, logo1, logo2, logo5];
 
 export default function LogoCarousel() {
     const settings = {

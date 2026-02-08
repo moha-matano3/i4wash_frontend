@@ -29,6 +29,10 @@ export default function AboutI4WASH() {
                         those at the last mile.
                     </p>
 
+                    <p className="closing-quote">
+                          The world needs more coordination, collaboration and communication. Silo thinking and silo-organization is too prevalent. Knowledge gaps prevent funding from reaching solutions, and solutions from reaching the problems they can solve
+                    </p>
+
                     <h2 className="about-subtitle">Our Mission</h2>
                     <p>
                         I4WASH exists to bridge bold ideas with bold action. Our mission is to support the design,
@@ -57,7 +61,9 @@ export default function AboutI4WASH() {
                     </p>
 
                     <div className="about-cta">
-                        <h2>Join the Movement</h2>
+                        <a href="/register/step1">
+                            <h2>Join the Movement</h2>
+                        </a>
                         <p>
                             I4WASH is where Africa’s WASH future is being imagined, built, and accelerated.
                             Whether you're a policymaker, startup, donor, NGO, SME, financial institution, or

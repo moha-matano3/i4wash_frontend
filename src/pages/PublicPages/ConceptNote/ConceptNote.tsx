@@ -40,7 +40,7 @@ export default function ConceptNote() {
 
                 <section className="content-section">
                     <p>
-                        Since 2017, I4WASH has showcased over 1000 solutions across three continents, acting as a catalyst for policy reform, knowledge sharing,
+                        Since 2018, I4WASH has showcased over 1000 solutions across three continents, acting as a catalyst for policy reform, knowledge sharing,
                         and commercialization of impactful innovations. Attendees can expect engaging sessions, practical tools, high-level dialogues,
                         and real-world solutions designed to build resilient, inclusive, and future-ready WASH systems. I4WASH isn't just shaping Africa’s WASH future—it’s accelerating it.
                     </p>
