@@ -9,7 +9,7 @@ import logo4 from "../../assets/logo/carouselLogos/logo4.jpeg";
 import logo5 from "../../assets/logo/carouselLogos/logo5.jpeg";
 import logo6 from "../../assets/logo/carouselLogos/logo6.png";
 
-const logos = [logo1, logo2, logo3, logo4, logo5, logo6];
+const logos = [logo4, logo3, logo6, logo1, logo2, logo5];
 
 export default function LogoCarousel() {
     const settings = {
